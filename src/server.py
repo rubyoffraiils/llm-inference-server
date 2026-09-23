@@ -7,7 +7,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from model import generate, load_model
+from model import load_model
+from scheduler import BatchingScheduler
 
 # Loaded once at startup and kept resident, rather than per-request --
 # reloading a model on every call would dominate latency.
@@ -17,9 +18,11 @@ _state: dict = {}
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     model, tokenizer = load_model()
-    _state["model"] = model
-    _state["tokenizer"] = tokenizer
+    scheduler = BatchingScheduler(model, tokenizer)
+    scheduler.start()
+    _state["scheduler"] = scheduler
     yield
+    await scheduler.stop()
     _state.clear()
 
 
@@ -36,5 +39,5 @@ class ProcessResponse(BaseModel):
 
 @app.post("/process", response_model=ProcessResponse)
 async def process(request: ProcessRequest) -> ProcessResponse:
-    output = generate(request.prompt, _state["model"], _state["tokenizer"])
-    return ProcessResponse(output=output)
+    result = await _state["scheduler"].submit(request.prompt)
+    return ProcessResponse(output=result.text)
