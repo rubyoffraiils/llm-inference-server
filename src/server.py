@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
+import asyncio
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 from model import load_model
@@ -39,5 +40,8 @@ class ProcessResponse(BaseModel):
 
 @app.post("/process", response_model=ProcessResponse)
 async def process(request: ProcessRequest) -> ProcessResponse:
-    result = await _state["scheduler"].submit(request.prompt)
+    try:
+        result = await _state["scheduler"].submit(request.prompt)
+    except asyncio.QueueFull:
+        raise HTTPException(status_code=503, detail="server at capacity, retry shortly")
     return ProcessResponse(output=result.text)

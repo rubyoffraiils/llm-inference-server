@@ -13,7 +13,7 @@ def test_manual_decode_matches_generate():
     model, tokenizer = load_model()
 
     for prompt in PROMPTS:
-        manual_output = generate(prompt, model, tokenizer, max_new_tokens=20)
+        manual_output = generate(prompt, model, tokenizer, max_new_tokens=20).text
 
         chat_prompt = tokenizer.apply_chat_template(
             [{"role": "user", "content": prompt}],

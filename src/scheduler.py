@@ -199,6 +199,25 @@ def _pad_cache_left(cache, pad_amount: int) -> None:
         layer.values = torch.cat([zeros, layer.values], dim=-2)
 
 
+def _trim_dead_columns(cache, mask: torch.Tensor) -> torch.Tensor:
+    """Drop leading columns that are padding for every slot, in place.
+
+    Only reclaims columns no live slot needs, so nothing in use is cut.
+    Note this can't reclaim anything while a slot that joined an empty
+    batch is still running: its row is live from column 0, so there is
+    no leading dead run. Bounding the cache under that case needs
+    per-slot lengths, which one shared tensor can't express.
+    """
+    live = mask.any(dim=0)
+    dead = int((~live).cumprod(dim=0).sum().item())  # leading run of all-padding
+    if dead == 0:
+        return mask
+    for layer in cache.layers:
+        layer.keys = layer.keys[:, :, dead:, :]
+        layer.values = layer.values[:, :, dead:, :]
+    return mask[:, dead:]
+
+
 def _splice_slot(batch_cache, slot_index: int, new_cache) -> None:
     """Overwrite `slot_index`'s row in `batch_cache` with `new_cache`'s data, in place.
 
@@ -242,12 +261,15 @@ class BatchingScheduler:
         tokenizer: PreTrainedTokenizerBase,
         max_batch_size: int = 4,
         max_new_tokens: int = 50,
+        max_queue_size: int = 32,
     ):
         self._model = model
         self._tokenizer = tokenizer
         self._max_batch_size = max_batch_size
         self._max_new_tokens = max_new_tokens
-        self._queue: asyncio.Queue[tuple[str, asyncio.Future]] = asyncio.Queue()
+        self._queue: asyncio.Queue[tuple[str, asyncio.Future]] = asyncio.Queue(
+            maxsize=max_queue_size
+        )
         self._loop_task: asyncio.Task | None = None
 
         self._slots = [_Slot() for _ in range(max_batch_size)]
@@ -263,9 +285,14 @@ class BatchingScheduler:
             self._loop_task.cancel()
 
     async def submit(self, prompt: str) -> GenerationResult:
-        """Queue `prompt` and wait for its own slot to finish generating."""
+        """Queue `prompt` and wait for its own slot to finish generating.
+
+        Raises QueueFull rather than accepting work it can't get to --
+        a caller that waits forever behind an unbounded queue just times
+        out having learned nothing.
+        """
         future: asyncio.Future = asyncio.get_event_loop().create_future()
-        await self._queue.put((prompt, future))
+        self._queue.put_nowait((prompt, future))
         return await future
 
     async def _run(self) -> None:
@@ -273,8 +300,13 @@ class BatchingScheduler:
             await self._admit_waiting_requests()
 
             if all(slot.is_free for slot in self._slots):
-                # Nothing in flight: block rather than spin, then loop
-                # back around to admit whatever just arrived.
+                # Fully drained: drop the cache rather than let the next
+                # request pad itself out to a dead batch's length.
+                self._cache = None
+                self._mask = None
+                self._next_input = None
+                # Block rather than spin, then loop back around to admit
+                # whatever just arrived.
                 prompt, future = await self._queue.get()
                 self._queue.put_nowait((prompt, future))
                 continue
@@ -292,6 +324,11 @@ class BatchingScheduler:
 
     def _join_slot(self, index: int, prompt: str, future: asyncio.Future) -> None:
         """Prefill `prompt` alone and splice it into slot `index`."""
+        if self._cache is not None:
+            # Reclaim columns no live slot needs before measuring how far
+            # this request has to pad -- otherwise a departed slot's dead
+            # columns inflate every future join.
+            self._mask = _trim_dead_columns(self._cache, self._mask)
         target_len = self._cache.get_seq_length() if self._cache is not None else 0
         cache, mask_row, first_token, _ = _prefill_and_pad(
             prompt, self._model, self._tokenizer, target_len
@@ -375,7 +412,7 @@ class BatchingScheduler:
 
     def _reap_finished_slots(self) -> None:
         """Resolve and free any slot that just hit EOS or the token cap."""
-        for slot in self._slots:
+        for index, slot in enumerate(self._slots):
             if slot.is_free:
                 continue
             hit_eos = slot.token_ids[-1] == self._tokenizer.eos_token_id
@@ -393,3 +430,6 @@ class BatchingScheduler:
             )
             slot.future = None
             slot.token_ids = []
+            # Release this slot's columns so they can be trimmed; a stale
+            # row of 1s would keep dead columns looking live forever.
+            self._mask[index].zero_()
