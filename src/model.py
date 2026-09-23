@@ -5,7 +5,7 @@ from __future__ import annotations
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, PreTrainedModel, PreTrainedTokenizerBase
 
-MODEL_NAME = "distilgpt2"
+MODEL_NAME = "Qwen/Qwen2.5-0.5B-Instruct"
 MAX_NEW_TOKENS = 50
 
 _device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -32,7 +32,12 @@ def generate(
     Each step feeds only the newest token back in, along with the
     cached past_key_values, instead of re-running the whole sequence.
     """
-    input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(_device)
+    chat_prompt = tokenizer.apply_chat_template(
+        [{"role": "user", "content": prompt}],
+        tokenize=False,
+        add_generation_prompt=True,
+    )
+    input_ids = tokenizer(chat_prompt, return_tensors="pt").input_ids.to(_device)
 
     generated_ids = input_ids
     past_key_values = None
@@ -59,4 +64,7 @@ def generate(
         # Next iteration only needs this new token -- the cache covers the rest.
         next_input = next_token
 
-    return tokenizer.decode(generated_ids[0], skip_special_tokens=True)
+    # Only the newly generated tokens are the reply -- the rest is the
+    # chat-template-wrapped prompt we fed in.
+    reply_ids = generated_ids[0, input_ids.shape[1]:]
+    return tokenizer.decode(reply_ids, skip_special_tokens=True)
