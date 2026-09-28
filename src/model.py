@@ -8,7 +8,12 @@ from dataclasses import dataclass
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, PreTrainedModel, PreTrainedTokenizerBase
 
-MODEL_NAME = "Qwen/Qwen2.5-0.5B-Instruct"
+# Same family for both tiers: a shared tokenizer makes token counts
+# directly comparable for cost, and prompts format identically.
+CHEAP_MODEL = "Qwen/Qwen2.5-0.5B-Instruct"
+EXPENSIVE_MODEL = "Qwen/Qwen2.5-1.5B-Instruct"
+MODEL_NAME = CHEAP_MODEL
+
 MAX_NEW_TOKENS = 50
 
 _device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -22,10 +27,12 @@ class GenerationResult:
     tokens_generated: int
 
 
-def load_model() -> tuple[PreTrainedModel, PreTrainedTokenizerBase]:
+def load_model(
+    name: str = MODEL_NAME,
+) -> tuple[PreTrainedModel, PreTrainedTokenizerBase]:
     """Load the tokenizer and model once at startup, kept resident in memory."""
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-    model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
+    tokenizer = AutoTokenizer.from_pretrained(name)
+    model = AutoModelForCausalLM.from_pretrained(name)
     model.to(_device)
     model.eval()  # disables dropout etc. -- we're doing inference, not training
     return model, tokenizer

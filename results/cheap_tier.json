@@ -1,0 +1,2867 @@
+{
+  "n": 200,
+  "exact_match": 0.545,
+  "contains": 0.74,
+  "token_f1": 0.6948454616244696,
+  "mean_tokens": 7.855,
+  "failure_rate": 0.255,
+  "records": [
+    {
+      "question": "What do some Mongolians feel non-Mongolian historians exaggerate about Genghis Khan?",
+      "golds": [
+        "his brutality",
+        "butchery",
+        "his butchery"
+      ],
+      "prediction": "They feel he was unfairly biased against them.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 10
+    },
+    {
+      "question": "Why is giving a defiant speech sometimes more harmful for the individual?",
+      "golds": [
+        "lack of remorse",
+        "lack of remorse",
+        "the judge increased her sentence",
+        "statement suggested a lack of remorse"
+      ],
+      "prediction": "Defiant speech can be harmful because it suggests a lack of remorse, attempts to avoid responsibility, and a likelihood of repeating illegal actions.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.25,
+      "failed": true,
+      "tokens": 28
+    },
+    {
+      "question": "How many Grammys has Lady Gaga won?",
+      "golds": [
+        "Six",
+        "Six",
+        "Six"
+      ],
+      "prediction": "Six",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 2
+    },
+    {
+      "question": "When did the UK formally subscribe to the Agreement on Social Policy?",
+      "golds": [
+        "1997",
+        "1997",
+        "1997"
+      ],
+      "prediction": "1997",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "When does the annual animal migration occur?",
+      "golds": [
+        "between June and September",
+        "June and September",
+        "between June and September"
+      ],
+      "prediction": "June to September",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What year was the first class taught at the University of Chicago?",
+      "golds": [
+        "1892",
+        "1892",
+        "1892",
+        "1892"
+      ],
+      "prediction": "1892",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "At what age do immune responses typically begin to decline?",
+      "golds": [
+        "around 50 years of age",
+        "50",
+        "around 50 years of age"
+      ],
+      "prediction": "Around 50 years of age.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "How and when did the first variant of y. pestis enter Europe?",
+      "golds": [
+        "through the port of Marseille around November 1347",
+        "the port of Marseille around November 1347",
+        "1347"
+      ],
+      "prediction": "The first variant of Y. pestis entered Europe through the port of Marseille around November 1347.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 24
+    },
+    {
+      "question": "Who recorded a version of the Doctor Who theme with spoken lyrics in the 1970's?",
+      "golds": [
+        "Jon Pertwee",
+        "Jon Pertwee",
+        "Jon Pertwee"
+      ],
+      "prediction": "Jon Pertwee",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "How much did Walt Disney want ABC to invest in Disneyland?",
+      "golds": [
+        "$500,000",
+        "$500,000",
+        "$500,000"
+      ],
+      "prediction": "$500,000",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "What type of amendments might members opposed to a bill put on the table?",
+      "golds": [
+        "wrecking",
+        "wrecking",
+        "\"wrecking amendments\""
+      ],
+      "prediction": "Wrecking amendments.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "What is the most common form of oxygen on the planet?",
+      "golds": [
+        "dioxygen",
+        "dioxygen",
+        "dioxygen",
+        "dioxygen"
+      ],
+      "prediction": "Dioxygen (O2)",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 8
+    },
+    {
+      "question": "The mother of which emperor was a concubine?",
+      "golds": [
+        "Tugh Temur",
+        "Tugh Temur",
+        "Tugh Temur"
+      ],
+      "prediction": "Tugh Temur",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What did Luther refuse to do?",
+      "golds": [
+        "recant his writings",
+        "recant his writings",
+        "recant"
+      ],
+      "prediction": "Recant his writings.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "Which species are ribbon-shaped planktonic animals?",
+      "golds": [
+        "The Cestida",
+        "Cestida",
+        "Cestida"
+      ],
+      "prediction": "Cestida",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What could anyone do to Martin Luther without legal consequence?",
+      "golds": [
+        "kill Luther",
+        "kill",
+        "kill"
+      ],
+      "prediction": "Kill him.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What was he studying that gave him the teleforce weapon idea?",
+      "golds": [
+        "Van de Graaff generator",
+        "the Van de Graaff generator",
+        "the Van de Graaff generator"
+      ],
+      "prediction": "The Van de Graaff generator.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 8
+    },
+    {
+      "question": "What is the basic unit of organization within the UMC?",
+      "golds": [
+        "The Annual Conference",
+        "synod",
+        "The Annual Conference"
+      ],
+      "prediction": "The Annual Conference.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Which two treaties provided more formal institutions of the European Union?",
+      "golds": [
+        "Treaty of Rome 1957 and the Maastricht Treaty 1992",
+        "the Treaty of Rome 1957 and the Maastricht Treaty 1992",
+        "the Treaty of Rome 1957 and the Maastricht Treaty 1992 (now: TFEU)",
+        "the Treaty of Rome 1957 and the Maastricht Treaty 1992 (now: TFEU)"
+      ],
+      "prediction": "The Treaty of Rome 1957 and the Treaty of Maastricht 1992.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.9411764705882353,
+      "failed": false,
+      "tokens": 24
+    },
+    {
+      "question": "What is floridean?",
+      "golds": [
+        "a form of starch",
+        "a form of starch",
+        "a form of starch"
+      ],
+      "prediction": "A form of starch collected outside the rhodoplast.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 12
+    },
+    {
+      "question": "Terra Nullius is a Latin expression meaning what in English?",
+      "golds": [
+        "empty land",
+        "empty land",
+        "empty land",
+        "empty land",
+        "'empty land'"
+      ],
+      "prediction": "Empty land",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "What did he work on refining until the end of his life?",
+      "golds": [
+        "the translation",
+        "translation",
+        "translation"
+      ],
+      "prediction": "The Bible.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 4
+    },
+    {
+      "question": "What activity maintains topographic gradients?",
+      "golds": [
+        "Continual motion along the fault",
+        "Continual motion",
+        "Continual motion along the fault"
+      ],
+      "prediction": "Volcanism and igneous activity.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 9
+    },
+    {
+      "question": "How long would Tesla spend gambling sometimes?",
+      "golds": [
+        "more than 48 hours",
+        "48 hours",
+        "48 hours"
+      ],
+      "prediction": "48 hours",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What was Tesla's mother's name?",
+      "golds": [
+        "\u0110uka Tesla",
+        "\u0110uka Tesla",
+        "\u0110uka Tesla (n\u00e9e Mandi\u0107)"
+      ],
+      "prediction": "Mandi\u0107",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.4,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "In which year did the museum started charging free admission fees?",
+      "golds": [
+        "2001",
+        "2001",
+        "2001",
+        "2001"
+      ],
+      "prediction": "1852",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 5
+    },
+    {
+      "question": "In what episode did Doctor Who get a new cycle of regenerations?",
+      "golds": [
+        "The Time of the Doctor",
+        "The Time of the Doctor",
+        "The Time of the Doctor"
+      ],
+      "prediction": "\"The Time of the Doctor\"",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 7
+    },
+    {
+      "question": "The Rhine forms an inland delta into which lake?",
+      "golds": [
+        "Lake Constance",
+        "Lake Constance",
+        "Lake Constance",
+        "Lake Constance"
+      ],
+      "prediction": "Lake Constance",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What idea was Tesla a fan of?",
+      "golds": [
+        "eugenics",
+        "eugenics",
+        "imposed selective breeding version of eugenics"
+      ],
+      "prediction": "Eugenics",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "Who were the creators of the Flintstones?",
+      "golds": [
+        "William Hanna and Joseph Barbera",
+        "William Hanna and Joseph Barbera",
+        "William Hanna and Joseph Barbera"
+      ],
+      "prediction": "William Hanna and Joseph Barbera",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 7
+    },
+    {
+      "question": "Granting what status would allow private non-religious schools in the US to receive public funds?",
+      "golds": [
+        "charter",
+        "charter",
+        "charter"
+      ],
+      "prediction": "Charter status",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What kind of buildings are in the towns of Close, Sandhill and Quayside?",
+      "golds": [
+        "modern",
+        "modern buildings as well as structures dating from the 15th\u201318th centuries",
+        "modern buildings"
+      ],
+      "prediction": "Modern buildings, structures dating from the 15th\u201318th centuries, including Bessie Surtees House, the Cooperage and Lloyds",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.5833333333333334,
+      "failed": false,
+      "tokens": 32
+    },
+    {
+      "question": "In the United States the UMC ranks as the largest what?",
+      "golds": [
+        "mainline Protestant denomination",
+        "Protestant denomination",
+        "mainline Protestant denomination"
+      ],
+      "prediction": "Mainline Protestant denomination",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "In what sense must you be observing the curvature of space-time?",
+      "golds": [
+        "global",
+        "a global sense",
+        "in space",
+        "the perspective of the object"
+      ],
+      "prediction": "From the perspective of the object, all motion occurs as if there were no gravitation whatsoever.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.35294117647058826,
+      "failed": true,
+      "tokens": 20
+    },
+    {
+      "question": "What nationality was Arthur Woolf?",
+      "golds": [
+        "British",
+        "British",
+        "British"
+      ],
+      "prediction": "British",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 2
+    },
+    {
+      "question": "Who first proved Bertrand's postulate?",
+      "golds": [
+        "Chebyshev",
+        "Chebyshev",
+        "Chebyshev",
+        "Chebyshev",
+        "Chebyshev"
+      ],
+      "prediction": "Chebyshev",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "In what decades was Dudley Simpson most active in contributing to Doctor Who?",
+      "golds": [
+        "the 1960s and 1970s",
+        "the 1960s and 1970s",
+        "1960s and 1970s"
+      ],
+      "prediction": "1960s and 1970s",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 13
+    },
+    {
+      "question": "What is the name of the village that once existed in what is now downtown Jacksonville?",
+      "golds": [
+        "Ossachite",
+        "Ossachite",
+        "Ossachite"
+      ],
+      "prediction": "Ossachite",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What is the edcuation system currently?",
+      "golds": [
+        "8\u20134\u20134 system",
+        "7\u20134\u20132\u20133 system",
+        "7\u20134\u20132\u20133"
+      ],
+      "prediction": "8-4-4 system",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 7
+    },
+    {
+      "question": "Which year was the case Commission v Italy that dealt with cocoa products?",
+      "golds": [
+        "2003",
+        "2003",
+        "2003"
+      ],
+      "prediction": "2003",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What is the second level of territorial division in Poland?",
+      "golds": [
+        "counties or powiats",
+        "counties or powiats",
+        "counties or powiats"
+      ],
+      "prediction": "Territorial division in Poland is divided into counties and powiats.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.30769230769230765,
+      "failed": true,
+      "tokens": 16
+    },
+    {
+      "question": "What is the name of another algorithm useful for conveniently testing the primality of large numbers? ",
+      "golds": [
+        "the AKS primality test",
+        "AKS primality test",
+        "AKS primality test",
+        "AKS primality test",
+        "AKS primality test"
+      ],
+      "prediction": "The Miller\u2013Rabin primality test.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 10
+    },
+    {
+      "question": "How many touchdowns did Jonathan Stewart have in 13 games?",
+      "golds": [
+        "six",
+        "six",
+        "six"
+      ],
+      "prediction": "4",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 2
+    },
+    {
+      "question": "What was the rumored reason Edison and Tesla were not awarded the prize?",
+      "golds": [
+        "Tesla and/or Edison had refused the prize",
+        "Tesla and/or Edison had refused the prize",
+        "Tesla and/or Edison had refused the prize"
+      ],
+      "prediction": "Edison and Tesla refused the prize.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.7272727272727272,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "What is an example of a mechanical barrier on leaves?",
+      "golds": [
+        "The waxy cuticle",
+        "waxy cuticle",
+        "waxy cuticle"
+      ],
+      "prediction": "Waxy cuticle.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "How did William Shirley feel about French advancement?",
+      "golds": [
+        "British colonists would not be safe as long as the French were present",
+        "British colonists would not be safe",
+        "British colonists would not be safe as long as the French were present",
+        "British colonists would not be safe",
+        "forceful"
+      ],
+      "prediction": "William Shirley was opposed to French advancement.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.10526315789473685,
+      "failed": true,
+      "tokens": 9
+    },
+    {
+      "question": "What stadium did Super Bowl 50 take place in?",
+      "golds": [
+        "Levi's Stadium",
+        "Levi's Stadium",
+        "Levi's Stadium"
+      ],
+      "prediction": "Levi's Stadium",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Where did the congregation at St. George's initially meet in 1767?",
+      "golds": [
+        "sail loft on Dock Street",
+        "meeting initially in a sail loft on Dock Street",
+        "Dock Street"
+      ],
+      "prediction": "In a sail loft on Dock Street.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.9090909090909091,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "What alumni wrote \"The Closing of the American Mind\"?",
+      "golds": [
+        "Allan Bloom",
+        "Allan Bloom",
+        "Allan Bloom"
+      ],
+      "prediction": "Allan Bloom",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "In which year did the Sackler Center open?",
+      "golds": [
+        "2008",
+        "2008",
+        "2008"
+      ],
+      "prediction": "2008",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Which Apollo was the first testing of the LM, unmanned, in Earth's orbit?",
+      "golds": [
+        "Apollo 5",
+        "Apollo 5",
+        "Apollo 5",
+        "Apollo 5",
+        "Apollo 5"
+      ],
+      "prediction": "Apollo 5",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "Where do all trains going to Scotland stop at?",
+      "golds": [
+        "Edinburgh",
+        "Edinburgh",
+        "Edinburgh"
+      ],
+      "prediction": "Edinburgh",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "What district of Warsaw chose the President between 1994 and 1999?",
+      "golds": [
+        "Centrum",
+        "Centrum",
+        "Centrum"
+      ],
+      "prediction": "Centrum",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "What was required of Huguenot children after the Edict was revoked?",
+      "golds": [
+        "education of children as Catholics",
+        "education of children as Catholics",
+        "required education of children as Catholics"
+      ],
+      "prediction": "Catholic education.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.28571428571428575,
+      "failed": true,
+      "tokens": 5
+    },
+    {
+      "question": "Where does the Lek join? ",
+      "golds": [
+        "Noord River",
+        "Nieuwe Maas",
+        "Noord River"
+      ],
+      "prediction": "The Lek joins the Noord River.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 10
+    },
+    {
+      "question": "At what temperature will oxygen condense?",
+      "golds": [
+        "90.20 K",
+        "90.20 K",
+        "90.20 K (\u2212182.95 \u00b0C, \u2212297.31 \u00b0F)",
+        "90.20 K",
+        "90.20 K (\u2212182.95 \u00b0C, \u2212297.31 \u00b0F)"
+      ],
+      "prediction": "90.20 K (\u2212182.95 \u00b0C, \u2212297.31 \u00b0F)",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 28
+    },
+    {
+      "question": "What was incorporated to help slow the CM's decent back to Earth?",
+      "golds": [
+        "Parachutes",
+        "Parachutes",
+        "Parachutes",
+        "Parachutes",
+        "Parachutes"
+      ],
+      "prediction": "Parachutes.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Who did the peasants think Luther would support an attack on?",
+      "golds": [
+        "upper classes",
+        "upper classes",
+        "upper classes"
+      ],
+      "prediction": "The peasants thought Luther would support an attack on the upper classes.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.3636363636363636,
+      "failed": true,
+      "tokens": 14
+    },
+    {
+      "question": "Where can chloroplasts sometimes be found?",
+      "golds": [
+        "collenchyma tissue",
+        "in collenchyma tissue",
+        "collenchyma tissue"
+      ],
+      "prediction": "In the parenchyma cells of land plants.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.2222222222222222,
+      "failed": true,
+      "tokens": 12
+    },
+    {
+      "question": "How much of the global wealth will the wealthiest 1 percent own by 2016?",
+      "golds": [
+        "half",
+        "more than half",
+        "own more than half of the global wealth by 2016",
+        "more than half"
+      ],
+      "prediction": "Over half of the world's wealth will be owned by the wealthiest 1 percent by 2016.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.43478260869565216,
+      "failed": false,
+      "tokens": 24
+    },
+    {
+      "question": "What did Tesla establish following his Colorado experiments?",
+      "golds": [
+        "Wardenclyffe",
+        "Wardenclyffe",
+        "Wardenclyffe"
+      ],
+      "prediction": "Wardenclyffe",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "What did Tesla Electric Light & Manufacturing do?",
+      "golds": [
+        "installed electrical arc light based illumination systems",
+        "installed electrical arc light based illumination systems",
+        "installed electrical arc light based illumination systems designed by Tesla and also had designs for dynamo electric machine commutators"
+      ],
+      "prediction": "Installed electrical arc light based illumination systems.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "What does the Geordie dialect keep of the older language which came before it?",
+      "golds": [
+        "many elements",
+        "many elements",
+        "many elements of the old language."
+      ],
+      "prediction": "The Geordie dialect retains many elements of the old language.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.7692307692307693,
+      "failed": false,
+      "tokens": 14
+    },
+    {
+      "question": "Where were Persians more successful compared to Chinese in the Yuan?",
+      "golds": [
+        "Ilkhanate",
+        "Ilkhanate",
+        "reaching the highest-post in the government"
+      ],
+      "prediction": "Persians were more successful in the Yuan compared to Chinese.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.15384615384615383,
+      "failed": true,
+      "tokens": 13
+    },
+    {
+      "question": "How many academic minors does the university grant in total?",
+      "golds": [
+        "28",
+        "28",
+        "28"
+      ],
+      "prediction": "28",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "What are three examples of complexity classes associated with definitions established by probabilistic Turing machines?",
+      "golds": [
+        "BPP, ZPP and RP",
+        "BPP, ZPP and RP",
+        "BPP, ZPP and RP"
+      ],
+      "prediction": "BPP, ZPP, RP",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.8571428571428571,
+      "failed": false,
+      "tokens": 8
+    },
+    {
+      "question": "What is the Latin name for Black Death?",
+      "golds": [
+        "atra mors",
+        "atra mors",
+        "atra mors"
+      ],
+      "prediction": "Atra mors",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "How many modern types of primality tests for general numbers n are there? ",
+      "golds": [
+        "two main classes",
+        "two",
+        "two",
+        "two",
+        "two"
+      ],
+      "prediction": "2",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 2
+    },
+    {
+      "question": "What is the hottest temperature record for Fresno?",
+      "golds": [
+        "115 \u00b0F",
+        "115 \u00b0F (46.1 \u00b0C)",
+        "115 \u00b0F"
+      ],
+      "prediction": "115 \u00b0F (46.1 \u00b0C)",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 14
+    },
+    {
+      "question": "How much higher was the 42% occupation stress figure, compared to other jobs?",
+      "golds": [
+        "twice the figure for the average profession",
+        "twice",
+        "twice"
+      ],
+      "prediction": "2000 - 42% = 37.8%",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 17
+    },
+    {
+      "question": "How many PD rings are there?",
+      "golds": [
+        "two",
+        "two",
+        "two"
+      ],
+      "prediction": "Two",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 2
+    },
+    {
+      "question": "Who was responsible for the decorations of the Centre Refreshment Room?",
+      "golds": [
+        "James Gamble",
+        "James Gamble,",
+        "James Gamble"
+      ],
+      "prediction": "James Gamble",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "When do Plastoglobuli occur in linked groups?",
+      "golds": [
+        "In old or stressed chloroplasts",
+        "In old or stressed chloroplasts",
+        "In old or stressed chloroplasts"
+      ],
+      "prediction": "In old or stressed chloroplasts.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "Full size working engines on what vehicles sometimes use oscillating cylinder steam engines?",
+      "golds": [
+        "ships",
+        "ships",
+        "ships"
+      ],
+      "prediction": "Yes, some full size working engines on ships use oscillating cylinder steam engines.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.14285714285714288,
+      "failed": true,
+      "tokens": 17
+    },
+    {
+      "question": "When did the age of Imperialism begin?",
+      "golds": [
+        "around 1700",
+        "around 1700",
+        "1700",
+        "around 1700",
+        "1700"
+      ],
+      "prediction": "1700",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What do FtsZ1 and FtsZ2 plus ARC6 form?",
+      "golds": [
+        "a structure called a Z-ring",
+        "a Z-ring",
+        "Z-ring"
+      ],
+      "prediction": "A Z-ring",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What has Islamism been increasingly interdependent with following the Arab Spring?",
+      "golds": [
+        "democracy",
+        "democracy",
+        "democracy"
+      ],
+      "prediction": "Democracy",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "When was most of Sunnside developed?",
+      "golds": [
+        "1950s through the 1970s",
+        "1950s through the 1970s",
+        "1950s through the 1970s"
+      ],
+      "prediction": "1950s",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.5,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "Who voted against Jacksonville's annexation?",
+      "golds": [
+        "Voters outside the city limits",
+        "Voters outside the city limits",
+        "Voters outside the city limits"
+      ],
+      "prediction": "Residents in unincorporated suburbs.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 9
+    },
+    {
+      "question": "Why did Tesla want funds from Morgan?",
+      "golds": [
+        "to complete the construction of Wardenclyffe.",
+        "to complete the construction of Wardenclyffe",
+        "to complete the construction of Wardenclyffe"
+      ],
+      "prediction": "To complete the construction of Wardenclyffe.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 11
+    },
+    {
+      "question": "Unsurprisingly, the mujahideen's victory against the Soviets in the 1980s failed to produce what?",
+      "golds": [
+        "justice and prosperity",
+        "justice and prosperity",
+        "justice and prosperity"
+      ],
+      "prediction": "Justice and prosperity.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What was the Genghis Khan's characteristic approach to religious diversity?",
+      "golds": [
+        "tolerant",
+        "tolerant",
+        "tolerant of religions"
+      ],
+      "prediction": "Tolerant.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Who designed the Sage Gateshead music center?",
+      "golds": [
+        "Norman Foster",
+        "Norman Foster",
+        "Norman Foster"
+      ],
+      "prediction": "The Sage Gateshead music center was designed by architect Norman Foster.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.33333333333333337,
+      "failed": true,
+      "tokens": 14
+    },
+    {
+      "question": "How many hundred of years was Scotland directly governed by the parliament of Great Britain?",
+      "golds": [
+        "three hundred",
+        "three hundred years",
+        "three hundred years"
+      ],
+      "prediction": "300",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 4
+    },
+    {
+      "question": "Where were Schirra, Eisele and Cunningham relocated to after different astronauts were selected for the AS-258 mission?",
+      "golds": [
+        "Apollo 1 backup crew",
+        "promoted",
+        "Apollo 1 backup crew",
+        "Apollo 1 backup crew",
+        "Apollo 1 backup crew."
+      ],
+      "prediction": "Apollo 11 Command Module.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.25,
+      "failed": true,
+      "tokens": 8
+    },
+    {
+      "question": "How many seats does the amphitheatre at Woodward park have?",
+      "golds": [
+        "2,500",
+        "2,500",
+        "2,500"
+      ],
+      "prediction": "2,500",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "When was the colony of New South Wales founded?",
+      "golds": [
+        "1788",
+        "1788",
+        "1788"
+      ],
+      "prediction": "1788",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What was the population of the Dutch Republic before this emigration?",
+      "golds": [
+        "ca. 2 million",
+        "2 million",
+        "2 million"
+      ],
+      "prediction": "2 million",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "What trading company helped settle Huguenots near the Cape?",
+      "golds": [
+        "Dutch East India Company",
+        "Dutch East India Company",
+        "Dutch East India Company"
+      ],
+      "prediction": "The Dutch East India Company helped settle Huguenots near the Cape.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6153846153846153,
+      "failed": false,
+      "tokens": 16
+    },
+    {
+      "question": "Where was Tracy Wolfson announcing from during the Super Bowl 50 game?",
+      "golds": [
+        "sidelines",
+        "the sidelines",
+        "sidelines"
+      ],
+      "prediction": "Super Bowl 50",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 6
+    },
+    {
+      "question": "What is the concept of the visible and invisible Church?",
+      "golds": [
+        "meaning that all who are truly believers in every age belong to the holy Church invisible",
+        "meaning that all who are truly believers in every age belong to the holy Church invisible, while the United Methodist Church is a branch of the Church visible,",
+        "all who are truly believers in every age belong to the holy Church invisible, while the United Methodist Church is a branch of the Church visible,"
+      ],
+      "prediction": "The visible Church is the Church visible to all believers, while the invisible Church is the Church invisible to all believers.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.5128205128205129,
+      "failed": false,
+      "tokens": 24
+    },
+    {
+      "question": "What helps the process of free movement of goods?",
+      "golds": [
+        "a customs union, and the principle of non-discrimination",
+        "a customs union",
+        "a customs union"
+      ],
+      "prediction": "Customs union, non-discrimination, Treaty on the Functioning of the European Union",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.5333333333333333,
+      "failed": false,
+      "tokens": 18
+    },
+    {
+      "question": "Who was the creator of the theme for the 50th Anniversary special?",
+      "golds": [
+        "Gold",
+        "Gold",
+        "Gold"
+      ],
+      "prediction": "The creator of the theme for the 50th Anniversary special was Gold.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.19999999999999998,
+      "failed": true,
+      "tokens": 17
+    },
+    {
+      "question": "What major conquest did Tancred play a roll in?",
+      "golds": [
+        "Jerusalem",
+        "Jerusalem",
+        "Jerusalem"
+      ],
+      "prediction": "Tancred worked for the expansion of the Crusader kingdom.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 13
+    },
+    {
+      "question": "What was Tesla's idea regarding Earth?",
+      "golds": [
+        "that the earth had a resonant frequency.",
+        "the earth had a resonant frequency",
+        "earth had a resonant frequency"
+      ],
+      "prediction": "Resonance.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 5
+    },
+    {
+      "question": "Who do gurus control?",
+      "golds": [
+        "their disciples",
+        "lives of their disciples",
+        "disciples"
+      ],
+      "prediction": "Gurus exercise great control over their disciples.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.4444444444444445,
+      "failed": false,
+      "tokens": 10
+    },
+    {
+      "question": "What does Luther's hymn Christ unser Herr zum jordan kam concern?",
+      "golds": [
+        "baptism",
+        "baptism",
+        "baptism"
+      ],
+      "prediction": "It's about baptism.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.5,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "What area did the Westwood One broadcast cover?",
+      "golds": [
+        "North America",
+        "North America",
+        "North America"
+      ],
+      "prediction": "North America",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "What was produced at tesla's company? ",
+      "golds": [
+        "dynamo electric machine commutators",
+        "electrical arc light based illumination systems",
+        "electrical arc light based illumination systems"
+      ],
+      "prediction": "Electric lighting, dynamo electric machine commutators.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.8,
+      "failed": false,
+      "tokens": 12
+    },
+    {
+      "question": "How can pyrenoids replicate?",
+      "golds": [
+        "divide to form new pyrenoids, or be produced \"de novo\"",
+        "divide",
+        "divide to form new pyrenoids, or be produced \"de novo\""
+      ],
+      "prediction": "Pyrenoids can replicate through cell division.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.125,
+      "failed": true,
+      "tokens": 10
+    },
+    {
+      "question": "What entities are included in the federal health care system?",
+      "golds": [
+        "the VA, the Indian Health Service, and NIH",
+        "the VA, the Indian Health Service, and NIH",
+        "VA, the Indian Health Service, and NIH"
+      ],
+      "prediction": "The federal health care system includes the U.S. federal health care system (including the VA, the Indian Health Service, and NIH), ambulatory care pharmacists",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.4615384615384615,
+      "failed": false,
+      "tokens": 32
+    },
+    {
+      "question": "What kind of people attend the IPCC meetings?",
+      "golds": [
+        "government officials and climate change experts",
+        "government officials and climate change experts",
+        "government officials and climate change experts"
+      ],
+      "prediction": "Government officials and climate change experts.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 8
+    },
+    {
+      "question": "What gender are most species of Ctenophores?",
+      "golds": [
+        "Most species are hermaphrodites",
+        "hermaphrodites",
+        "hermaphrodites"
+      ],
+      "prediction": "Males",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 3
+    },
+    {
+      "question": "What is the break down of years at different level of education?",
+      "golds": [
+        "eight years in primary school and four years in high school or secondary school.",
+        "eight years in primary school and four years in high school",
+        "eight years in primary school and four years in high school"
+      ],
+      "prediction": "8 years in primary school, 4 years in high school or secondary school",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.8148148148148148,
+      "failed": false,
+      "tokens": 16
+    },
+    {
+      "question": "Who was Kennedy's vice president?",
+      "golds": [
+        "Lyndon B. Johnson",
+        "Lyndon B. Johnson",
+        "Lyndon B. Johnson",
+        "Lyndon B. Johnson",
+        "Lyndon B. Johnson"
+      ],
+      "prediction": "Lyndon B. Johnson",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "What does oxygen the basis for in combustion?",
+      "golds": [
+        "chemical energy",
+        "chemical energy",
+        "chemical energy",
+        "most of the chemical energy"
+      ],
+      "prediction": "It is the oxidant.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 7
+    },
+    {
+      "question": "What year did Iqbal return to Lahore?",
+      "golds": [
+        "1908",
+        "1908",
+        "1908"
+      ],
+      "prediction": "1908",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Why would one plead guilty to a crime involving civil disobedience?",
+      "golds": [
+        "I feel I did the right thing by violating this particular law",
+        "I feel I did the right thing by violating this particular law",
+        "proud of it",
+        "proud of it",
+        "have violated some specific laws, but I am guilty of doing no w",
+        "have violated some specific laws, but I am guilty of doing no w"
+      ],
+      "prediction": "To avoid punishment.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 5
+    },
+    {
+      "question": "What language other than English has the Scottish Parliament had meetings in?",
+      "golds": [
+        "Gaelic",
+        "Gaelic",
+        "Scots, Gaelic, or any other language with the agreement of the Presiding Officer"
+      ],
+      "prediction": "Gaelic",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What does coastal beriods use as teeth?",
+      "golds": [
+        "groups of large, stiffened cilia",
+        "stiffened cilia",
+        "stiffened cilia"
+      ],
+      "prediction": "They use huge mouths armed with stiffened cilia.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.4,
+      "failed": false,
+      "tokens": 12
+    },
+    {
+      "question": "What can lead to higher wages for members of labor organizations?",
+      "golds": [
+        "collective bargaining, political influence, or corruption",
+        "collective bargaining, political influence, or corruption",
+        "collective bargaining, political influence, or corruption"
+      ],
+      "prediction": "Members may receive higher wages through collective bargaining, political influence, or corruption.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 16
+    },
+    {
+      "question": "In what month is the university's scavenger hunt?",
+      "golds": [
+        "May",
+        "May",
+        "May"
+      ],
+      "prediction": "May",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 2
+    },
+    {
+      "question": "What are the wave-particles called that mediate all electromagnetic phenomena?",
+      "golds": [
+        "photons",
+        "photons",
+        "photons",
+        "photons"
+      ],
+      "prediction": "Photons.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "Goldenson proposed a merger between UPT and what network in October 1954?",
+      "golds": [
+        "DuMont Television Network",
+        "DuMont Television Network",
+        "DuMont Television Network"
+      ],
+      "prediction": "DuMont Television Network",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Who arranged for Tesla to demonstrate his system at the IEEE?",
+      "golds": [
+        "Thomas Commerford Martin",
+        "Thomas Commerford Martin",
+        "Thomas Commerford Martin"
+      ],
+      "prediction": "Thomas Commerford Martin",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "What's the name of Newcastle's speedway team?",
+      "golds": [
+        "Newcastle Diamonds",
+        "Newcastle Diamonds",
+        "Newcastle Diamonds"
+      ],
+      "prediction": "Newcastle Diamonds",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What is the opposite of an ongoing role of teaching?",
+      "golds": [
+        "transient",
+        "transient",
+        "Informal learning"
+      ],
+      "prediction": "Transient role",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "The university agreed to grant a degree to any graduate of affiliate schoos that did what?",
+      "golds": [
+        "made a grade of A for all four years",
+        "made a grade of A for all four years, and on any other graduate who took twelve weeks additional study at the University of Chicago",
+        "made a grade of A for all four years",
+        "made a grade of A for all four years"
+      ],
+      "prediction": "made a grade of A for all four years",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 10
+    },
+    {
+      "question": "One strategy of Islamization is to seize power by what methods?",
+      "golds": [
+        "revolution or invasion",
+        "revolution or invasion",
+        "revolution"
+      ],
+      "prediction": "Revolution or invasion",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What troops attacked Fort William Henry in early 1757?",
+      "golds": [
+        "French irregular forces (Canadian scouts and Indians)",
+        "French irregular forces",
+        "French irregular forces",
+        "French irregular forces",
+        "French irregular forces"
+      ],
+      "prediction": "British rangers",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 4
+    },
+    {
+      "question": "Approximately how many architectural photographs does the V&A hold in its collection?",
+      "golds": [
+        "over 700,000",
+        "over 700,000",
+        "700,000"
+      ],
+      "prediction": "700,000",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 8
+    },
+    {
+      "question": "The French church in Portarlington was built when?",
+      "golds": [
+        "1696",
+        "1696",
+        "1696"
+      ],
+      "prediction": "1696",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What was found to be at fault for the fire in the cabin on Apollo 1 regarding the CM design?",
+      "golds": [
+        "deficiencies",
+        "workmanship and quality control",
+        "deficiencies existed in Command Module design, workmanship and quality control",
+        "\"deficiencies existed in Command Module design, workmanship and quality control.\""
+      ],
+      "prediction": "Deficiencies in Command Module design, workmanship and quality control.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.9473684210526316,
+      "failed": false,
+      "tokens": 14
+    },
+    {
+      "question": "What coach left the Broncos after the season prior to Super Bowl 50?",
+      "golds": [
+        "John Fox",
+        "John Fox",
+        "Fox"
+      ],
+      "prediction": "John Fox",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "Acessing the Amazon rainforest was restricted before what era?",
+      "golds": [
+        "the early 1960s",
+        "early 1960s",
+        "1960s"
+      ],
+      "prediction": "The 1960s.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "What is a name for the different ways to instruct students?",
+      "golds": [
+        "pedagogy",
+        "pedagogy",
+        "pedagogy"
+      ],
+      "prediction": "Pedagogy",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What group of scientists seek to measure the amounts of oxygen in marine animals?",
+      "golds": [
+        "Paleoclimatologists",
+        "Paleoclimatologists",
+        "Paleoclimatologists",
+        "Paleoclimatologists",
+        "Paleoclimatologists"
+      ],
+      "prediction": "Paleoclimatologists",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "What was the name for the imaging campaign ABC began in 2007?",
+      "golds": [
+        "Start Here",
+        "\"Start Here\"",
+        "Start Here"
+      ],
+      "prediction": "Start Here",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "Which year resulted in the suspension of one of the two soccer teams?",
+      "golds": [
+        "2014",
+        "2014",
+        "2014"
+      ],
+      "prediction": "2014",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What Italian painter was depicted in the main bronze door entrance of the museum?",
+      "golds": [
+        "Titian",
+        "Michelangelo (sculpture)",
+        "Michelangelo"
+      ],
+      "prediction": "Godfrey Sykes",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 5
+    },
+    {
+      "question": "What is a PPP also known as?",
+      "golds": [
+        "private finance initiatives (PFIs)",
+        "private finance initiatives (PFIs)",
+        "private finance initiatives (PFIs)"
+      ],
+      "prediction": "Private-Private Partnership",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 5
+    },
+    {
+      "question": "When were most of the places of religious worship destroyed in Warsaw?",
+      "golds": [
+        "1944",
+        "1944",
+        "1944"
+      ],
+      "prediction": "After the Warsaw Uprising of 1944.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.33333333333333337,
+      "failed": true,
+      "tokens": 13
+    },
+    {
+      "question": "How old was Tesla when he wrote that he'd completed his dynamic theory of gravity?",
+      "golds": [
+        "81",
+        "81",
+        "81"
+      ],
+      "prediction": "81",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "Besides the Bondage of the Will, what other work did Luther view as a book of his?",
+      "golds": [
+        "the Catechism",
+        "Catechism",
+        "Catechism"
+      ],
+      "prediction": "The Catechism.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 7
+    },
+    {
+      "question": "In what year did Dewar experiment on liquid oxygen?",
+      "golds": [
+        "1891",
+        "1891",
+        "1891",
+        "1891",
+        "1891"
+      ],
+      "prediction": "1891",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Who was on the receiving end of a 45-yard pass from Cam Newton?",
+      "golds": [
+        "Ted Ginn Jr.",
+        "Ted Ginn Jr",
+        "Ted Ginn Jr"
+      ],
+      "prediction": "Ted Ginn Jr.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "The Rhine flowed through Swabia, Franconia and what other location in the 10th Century?",
+      "golds": [
+        "Lower Lorraine",
+        "Lower Lorraine",
+        "Lower Lorraine"
+      ],
+      "prediction": "Lower Lorraine",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What path does a ball thrown up and down in a moving vehicle take when seen by an outside observer? ",
+      "golds": [
+        "parabolic",
+        "parabolic path",
+        "a curving parabolic path",
+        "curving parabolic path",
+        "curving parabolic path"
+      ],
+      "prediction": "A ball follows a parabolic path.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "What kind of diseases do drugs target apicoplasts for?",
+      "golds": [
+        "apicomplexan-related diseases",
+        "apicomplexan-related diseases",
+        "apicomplexan-related"
+      ],
+      "prediction": "Apicoplasts are targets for drugs to treat apicomplexan-related diseases.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.3636363636363636,
+      "failed": true,
+      "tokens": 18
+    },
+    {
+      "question": "What was used by the West to justify control over eastern territories?",
+      "golds": [
+        "Orientalism",
+        "inferior",
+        "Defining the East as a negative vision of itself",
+        "Orientalism",
+        "Orientalism"
+      ],
+      "prediction": "The West used the idea of place-based identities to justify control over eastern territories.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.10526315789473685,
+      "failed": true,
+      "tokens": 17
+    },
+    {
+      "question": "What language did Tesla study while in school?",
+      "golds": [
+        "German",
+        "German",
+        "German"
+      ],
+      "prediction": "German",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 2
+    },
+    {
+      "question": "In what year was it declared that no Roman numerals would be used in the name of the 50th Super Bowl?",
+      "golds": [
+        "2014",
+        "2014",
+        "2014"
+      ],
+      "prediction": "2014",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What, when combined with a large workload, can contribute to occupational stress?",
+      "golds": [
+        "long hours",
+        "organizational change, relationships with students, fellow teachers, and administrative personnel, working environment, expectations to substitute",
+        "organizational change, relationships with students, fellow teachers, and administrative personnel, working environment, expectations to substitute, long hours"
+      ],
+      "prediction": "Long hours, heavy workload, inspections.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.5714285714285715,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "When forces are from the presence of differnet objects, what law gives symmetry?",
+      "golds": [
+        "Newton's Third",
+        "Newton's Third Law",
+        "Newton's Third Law",
+        "Newton's Third Law",
+        "Newton's Third Law"
+      ],
+      "prediction": "Newton's Third Law.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "Which successor to Henry resumed persecution of the Huguenots?",
+      "golds": [
+        "Louis XIII",
+        "Louis XIII",
+        "Louis XIII"
+      ],
+      "prediction": "Louis XIV",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.5,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "Where did the French send a large number of settlers?",
+      "golds": [
+        "Algeria",
+        "Algeria",
+        "Algeria",
+        "Algeria"
+      ],
+      "prediction": "Algeria",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What campaigh did the Scottish National Party (SNP) run?",
+      "golds": [
+        "\"It's Scotland's oil\"",
+        "It's Scotland's oil",
+        "\"It's Scotland's oil\""
+      ],
+      "prediction": "The SNP ran against the Conservative Party.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 9
+    },
+    {
+      "question": "What tool is used in corporal punishment?",
+      "golds": [
+        "a specially made wooden paddle",
+        "wooden paddle",
+        "wooden paddle"
+      ],
+      "prediction": "Wooden paddle",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What will a pharmacist who passes the ambulatory pharmacist exam be called?",
+      "golds": [
+        "Board Certified Ambulatory Care Pharmacist",
+        "Board Certified Ambulatory Care Pharmacist",
+        "Board Certified Ambulatory Care Pharmacist"
+      ],
+      "prediction": "Board Certified Ambulatory Care Pharmacist",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 8
+    },
+    {
+      "question": "How did Morgan react to the request?",
+      "golds": [
+        "shocked",
+        "shocked",
+        "shocked by the reminder of his part in the stock market crash and by Tesla's breach of contract"
+      ],
+      "prediction": "Morgan was shocked by the reminder of his part in the stock market crash.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.7142857142857143,
+      "failed": false,
+      "tokens": 17
+    },
+    {
+      "question": "Which sitcom produced a spinoff for ABC after ending its run in 1984?",
+      "golds": [
+        "Three's Company",
+        "Three's Company",
+        "Three's Company"
+      ],
+      "prediction": "The Love Boat",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 4
+    },
+    {
+      "question": "What would type of activities would require a teacher to take on a supervisor role?",
+      "golds": [
+        "extracurricular",
+        "extracurricular",
+        "extracurricular"
+      ],
+      "prediction": "Extracurricular activities.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 8
+    },
+    {
+      "question": "What was the Doritos customer Super Bowl ad campaign called?",
+      "golds": [
+        "Crash the Super Bowl",
+        "Crash the Super Bowl",
+        "Crash the Super Bowl"
+      ],
+      "prediction": "Crash the Super Bowl",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "When is the earliest Britain had an imperialist policy?",
+      "golds": [
+        "the sixteenth century",
+        "sixteenth century",
+        "sixteenth century",
+        "sixteenth century",
+        "sixteenth century"
+      ],
+      "prediction": "16th century",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.5,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Who has the record of being the oldest quarter back in any Super Bowl game?",
+      "golds": [
+        "Peyton Manning",
+        "Peyton Manning",
+        "Manning",
+        "Manning"
+      ],
+      "prediction": "John Elway",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 4
+    },
+    {
+      "question": "What war in Ireland featured Huguenot regiments?",
+      "golds": [
+        "Williamite war",
+        "Williamite",
+        "the Williamite war"
+      ],
+      "prediction": "Williamite war",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "How much percentage of Victoria's land is taken up by farms?",
+      "golds": [
+        "60%",
+        "60%",
+        "60%"
+      ],
+      "prediction": "60%",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What study covered subjects in 80,000 schools?",
+      "golds": [
+        "The AAUW study",
+        "AAUW",
+        "AAUW study"
+      ],
+      "prediction": "The AAUW study",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "What did ABC do that was special in 2003?",
+      "golds": [
+        "weekly screenings of all available classic episodes",
+        "screenings of all available classic episodes",
+        "repeated episodes"
+      ],
+      "prediction": "The ABC provided weekly screenings of all available classic episodes.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.8750000000000001,
+      "failed": false,
+      "tokens": 12
+    },
+    {
+      "question": "What components raise steam temperature above its saturated vapor point?",
+      "golds": [
+        "superheaters",
+        "superheaters",
+        "superheaters"
+      ],
+      "prediction": "Superheaters",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "Where is a palm house with subtropic plants from all over the world on display?",
+      "golds": [
+        "New Orangery",
+        "New Orangery",
+        "New Orangery"
+      ],
+      "prediction": "Pole Mokotowskie",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 8
+    },
+    {
+      "question": "Newton was the number one pick in which draft?",
+      "golds": [
+        "2011",
+        "2011",
+        "2011"
+      ],
+      "prediction": "1998 NFL draft",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 7
+    },
+    {
+      "question": "What is retrograde signaling?",
+      "golds": [
+        "signals from the chloroplast that regulate gene expression in the nucleus",
+        "signals from the chloroplast that regulate gene expression",
+        "signals from the chloroplast that regulate gene expression in the nucleus"
+      ],
+      "prediction": "Signals from the chloroplast that regulate gene expression in the nucleus.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 14
+    },
+    {
+      "question": "Who may seek changes or exemptions in the law that governs the land where the building will be built?",
+      "golds": [
+        "An attorney",
+        "attorney",
+        "An attorney"
+      ],
+      "prediction": "An attorney.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "Unlike confirmation and profession of faith, what is a sacrament in the UMC?",
+      "golds": [
+        "Baptism",
+        "Baptism",
+        "Baptism"
+      ],
+      "prediction": "Baptism",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "Which two religions did Tesla express respect for?",
+      "golds": [
+        "Buddhism and Christianity",
+        "Buddhism and Christianity",
+        "Buddhism and Christianity"
+      ],
+      "prediction": "Buddhism and Christianity.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 8
+    },
+    {
+      "question": "What do the Treaties generally limit?",
+      "golds": [
+        "free trade",
+        "free trade",
+        "free trade"
+      ],
+      "prediction": "The Treaties limit free trade to prioritise other values.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.4,
+      "failed": false,
+      "tokens": 13
+    },
+    {
+      "question": "Who became the King of the Canary Islands?",
+      "golds": [
+        "Bethencourt",
+        "Bethencourt",
+        "Bethencourt"
+      ],
+      "prediction": "Henry III of Castile",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 6
+    },
+    {
+      "question": "To monitor what event would measuring radiance from vegetation provide information?",
+      "golds": [
+        "carbon cycle",
+        "plant health status",
+        "the carbon cycle",
+        "plant health status",
+        "carbon cycle"
+      ],
+      "prediction": "Carbon cycle",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "In what area of the United States did Tesla move to?",
+      "golds": [
+        "New York City",
+        "New York City",
+        "New York City"
+      ],
+      "prediction": "New York City",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "When did a plague-ridden ship land in Norway?",
+      "golds": [
+        "1349",
+        "1349",
+        "1349"
+      ],
+      "prediction": "1349",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What developmental network was discontinued after the shutdown of ABC1?",
+      "golds": [
+        "ABC International",
+        "ABC International",
+        "ABC International"
+      ],
+      "prediction": "Playhouse Disney",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 4
+    },
+    {
+      "question": "After what higher learning model was the school designed?",
+      "golds": [
+        "English university model",
+        "English university",
+        "English university"
+      ],
+      "prediction": "The school was designed with a classic curriculum.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 10
+    },
+    {
+      "question": "What group can amend the Victorian constitution?",
+      "golds": [
+        "Parliament of Victoria",
+        "the Parliament of Victoria",
+        "Parliament of Victoria"
+      ],
+      "prediction": "The Parliament of Victoria can amend the Victorian constitution.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6,
+      "failed": false,
+      "tokens": 11
+    },
+    {
+      "question": "The Yuan was the first time all of China was ruled by whom?",
+      "golds": [
+        "non-native Chinese people",
+        "non-native Chinese people",
+        "non-native Chinese"
+      ],
+      "prediction": "Non-native Chinese people",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "What was the date of the very first episode of Doctor Who?",
+      "golds": [
+        "23 November 1963",
+        "Saturday, 23 November 1963",
+        "23 November 1963"
+      ],
+      "prediction": "Saturday, 23 November 1963",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 12
+    },
+    {
+      "question": "What BBC radio station will carry the game in the United Kingdom?",
+      "golds": [
+        "BBC Radio 5",
+        "Radio 5 Live",
+        "BBC Radio 5 Live"
+      ],
+      "prediction": "BBC Radio 5 Live",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 6
+    },
+    {
+      "question": "What did the civil war leave the state of Afghanistan's economy in?",
+      "golds": [
+        "one of the poorest countries on earth",
+        "one of the poorest countries on earth",
+        "one of the poorest countries on earth"
+      ],
+      "prediction": "poor",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 3
+    },
+    {
+      "question": "Who did Tesla think would run the world of the future?",
+      "golds": [
+        "women",
+        "women",
+        "women"
+      ],
+      "prediction": "Queen Bees.",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 5
+    },
+    {
+      "question": "In what constituent country of the United Kingdom is Merthyr Tydfil located?",
+      "golds": [
+        "Wales",
+        "south Wales",
+        "Wales"
+      ],
+      "prediction": "Merthyr Tydfil is located in Wales.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.2857142857142857,
+      "failed": true,
+      "tokens": 12
+    },
+    {
+      "question": "Article 34 meant states could be responsible for what?",
+      "golds": [
+        "private actors",
+        "private actors",
+        "private actors"
+      ],
+      "prediction": "Private actors.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "For which ABC Movie of the Week film did Steven Spielberg first gain success?",
+      "golds": [
+        "Duel",
+        "Duel",
+        "Duel"
+      ],
+      "prediction": "Duel",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "How long was each Doctor Who episode in the 2005 revival series (including ads)?",
+      "golds": [
+        "60 minutes",
+        "45-minute",
+        "60 minutes"
+      ],
+      "prediction": "60 minutes",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What rift system developed in the Alpine orogeny?",
+      "golds": [
+        "N\u2013S",
+        "N\u2013S",
+        "N\u2013S rift system"
+      ],
+      "prediction": "The Alpine orogeny caused a N\u2013S rift system to develop in this zone.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.42857142857142855,
+      "failed": false,
+      "tokens": 19
+    },
+    {
+      "question": "How many lines does the commuter rail system have?",
+      "golds": [
+        "seven",
+        "seven",
+        "seven"
+      ],
+      "prediction": "Seven lines.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.6666666666666666,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What working fluid is used in a mercury vapor turbine?",
+      "golds": [
+        "Mercury",
+        "Mercury",
+        "Mercury"
+      ],
+      "prediction": "Mercury.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What were the structures built by the Soviets typical of?",
+      "golds": [
+        "an Eastern Bloc city",
+        "an Eastern Bloc city"
+      ],
+      "prediction": "Prefabricated buildings",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 5
+    },
+    {
+      "question": "When was Luther's last sermon?",
+      "golds": [
+        "15 February 1546",
+        "15 February 1546",
+        "15 February 1546"
+      ],
+      "prediction": "15 February 1546",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 9
+    },
+    {
+      "question": "What is the name given to the district that is associated with the motion picture industry?",
+      "golds": [
+        "Hollywood",
+        "Hollywood",
+        "Hollywood"
+      ],
+      "prediction": "Hollywood",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "Which husband and wife modern furniture design team are represented in the V&A furniture collection?",
+      "golds": [
+        "Charles and Ray Eames",
+        "Charles and Ray Eames",
+        "Charles and Ray Eames"
+      ],
+      "prediction": "Yes, Ernest Gimson, Edward William Godwin, Charles Voysey, Adolf Loos, Otto Wagner, Le Corbusier, Marcel Breuer, Charles",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.09523809523809523,
+      "failed": true,
+      "tokens": 32
+    },
+    {
+      "question": "Whose goals often still oppose the IPCC?",
+      "golds": [
+        "states and governments",
+        "states and governments",
+        "states and governments"
+      ],
+      "prediction": "States and governments.",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 5
+    },
+    {
+      "question": "Which country in 1985 signed a treaty to give it special status?",
+      "golds": [
+        "Greenland",
+        "Greenland",
+        "Greenland",
+        "Greenland"
+      ],
+      "prediction": "Greenland",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "What is a typical name for learning that is not inside of the classroom?",
+      "golds": [
+        "field trips",
+        "field trips",
+        "field trips"
+      ],
+      "prediction": "Informal",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 3
+    },
+    {
+      "question": "What did the Taliban want to subject the entire country to?",
+      "golds": [
+        "Sharia",
+        "an idealized and systematized version of conservative tribal village customs",
+        "Sharia"
+      ],
+      "prediction": "To subject the entire country to Sharia.",
+      "exact_match": false,
+      "contains": true,
+      "f1": 0.2857142857142857,
+      "failed": true,
+      "tokens": 9
+    },
+    {
+      "question": "What sport attracts most tourists to Jacksonville?",
+      "golds": [
+        "golf",
+        "golf",
+        "golf"
+      ],
+      "prediction": "Golf",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 3
+    },
+    {
+      "question": "What was the name of the set top box manufacturer that BSkyB was having issues with?",
+      "golds": [
+        "Thomson",
+        "Thomson",
+        "STB"
+      ],
+      "prediction": "Thomson",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "How many Pro Bowlers were on the Panthers offense?",
+      "golds": [
+        "six",
+        "six",
+        "six"
+      ],
+      "prediction": "6",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 2
+    },
+    {
+      "question": "When was the Doctor Who series released on DVD?",
+      "golds": [
+        "November 2006",
+        "November 2006",
+        "2006"
+      ],
+      "prediction": "November 2006",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 7
+    },
+    {
+      "question": "What is it called when people in society rebel against laws they think are unfair?",
+      "golds": [
+        "Civil disobedience",
+        "Civil disobedience",
+        "Civil disobedience",
+        "Civil disobedience",
+        "Civil disobedience"
+      ],
+      "prediction": "Civil disobedience",
+      "exact_match": true,
+      "contains": true,
+      "f1": 1.0,
+      "failed": false,
+      "tokens": 4
+    },
+    {
+      "question": "What is the term for closing off rivers that are no longer connected?",
+      "golds": [
+        "dammed",
+        "dammed",
+        "dammed"
+      ],
+      "prediction": "Damming rivers",
+      "exact_match": false,
+      "contains": false,
+      "f1": 0.0,
+      "failed": true,
+      "tokens": 4
+    }
+  ]
+}

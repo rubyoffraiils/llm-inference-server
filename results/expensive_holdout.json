@@ -1,0 +1,2633 @@
+{
+  "records": [
+    {
+      "question": "Hajduk Split FC play in which country",
+      "prompt": "Question: Hajduk Split FC play in which country\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Croatia"
+      ],
+      "prediction": "Croatia",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What product invented by Frederick Walton in 1864 became so widely used and 'stepped on' that the name became generic just 14 years after its invention?",
+      "prompt": "Question: What product invented by Frederick Walton in 1864 became so widely used and 'stepped on' that the name became generic just 14 years after its invention?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Linoleum"
+      ],
+      "prediction": "Cordless telephone",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What is the second level of territorial division in Poland?",
+      "prompt": "Context: The basic unit of territorial division in Poland is a commune (gmina). A city is also a commune \u2013 but with the city charter. Both cities and communes are governed by a mayor \u2013 but in the communes the mayor is vogt (w\u00f3jt in Polish), however in the cities \u2013 burmistrz. Some bigger cities obtain the entitlements, i.e. tasks and privileges, which are possessed by the units of the second level of the territorial division \u2013 counties or powiats. An example of such entitlement is a car registration: a gmina cannot register cars, this is a powiat's task (i.e. a registration number depends on what powiat a car had been registered, not gmina). In this case we say about city county or powiat grodzki. Such cities are for example Lublin, Krak\u00f3w, Gda\u0144sk, Pozna\u0144. In Warsaw, its districts additionally have some of powiat's entitlements \u2013 like already mentioned car registration. For example, the district Wola has its own evidence and the district Ursyn\u00f3w \u2013 its own (and the cars from Wola have another type of registration number than these from Ursyn\u00f3w). But for instance the districts in Krak\u00f3w do not have entitlements of powiat, so the registration numbers in Krak\u00f3w are of the same type for all districts.\n\nQuestion: What is the second level of territorial division in Poland?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "counties or powiats",
+        "counties or powiats",
+        "counties or powiats"
+      ],
+      "prediction": "Powiat",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which Greek philosopher taught at the Lyceum?",
+      "prompt": "Question: Which Greek philosopher taught at the Lyceum?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "ARISTOTLE"
+      ],
+      "prediction": "Socrates",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What U.S. state is closest to Africa (geographically)?",
+      "prompt": "Question: What U.S. state is closest to Africa (geographically)?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Maine"
+      ],
+      "prediction": "Algeria",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which species are ribbon-shaped planktonic animals?",
+      "prompt": "Context: The Cestida (\"belt animals\") are ribbon-shaped planktonic animals, with the mouth and aboral organ aligned in the middle of opposite edges of the ribbon. There is a pair of comb-rows along each aboral edge, and tentilla emerging from a groove all along the oral edge, which stream back across most of the wing-like body surface. Cestids can swim by undulating their bodies as well as by the beating of their comb-rows. There are two known species, with worldwide distribution in warm, and warm-temperate waters: Cestum veneris (\"Venus' girdle\") is among the largest ctenophores \u2013 up to 1.5 meters (4.9 ft) long, and can undulate slowly or quite rapidly. Velamen parallelum, which is typically less than 20 centimeters (0.66 ft) long, can move much faster in what has been described as a \"darting motion\".\n\nQuestion: Which species are ribbon-shaped planktonic animals?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "The Cestida",
+        "Cestida",
+        "Cestida"
+      ],
+      "prediction": "Cestida",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "How many Pro Bowlers were on the Panthers offense?",
+      "prompt": "Context: The Panthers offense, which led the NFL in scoring (500 points), was loaded with talent, boasting six Pro Bowl selections. Pro Bowl quarterback Cam Newton had one of his best seasons, throwing for 3,837 yards and rushing for 636, while recording a career-high and league-leading 45 total touchdowns (35 passing, 10 rushing), a career-low 10 interceptions, and a career-best quarterback rating of 99.4. Newton's leading receivers were tight end Greg Olsen, who caught a career-high 77 passes for 1,104 yards and seven touchdowns, and wide receiver Ted Ginn, Jr., who caught 44 passes for 739 yards and 10 touchdowns; Ginn also rushed for 60 yards and returned 27 punts for 277 yards. Other key receivers included veteran Jerricho Cotchery (39 receptions for 485 yards), rookie Devin Funchess (31 receptions for 473 yards and five touchdowns), and second-year receiver Corey Brown (31 receptions for 447 yards). The Panthers backfield featured Pro Bowl running back Jonathan Stewart, who led the team with 989 rushing yards and six touchdowns in 13 games, along with Pro Bowl fullback Mike Tolbert, who rushed for 256 yards and caught 18 passes for another 154 yards. Carolina's offensive line also featured two Pro Bowl selections: center Ryan Kalil and guard Trai Turner.\n\nQuestion: How many Pro Bowlers were on the Panthers offense?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "six",
+        "six",
+        "six"
+      ],
+      "prediction": "6",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What district of Warsaw chose the President between 1994 and 1999?",
+      "prompt": "Context: The mayor of Warsaw is called President. Generally, in Poland, the mayors of bigger cities are called presidents \u2013 i.e. such cities, which have over 100,000 people or these, where already was president before 1990. The first Warsaw President was Jan Andrzej Menich (1695\u20131696). Between 1975 and 1990 the Warsaw Presidents was simultaneously the Warsaw Voivode. Since 1990 the President of Warsaw had been elected by the City council. In the years of 1994\u20131999 the mayor of the district Centrum automatically was designated as the President of Warsaw: the mayor of Centrum was elected by the district council of Centrum and the council was elected only by the Centrum residents. Since 2002 the President of Warsaw is elected by all of the citizens of Warsaw.\n\nQuestion: What district of Warsaw chose the President between 1994 and 1999?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Centrum",
+        "Centrum",
+        "Centrum"
+      ],
+      "prediction": "Centrum",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "After what higher learning model was the school designed?",
+      "prompt": "Context: In the early years the College trained many Puritan ministers.[citation needed] (A 1643 publication said the school's purpose was \"to advance learning and perpetuate it to posterity, dreading to leave an illiterate ministry to the churches when our present ministers shall lie in the dust\".) It offered a classic curriculum on the English university model\u2014\u200b\u200bmany leaders in the colony had attended the University of Cambridge\u2014\u200b\u200bbut conformed Puritanism. It was never affiliated with any particular denomination, but many of its earliest graduates went on to become clergymen in Congregational and Unitarian churches.\n\nQuestion: After what higher learning model was the school designed?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "English university model",
+        "English university",
+        "English university"
+      ],
+      "prediction": "English university model",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who did Tesla think would run the world of the future?",
+      "prompt": "Context: In 1926, Tesla commented on the ills of the social subservience of women and the struggle of women toward gender equality, and indicated that humanity's future would be run by \"Queen Bees.\" He believed that women would become the dominant sex in the future.\n\nQuestion: Who did Tesla think would run the world of the future?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "women",
+        "women",
+        "women"
+      ],
+      "prediction": "Women",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What was the rumored reason Edison and Tesla were not awarded the prize?",
+      "prompt": "Context: On 6 November 1915, a Reuters news agency report from London had the 1915 Nobel Prize in Physics awarded to Thomas Edison and Nikola Tesla; however, on 15 November, a Reuters story from Stockholm stated the prize that year was being awarded to Sir William Henry Bragg and William Lawrence Bragg \"for their services in the analysis of crystal structure by means of X-rays.\":245 There were unsubstantiated rumors at the time that Tesla and/or Edison had refused the prize.:245 The Nobel Foundation said, \"Any rumor that a person has not been given a Nobel Prize because he has made known his intention to refuse the reward is ridiculous\"; a recipient could only decline a Nobel Prize after he is announced a winner.:245\n\nQuestion: What was the rumored reason Edison and Tesla were not awarded the prize?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Tesla and/or Edison had refused the prize",
+        "Tesla and/or Edison had refused the prize",
+        "Tesla and/or Edison had refused the prize"
+      ],
+      "prediction": "They refused the prize.",
+      "exact_match": false,
+      "f1": 0.4444444444444444,
+      "failed": false
+    },
+    {
+      "question": "Where did the French send a large number of settlers?",
+      "prompt": "Context: It became a moral justification to lift the world up to French standards by bringing Christianity and French culture. In 1884 the leading exponent of colonialism, Jules Ferry declared France had a civilising mission: \"The higher races have a right over the lower races, they have a duty to civilize the inferior\". Full citizenship rights \u2013 \u2018\u2019assimilation\u2019\u2019 \u2013 were offered, although in reality assimilation was always on the distant horizon. Contrasting from Britain, France sent small numbers of settlers to its colonies, with the only notable exception of Algeria, where French settlers nevertheless always remained a small minority.\n\nQuestion: Where did the French send a large number of settlers?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Algeria",
+        "Algeria",
+        "Algeria",
+        "Algeria"
+      ],
+      "prediction": "Algeria",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who won the 1952 US Presidential election?",
+      "prompt": "Question: Who won the 1952 US Presidential election?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "(Dwight D.) Eisenhower"
+      ],
+      "prediction": "Eisenhower",
+      "exact_match": false,
+      "f1": 0.5,
+      "failed": false
+    },
+    {
+      "question": "When was Luther's last sermon?",
+      "prompt": "Context: His last sermon was delivered at Eisleben, his place of birth, on 15 February 1546, three days before his death. It was \"entirely devoted to the obdurate Jews, whom it was a matter of great urgency to expel from all German territory,\" according to L\u00e9on Poliakov. James Mackinnon writes that it concluded with a \"fiery summons to drive the Jews bag and baggage from their midst, unless they desisted from their calumny and their usury and became Christians.\" Luther said, \"we want to practice Christian love toward them and pray that they convert,\" but also that they are \"our public enemies ... and if they could kill us all, they would gladly do so. And so often they do.\"\n\nQuestion: When was Luther's last sermon?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "15 February 1546",
+        "15 February 1546",
+        "15 February 1546"
+      ],
+      "prediction": "15 February 1546",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What helps the process of free movement of goods?",
+      "prompt": "Context: Free movement of goods within the European Union is achieved by a customs union, and the principle of non-discrimination. The EU manages imports from non-member states, duties between member states are prohibited, and imports circulate freely. In addition under the Treaty on the Functioning of the European Union article 34, \u2018Quantitative restrictions on imports and all measures having equivalent effect shall be prohibited between Member States\u2019. In Procureur du Roi v Dassonville the Court of Justice held that this rule meant all \"trading rules\" that are \"enacted by Member States\" which could hinder trade \"directly or indirectly, actually or potentially\" would be caught by article 34. This meant that a Belgian law requiring Scotch whisky imports to have a certificate of origin was unlikely to be lawful. It discriminated against parallel importers like Mr Dassonville, who could not get certificates from authorities in France, where they bought the Scotch. This \"wide test\", to determine what could potentially be an unlawful restriction on trade, applies equally to actions by quasi-government bodies, such as the former \"Buy Irish\" company that had government appointees. It also means states can be responsible for private actors. For instance, in Commission v France French farmer vigilantes were continually sabotaging shipments of Spanish strawberries, and even Belgian tomato imports. France was liable for these hindrances to trade because the authorities \u2018manifestly and persistently abstained' from preventing the sabotage. Generally speaking, if a member state has laws or practices that directly discriminate against imports (or exports under TFEU article 35) then it must be justified under article 36. The justifications include public morality, policy or security, \"protection of health and life of humans, animals or plants\", \"national treasures\" of \"artistic, historic or archaeological value\" and \"industrial and commercial property.\" In addition, although not clearly listed, environmental protection can justify restrictions on trade as an overriding requirement derived from TFEU article 11. More generally, it has been increasingly acknowledged that fundamental human rights should take priority over all trade rules. So, in Schmidberger v Austria the Court of Justice held that Austria did not infringe article 34 by failing to ban a protest that blocked heavy traffic passing over the A13, Brenner Autobahn, en route to Italy. Although many companies, including Mr Schmidberger's German undertaking, were prevented from trading, the Court of Justice reasoned that freedom of association is one of the \u2018fundamental pillars of a democratic society\u2019, against which the free movement of goods had to be balanced, and was probably subordinate. If a member state does appeal to the article 36 justification, the measures it takes have to be applied proportionately. This means the rule must be pursue a legitimate aim and (1) be suitable to achieve the aim, (2) be necessary, so that a less restrictive measure could not achieve the same result, and (3) be reasonable in balancing the interests of free trade with interests in article 36.\n\nQuestion: What helps the process of free movement of goods?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "a customs union, and the principle of non-discrimination",
+        "a customs union",
+        "a customs union"
+      ],
+      "prediction": "Customs union, non-discrimination, and the Treaty on the Functioning of the European Union.",
+      "exact_match": false,
+      "f1": 0.625,
+      "failed": false
+    },
+    {
+      "question": "What is the more correct term for the sport of archery?",
+      "prompt": "Question: What is the more correct term for the sport of archery?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "TOXOPHILY"
+      ],
+      "prediction": "Bow and\u7bad",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What are fairy rings made of?",
+      "prompt": "Question: What are fairy rings made of?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Mushrooms"
+      ],
+      "prediction": "Mushrooms",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What entities are included in the federal health care system?",
+      "prompt": "Context: In the U.S. federal health care system (including the VA, the Indian Health Service, and NIH) ambulatory care pharmacists are given full independent prescribing authority. In some states such North Carolina and New Mexico these pharmacist clinicians are given collaborative prescriptive and diagnostic authority. In 2011 the board of Pharmaceutical Specialties approved ambulatory care pharmacy practice as a separate board certification. The official designation for pharmacists who pass the ambulatory care pharmacy specialty certification exam will be Board Certified Ambulatory Care Pharmacist and these pharmacists will carry the initials BCACP.\n\nQuestion: What entities are included in the federal health care system?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "the VA, the Indian Health Service, and NIH",
+        "the VA, the Indian Health Service, and NIH",
+        "VA, the Indian Health Service, and NIH"
+      ],
+      "prediction": "VA, Indian Health Service, NIH, ambulatory care pharmacists, North Carolina, New Mexico, Board of Pharmaceutical Specialties, BCACP",
+      "exact_match": false,
+      "f1": 0.4347826086956522,
+      "failed": false
+    },
+    {
+      "question": "In what constituent country of the United Kingdom is Merthyr Tydfil located?",
+      "prompt": "Context: The first full-scale working railway steam locomotive was built by Richard Trevithick in the United Kingdom and, on 21 February 1804, the world's first railway journey took place as Trevithick's unnamed steam locomotive hauled a train along the tramway from the Pen-y-darren ironworks, near Merthyr Tydfil to Abercynon in south Wales. The design incorporated a number of important innovations that included using high-pressure steam which reduced the weight of the engine and increased its efficiency. Trevithick visited the Newcastle area later in 1804 and the colliery railways in north-east England became the leading centre for experimentation and development of steam locomotives.\n\nQuestion: In what constituent country of the United Kingdom is Merthyr Tydfil located?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Wales",
+        "south Wales",
+        "Wales"
+      ],
+      "prediction": "Wales",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which European nation was the colonial power of Indonesia for 350 years until officially ceding control in December 1949?",
+      "prompt": "Question: Which European nation was the colonial power of Indonesia for 350 years until officially ceding control in December 1949?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "The Netherlands"
+      ],
+      "prediction": "Netherlands",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What was the Doritos customer Super Bowl ad campaign called?",
+      "prompt": "Context: CBS set the base rate for a 30-second advertisement at $5,000,000, a record high price for a Super Bowl ad. As of January 26, the advertisements had not yet sold out. CBS mandated that all advertisers purchase a package covering time on both the television and digital broadcasts of the game, meaning that for the first time, digital streams of the game would carry all national advertising in pattern with the television broadcast. This would be the final year in a multi-year contract with Anheuser-Busch InBev that allowed the beer manufacturer to air multiple advertisements during the game at a steep discount. It was also the final year that Doritos, a longtime sponsor of the game, held its \"Crash the Super Bowl\" contest that allowed viewers to create their own Doritos ads for a chance to have it aired during the game. Nintendo and The Pok\u00e9mon Company also made their Super Bowl debut, promoting the 20th anniversary of the Pok\u00e9mon video game and media franchise.\n\nQuestion: What was the Doritos customer Super Bowl ad campaign called?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Crash the Super Bowl",
+        "Crash the Super Bowl",
+        "Crash the Super Bowl"
+      ],
+      "prediction": "Crash the Super Bowl",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What type of amendments might members opposed to a bill put on the table?",
+      "prompt": "Context: Stage 3 is the final stage of the bill and is considered at a meeting of the whole Parliament. This stage comprises two parts: consideration of amendments to the bill as a general debate, and a final vote on the bill. Opposition members can table \"wrecking amendments\" to the bill, designed to thwart further progress and take up parliamentary time, to cause the bill to fall without a final vote being taken. After a general debate on the final form of the bill, members proceed to vote at Decision Time on whether they agree to the general principles of the final bill.\n\nQuestion: What type of amendments might members opposed to a bill put on the table?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "wrecking",
+        "wrecking",
+        "\"wrecking amendments\""
+      ],
+      "prediction": "Wrecking amendments",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What troops attacked Fort William Henry in early 1757?",
+      "prompt": "Context: French irregular forces (Canadian scouts and Indians) harassed Fort William Henry throughout the first half of 1757. In January they ambushed British rangers near Ticonderoga. In February they launched a daring raid against the position across the frozen Lake George, destroying storehouses and buildings outside the main fortification. In early August, Montcalm and 7,000 troops besieged the fort, which capitulated with an agreement to withdraw under parole. When the withdrawal began, some of Montcalm's Indian allies, angered at the lost opportunity for loot, attacked the British column, killing and capturing several hundred men, women, children, and slaves. The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations; as some Indians were reported to have traveled from beyond the Mississippi to participate in the campaign and returned afterward having been exposed to European carriers.\n\nQuestion: What troops attacked Fort William Henry in early 1757?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "French irregular forces (Canadian scouts and Indians)",
+        "French irregular forces",
+        "French irregular forces",
+        "French irregular forces",
+        "French irregular forces"
+      ],
+      "prediction": "French irregular forces",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which Chinese dynasty ruled from the 14th to the 17th century?",
+      "prompt": "Question: Which Chinese dynasty ruled from the 14th to the 17th century?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Ming"
+      ],
+      "prediction": "Ming Dynasty",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "What was the name of the computer in the sitcom Red Dwarf?",
+      "prompt": "Question: What was the name of the computer in the sitcom Red Dwarf?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Holly"
+      ],
+      "prediction": "Kryten",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "\"Which American country singer, the younger sister of singer Loretta Lynn, had 18 #1 country hits during the 1970s and 1980s, and is best known for a series of country-pop crossover hits including \"\"Don't It Make My Brown Eyes Blue\"\"?\"",
+      "prompt": "Question: \"Which American country singer, the younger sister of singer Loretta Lynn, had 18 #1 country hits during the 1970s and 1980s, and is best known for a series of country-pop crossover hits including \"\"Don't It Make My Brown Eyes Blue\"\"?\"\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Crystal Gayle"
+      ],
+      "prediction": "Shania Twain",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "How many pieces are there in a standard set of dominoes?",
+      "prompt": "Question: How many pieces are there in a standard set of dominoes?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "28"
+      ],
+      "prediction": "28",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Where was Tracy Wolfson announcing from during the Super Bowl 50 game?",
+      "prompt": "Context: In the United States, the game was televised by CBS, as part of a cycle between the three main broadcast television partners of the NFL. The network's lead broadcast team of Jim Nantz and Phil Simms called the contest, with Tracy Wolfson and Evan Washburn on the sidelines. CBS introduced new features during the telecast, including pylon cameras and microphones along with EyeVision 360\u2014an array of 36 cameras along the upper deck that can be used to provide a 360-degree view of plays and \"bullet time\" effects. (An earlier version of EyeVision was last used in Super Bowl XXXV; for Super Bowl 50, the cameras were upgraded to 5K resolution.)\n\nQuestion: Where was Tracy Wolfson announcing from during the Super Bowl 50 game?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "sidelines",
+        "the sidelines",
+        "sidelines"
+      ],
+      "prediction": "The sideline",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "When was most of Sunnside developed?",
+      "prompt": "Context: The neighborhood of Sunnyside is on Fresno's far southeast side, bounded by Chestnut Avenue to the West. Its major thoroughfares are Kings Canyon Avenue and Clovis Avenue. Although parts of Sunnyside are within the City of Fresno, much of the neighborhood is a \"county island\" within Fresno County. Largely developed in the 1950s through the 1970s, it has recently experienced a surge in new home construction. It is also the home of the Sunnyside Country Club, which maintains a golf course designed by William P. Bell.\n\nQuestion: When was most of Sunnside developed?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "1950s through the 1970s",
+        "1950s through the 1970s",
+        "1950s through the 1970s"
+      ],
+      "prediction": "1950s through 1970s",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which two religions did Tesla express respect for?",
+      "prompt": "Context: Tesla was raised an Orthodox Christian. Later in his life, he did not consider himself to be a \"believer in the orthodox sense,\" and opposed religious fanaticism. Despite this, he had a profound respect for both Buddhism and Christianity.\n\nQuestion: Which two religions did Tesla express respect for?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Buddhism and Christianity",
+        "Buddhism and Christianity",
+        "Buddhism and Christianity"
+      ],
+      "prediction": "Buddhism and Christianity",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What device uses radio waves bounced off of objects to identify their range, altitude, direction, and speed?",
+      "prompt": "Question: What device uses radio waves bounced off of objects to identify their range, altitude, direction, and speed?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Radar"
+      ],
+      "prediction": "RADAR",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What was incorporated to help slow the CM's decent back to Earth?",
+      "prompt": "Context: The Command Module (CM) was the conical crew cabin, designed to carry three astronauts from launch to lunar orbit and back to an Earth ocean landing. It was the only component of the Apollo spacecraft to survive without major configuration changes as the program evolved from the early Apollo study designs. Its exterior was covered with an ablative heat shield, and had its own reaction control system (RCS) engines to control its attitude and steer its atmospheric entry path. Parachutes were carried to slow its descent to splashdown. The module was 11.42 feet (3.48 m) tall, 12.83 feet (3.91 m) in diameter, and weighed approximately 12,250 pounds (5,560 kg).\n\nQuestion: What was incorporated to help slow the CM's decent back to Earth?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Parachutes",
+        "Parachutes",
+        "Parachutes",
+        "Parachutes",
+        "Parachutes"
+      ],
+      "prediction": "Parachutes",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What is the basic unit of organization within the UMC?",
+      "prompt": "Context: The Annual Conference, roughly the equivalent of a diocese in the Anglican Communion and the Roman Catholic Church or a synod in some Lutheran denominations such as the Evangelical Lutheran Church in America, is the basic unit of organization within the UMC. The term Annual Conference is often used to refer to the geographical area it covers as well as the frequency of meeting. Clergy are members of their Annual Conference rather than of any local congregation, and are appointed to a local church or other charge annually by the conference's resident Bishop at the meeting of the Annual Conference. In many ways, the United Methodist Church operates in a connectional organization of the Annual Conferences, and actions taken by one conference are not binding upon another.\n\nQuestion: What is the basic unit of organization within the UMC?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "The Annual Conference",
+        "synod",
+        "The Annual Conference"
+      ],
+      "prediction": "Annual Conference",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which 1969 film concerns the dance marathon competitions during the Depression Era in America?",
+      "prompt": "Question: Which 1969 film concerns the dance marathon competitions during the Depression Era in America?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "THEY SHOOT HORSES DON'T THEY"
+      ],
+      "prediction": "The Great American Dance Marathon",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Who was the snooker player that beat Steve Davis in a world snooker final after being 8 - 0 down?",
+      "prompt": "Question: Who was the snooker player that beat Steve Davis in a world snooker final after being 8 - 0 down?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Dennis Taylor"
+      ],
+      "prediction": "John Higgins",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "In which year did the museum started charging free admission fees?",
+      "prompt": "Context: The Victoria and Albert Museum (often abbreviated as the V&A), London, is the world's largest museum of decorative arts and design, housing a permanent collection of over 4.5 million objects. It was founded in 1852 and named after Queen Victoria and Prince Albert. The V&A is located in the Brompton district of the Royal Borough of Kensington and Chelsea, in an area that has become known as \"Albertopolis\" because of its association with Prince Albert, the Albert Memorial and the major cultural institutions with which he was associated. These include the Natural History Museum, the Science Museum and the Royal Albert Hall. The museum is a non-departmental public body sponsored by the Department for Culture, Media and Sport. Like other national British museums, entrance to the museum has been free since 2001.\n\nQuestion: In which year did the museum started charging free admission fees?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "2001",
+        "2001",
+        "2001",
+        "2001"
+      ],
+      "prediction": "2001",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which acid is found in rhubarb leaves ?",
+      "prompt": "Question: Which acid is found in rhubarb leaves ?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "OXALIC"
+      ],
+      "prediction": "Acid oxalic",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "What language other than English has the Scottish Parliament had meetings in?",
+      "prompt": "Context: The Presiding Officer (or Deputy Presiding Officer) decides who speaks in chamber debates and the amount of time for which they are allowed to speak. Normally, the Presiding Officer tries to achieve a balance between different viewpoints and political parties when selecting members to speak. Typically, ministers or party leaders open debates, with opening speakers given between 5 and 20 minutes, and succeeding speakers allocated less time. The Presiding Officer can reduce speaking time if a large number of members wish to participate in the debate. Debate is more informal than in some parliamentary systems. Members may call each other directly by name, rather than by constituency or cabinet position, and hand clapping is allowed. Speeches to the chamber are normally delivered in English, but members may use Scots, Gaelic, or any other language with the agreement of the Presiding Officer. The Scottish Parliament has conducted debates in the Gaelic language.\n\nQuestion: What language other than English has the Scottish Parliament had meetings in?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Gaelic",
+        "Gaelic",
+        "Scots, Gaelic, or any other language with the agreement of the Presiding Officer"
+      ],
+      "prediction": "Gaelic",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What was used by the West to justify control over eastern territories?",
+      "prompt": "Context: Orientalism, as theorized by Edward Said, refers to how the West developed an imaginative geography of the East. This imaginative geography relies on an essentializing discourse that represents neither the diversity nor the social reality of the East. Rather, by essentializing the East, this discourse uses the idea of place-based identities to create difference and distance between \"we\" the West and \"them\" the East, or \"here\" in the West and \"there\" in the East. This difference was particularly apparent in textual and visual works of early European studies of the Orient that positioned the East as irrational and backward in opposition to the rational and progressive West. Defining the East as a negative vision of itself, as its inferior, not only increased the West\u2019s sense of self, but also was a way of ordering the East and making it known to the West so that it could be dominated and controlled. The discourse of Orientalism therefore served as an ideological justification of early Western imperialism, as it formed a body of knowledge and ideas that rationalized social, cultural, political, and economic control of other territories.\n\nQuestion: What was used by the West to justify control over eastern territories?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Orientalism",
+        "inferior",
+        "Defining the East as a negative vision of itself",
+        "Orientalism",
+        "Orientalism"
+      ],
+      "prediction": "The discourse of Orientalism.",
+      "exact_match": false,
+      "f1": 0.5,
+      "failed": false
+    },
+    {
+      "question": "What is the name of the yacht that won the Royal Yacht Squadron's regatta around the Isle of Wight in 1851 and lent its name to a famous sports prize?",
+      "prompt": "Question: What is the name of the yacht that won the Royal Yacht Squadron's regatta around the Isle of Wight in 1851 and lent its name to a famous sports prize?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "America"
+      ],
+      "prediction": "HMS Warrior",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What group can amend the Victorian constitution?",
+      "prompt": "Context: Victoria has a written constitution enacted in 1975, but based on the 1855 colonial constitution, passed by the United Kingdom Parliament as the Victoria Constitution Act 1855, which establishes the Parliament as the state's law-making body for matters coming under state responsibility. The Victorian Constitution can be amended by the Parliament of Victoria, except for certain \"entrenched\" provisions that require either an absolute majority in both houses, a three-fifths majority in both houses, or the approval of the Victorian people in a referendum, depending on the provision.\n\nQuestion: What group can amend the Victorian constitution?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Parliament of Victoria",
+        "the Parliament of Victoria",
+        "Parliament of Victoria"
+      ],
+      "prediction": "The Parliament of Victoria.",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Fiji Day is celebrated in Fiji during which month of the year?",
+      "prompt": "Question: Fiji Day is celebrated in Fiji during which month of the year?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "October"
+      ],
+      "prediction": "December",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What could anyone do to Martin Luther without legal consequence?",
+      "prompt": "Context: Over the next five days, private conferences were held to determine Luther's fate. The Emperor presented the final draft of the Edict of Worms on 25 May 1521, declaring Luther an outlaw, banning his literature, and requiring his arrest: \"We want him to be apprehended and punished as a notorious heretic.\" It also made it a crime for anyone in Germany to give Luther food or shelter. It permitted anyone to kill Luther without legal consequence.\n\nQuestion: What could anyone do to Martin Luther without legal consequence?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "kill Luther",
+        "kill",
+        "kill"
+      ],
+      "prediction": "Kill Luther",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What is the equivalent Royal Navy rank to an Air Marshall in the R.A.F.?",
+      "prompt": "Question: What is the equivalent Royal Navy rank to an Air Marshall in the R.A.F.?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "VICE ADMIRAL"
+      ],
+      "prediction": "Air Commodore",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What were the structures built by the Soviets typical of?",
+      "prompt": "Context: After World War II, under a Communist regime set up by the conquering Soviets, the \"Bricks for Warsaw\" campaign was initiated, and large prefabricated housing projects were erected in Warsaw to address the housing shortage, along with other typical buildings of an Eastern Bloc city, such as the Palace of Culture and Science, a gift from the Soviet Union. The city resumed its role as the capital of Poland and the country's centre of political and economic life. Many of the historic streets, buildings, and churches were restored to their original form. In 1980, Warsaw's historic Old Town was inscribed onto UNESCO's World Heritage list.\n\nQuestion: What were the structures built by the Soviets typical of?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "an Eastern Bloc city",
+        "an Eastern Bloc city"
+      ],
+      "prediction": "Typical buildings of an Eastern Bloc city.",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "What was required of Huguenot children after the Edict was revoked?",
+      "prompt": "Context: The revocation forbade Protestant services, required education of children as Catholics, and prohibited emigration. It proved disastrous to the Huguenots and costly for France. It precipitated civil bloodshed, ruined commerce, and resulted in the illegal flight from the country of hundreds of thousands of Protestants, many of whom became intellectuals, doctors and business leaders in Britain as well as Holland, Prussia, and South Africa. Four thousand emigrated to the North American colonies, where they settled in New York and Virginia, especially. The English welcomed the French refugees, providing money from both government and private agencies to aid their relocation. Those Huguenots who stayed in France became Catholics and were called \"new converts\".\n\nQuestion: What was required of Huguenot children after the Edict was revoked?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "education of children as Catholics",
+        "education of children as Catholics",
+        "required education of children as Catholics"
+      ],
+      "prediction": "Education as Catholics.",
+      "exact_match": false,
+      "f1": 0.7499999999999999,
+      "failed": false
+    },
+    {
+      "question": "Which wedge-shaped writing system was used by various middle-eastern peoples from the fourth millennium BC until the invention of alphabetic systems?",
+      "prompt": "Question: Which wedge-shaped writing system was used by various middle-eastern peoples from the fourth millennium BC until the invention of alphabetic systems?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "CUNEIFORM"
+      ],
+      "prediction": "Cuneiform",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "O UGLY NINE is an anagram of which singer songwriter?",
+      "prompt": "Question: O UGLY NINE is an anagram of which singer songwriter?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Neil Young"
+      ],
+      "prediction": "Bon Jovi",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "\"\"\"Wuthering Heights\"\" by Emily Bront tells the story of which two lovers?\"",
+      "prompt": "Question: \"\"\"Wuthering Heights\"\" by Emily Bront tells the story of which two lovers?\"\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Catherine and Heathcliff"
+      ],
+      "prediction": "Heathcliff and Catherine.",
+      "exact_match": false,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who founded the Body Shop, in the UK, in 1976?",
+      "prompt": "Question: Who founded the Body Shop, in the UK, in 1976?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Anita Roddick"
+      ],
+      "prediction": "Elizabeth Arden",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which Russian author died at Astapovo Railway Station in 1910 of pneumonia?",
+      "prompt": "Question: Which Russian author died at Astapovo Railway Station in 1910 of pneumonia?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Leo Tolstoy"
+      ],
+      "prediction": "Fyodor Dostoevsky",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What is the largest (by population) landlocked country?",
+      "prompt": "Question: What is the largest (by population) landlocked country?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Ethiopia"
+      ],
+      "prediction": "Bolivia",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "In which year did the Sackler Center open?",
+      "prompt": "Context: With the death of Captain Francis Fowke, Royal Engineers the next architect to work at the museum was Colonel (later Major General) Henry Young Darracott Scott, also of the Royal Engineers. He designed to the north west of the garden the five-storey School for Naval Architects (also known as the science schools), now the Henry Cole Wing in 1867\u201372. Scott's assistant J.W. Wild designed the impressive staircase that rises the full height of the building, made from Cadeby stone the steps are 7 feet (2.1 m) in length, the balustrades and columns are Portland stone. It is now used to jointly house the prints and architectural drawings of the V&A (prints, drawings, paintings and photographs) and Royal Institute of British Architects (RIBA Drawings and Archives Collections); and the Sackler Centre for arts education, which opened in 2008.\n\nQuestion: In which year did the Sackler Center open?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "2008",
+        "2008",
+        "2008"
+      ],
+      "prediction": "2008",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What year was the first class taught at the University of Chicago?",
+      "prompt": "Context: Founded by the American Baptist Education Society with a donation from oil magnate and wealthiest man in history John D. Rockefeller, the University of Chicago was incorporated in 1890; William Rainey Harper became the university's first president in 1891, and the first classes were held in 1892. Both Harper and future president Robert Maynard Hutchins advocated for Chicago's curriculum to be based upon theoretical and perennial issues rather than on applied sciences and commercial utility. With Harper's vision in mind, the University of Chicago also became one of the 14 founding members of the Association of American Universities, an international organization of leading research universities, in 1900.\n\nQuestion: What year was the first class taught at the University of Chicago?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "1892",
+        "1892",
+        "1892",
+        "1892"
+      ],
+      "prediction": "1892",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "How was the European Recovery Program in the 1940s more commonly known?",
+      "prompt": "Question: How was the European Recovery Program in the 1940s more commonly known?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Marshall Plan"
+      ],
+      "prediction": "The Marshall Plan",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which two treaties provided more formal institutions of the European Union?",
+      "prompt": "Context: The principal Treaties that form the European Union began with common rules for coal and steel, and then atomic energy, but more complete and formal institutions were established through the Treaty of Rome 1957 and the Maastricht Treaty 1992 (now: TFEU). Minor amendments were made during the 1960s and 1970s. Major amending treaties were signed to complete the development of a single, internal market in the Single European Act 1986, to further the development of a more social Europe in the Treaty of Amsterdam 1997, and to make minor amendments to the relative power of member states in the EU institutions in the Treaty of Nice 2001 and the Treaty of Lisbon 2007. Since its establishment, more member states have joined through a series of accession treaties, from the UK, Ireland, Denmark and Norway in 1972 (though Norway did not end up joining), Greece in 1979, Spain and Portugal 1985, Austria, Finland, Norway and Sweden in 1994 (though again Norway failed to join, because of lack of support in the referendum), the Czech Republic, Cyprus, Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Slovakia and Slovenia in 2004, Romania and Bulgaria in 2007 and Croatia in 2013. Greenland signed a Treaty in 1985 giving it a special status.\n\nQuestion: Which two treaties provided more formal institutions of the European Union?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Treaty of Rome 1957 and the Maastricht Treaty 1992",
+        "the Treaty of Rome 1957 and the Maastricht Treaty 1992",
+        "the Treaty of Rome 1957 and the Maastricht Treaty 1992 (now: TFEU)",
+        "the Treaty of Rome 1957 and the Maastricht Treaty 1992 (now: TFEU)"
+      ],
+      "prediction": "Treaty of Rome 1957, Maastricht Treaty 1992",
+      "exact_match": false,
+      "f1": 0.9333333333333333,
+      "failed": false
+    },
+    {
+      "question": "In which film did Jude Law play a sniper at the Battle of Stalingrad?",
+      "prompt": "Question: In which film did Jude Law play a sniper at the Battle of Stalingrad?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Enemy at the Gates"
+      ],
+      "prediction": "\"Black Hawk Down\"",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which husband and wife modern furniture design team are represented in the V&A furniture collection?",
+      "prompt": "Context: There are a set of beautiful inlaid doors, dated 1580 from Antwerp City Hall, attributed to Hans Vredeman de Vries. One of the finest pieces of continental furniture in the collection is the Rococo Augustus Rex Bureau Cabinet dated c1750 from Germany, with especially fine marquetry and ormolu mounts. One of the grandest pieces of 19th-century furniture is the highly elaborate French Cabinet dated 1861\u20131867 made by M. Fourdinois, made from ebony inlaid with box, lime, holly, pear, walnut and mahogany woods as well as marble with gilded carvings. Furniture designed by Ernest Gimson, Edward William Godwin, Charles Voysey, Adolf Loos and Otto Wagner are among the late 19th-century and early 20th-century examples in the collection. The work of modernists in the collection include Le Corbusier, Marcel Breuer, Charles and Ray Eames, and Gi\u00f2 Ponti.\n\nQuestion: Which husband and wife modern furniture design team are represented in the V&A furniture collection?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Charles and Ray Eames",
+        "Charles and Ray Eames",
+        "Charles and Ray Eames"
+      ],
+      "prediction": "Charles and Ray Eames",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What is the usual colour of the drink Grenadine?",
+      "prompt": "Question: What is the usual colour of the drink Grenadine?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "RED"
+      ],
+      "prediction": "Red",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Sandygate Road football and cricket stadium is in which English city?",
+      "prompt": "Question: Sandygate Road football and cricket stadium is in which English city?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Sheffield"
+      ],
+      "prediction": "Leeds",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What did Tesla Electric Light & Manufacturing do?",
+      "prompt": "Context: After leaving Edison's company Tesla partnered with two businessmen in 1886, Robert Lane and Benjamin Vail, who agreed to finance an electric lighting company in Tesla's name, Tesla Electric Light & Manufacturing. The company installed electrical arc light based illumination systems designed by Tesla and also had designs for dynamo electric machine commutators, the first patents issued to Tesla in the US.\n\nQuestion: What did Tesla Electric Light & Manufacturing do?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "installed electrical arc light based illumination systems",
+        "installed electrical arc light based illumination systems",
+        "installed electrical arc light based illumination systems designed by Tesla and also had designs for dynamo electric machine commutators"
+      ],
+      "prediction": "Tesla Electric Light & Manufacturing installed electrical arc light based illumination systems and had designs for dynamo electric machines.",
+      "exact_match": false,
+      "f1": 0.7567567567567567,
+      "failed": false
+    },
+    {
+      "question": "Who plays the bounty hunter Carson Wells in the 2007 film \u2018No Country For Old Men\u2019?",
+      "prompt": "Question: Who plays the bounty hunter Carson Wells in the 2007 film \u2018No Country For Old Men\u2019?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Woody Harrelson"
+      ],
+      "prediction": "Tom Hardy",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Keflavik is the main international airport of which country?",
+      "prompt": "Question: Keflavik is the main international airport of which country?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Iceland"
+      ],
+      "prediction": "Iceland",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What did Luther refuse to do?",
+      "prompt": "Context: Luther refused to recant his writings. He is sometimes also quoted as saying: \"Here I stand. I can do no other\". Recent scholars consider the evidence for these words to be unreliable, since they were inserted before \"May God help me\" only in later versions of the speech and not recorded in witness accounts of the proceedings. However, Mullett suggests that given his nature, \"we are free to believe that Luther would tend to select the more dramatic form of words.\"\n\nQuestion: What did Luther refuse to do?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "recant his writings",
+        "recant his writings",
+        "recant"
+      ],
+      "prediction": "Recant his writings.",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What hourglass-shaped women's garment was made using whalebone?",
+      "prompt": "Question: What hourglass-shaped women's garment was made using whalebone?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Corset"
+      ],
+      "prediction": "Whalebone corset",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "How long would Tesla spend gambling sometimes?",
+      "prompt": "Context: During his second year of study at Graz, Tesla developed a passion for (and became very proficient at) billiards, chess and card-playing, sometimes spending more than 48 hours in a stretch at a gaming table.:43, 301 On one occasion at his laboratory, Tesla worked for a period of 84 hours without sleep or rest.:208 Kenneth Swezey, a journalist whom Tesla had befriended, confirmed that Tesla rarely slept. Swezey recalled one morning when Tesla called him at 3 a.m.: \"I was sleeping in my room like one dead ... Suddenly, the telephone ring awakened me ... [Tesla] spoke animatedly, with pauses, [as he] ... work[ed] out a problem, comparing one theory to another, commenting; and when he felt he had arrived at the solution, he suddenly closed the telephone.\"\n\nQuestion: How long would Tesla spend gambling sometimes?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "more than 48 hours",
+        "48 hours",
+        "48 hours"
+      ],
+      "prediction": "48 hours",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which boxer fought Mohammed Ali in the fight known as 'The Thriller In Manilla'?",
+      "prompt": "Question: Which boxer fought Mohammed Ali in the fight known as 'The Thriller In Manilla'?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "JOE FRAZIER"
+      ],
+      "prediction": "Joe Frazier",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "When did the age of Imperialism begin?",
+      "prompt": "Context: The Age of Imperialism, a time period beginning around 1700, saw (generally European) industrializing nations engaging in the process of colonizing, influencing, and annexing other parts of the world in order to gain political power.[citation needed] Although imperialist practices have existed for thousands of years, the term \"Age of Imperialism\" generally refers to the activities of European powers from the early 18th century through to the middle of the 20th century, for example, the \"The Great Game\" in Persian lands, the \"Scramble for Africa\" and the \"Open Door Policy\" in China.\n\nQuestion: When did the age of Imperialism begin?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "around 1700",
+        "around 1700",
+        "1700",
+        "around 1700",
+        "1700"
+      ],
+      "prediction": "1700",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which prominent Irish Nationalist was hung for treason in 1916 due to his involvement in the Easter Uprising?",
+      "prompt": "Question: Which prominent Irish Nationalist was hung for treason in 1916 due to his involvement in the Easter Uprising?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Roger Casement"
+      ],
+      "prediction": "Thomas Clarke",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which country was founded by Muhammed Ali Jinnah?",
+      "prompt": "Question: Which country was founded by Muhammed Ali Jinnah?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Pakistan"
+      ],
+      "prediction": "Pakistan",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What is either a type of wood or an African-American magazine?",
+      "prompt": "Question: What is either a type of wood or an African-American magazine?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Ebony"
+      ],
+      "prediction": "Piano, Ebony",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "Who succeeded Prince Rainier of Monaco?",
+      "prompt": "Question: Who succeeded Prince Rainier of Monaco?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Prince Albert"
+      ],
+      "prediction": "His Highness Prince Albert II succeeded Prince Rainier III.",
+      "exact_match": false,
+      "f1": 0.3636363636363636,
+      "failed": true
+    },
+    {
+      "question": "What was the population of the Dutch Republic before this emigration?",
+      "prompt": "Context: After the revocation of the Edict of Nantes, the Dutch Republic received the largest group of Huguenot refugees, an estimated total of 75,000 to 100,000 people. Amongst them were 200 clergy. Many came from the region of the C\u00e9vennes, for instance, the village of Fraissinet-de-Loz\u00e8re. This was a huge influx as the entire population of the Dutch Republic amounted to ca. 2 million at that time. Around 1700, it is estimated that nearly 25% of the Amsterdam population was Huguenot.[citation needed] In 1705, Amsterdam and the area of West Frisia were the first areas to provide full citizens rights to Huguenot immigrants, followed by the Dutch Republic in 1715. Huguenots intermarried with Dutch from the outset.\n\nQuestion: What was the population of the Dutch Republic before this emigration?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "ca. 2 million",
+        "2 million",
+        "2 million"
+      ],
+      "prediction": "2 million",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Whose goals often still oppose the IPCC?",
+      "prompt": "Context: The IPCC process on climate change and its efficiency and success has been compared with dealings with other environmental challenges (compare Ozone depletion and global warming). In case of the Ozone depletion global regulation based on the Montreal Protocol has been successful, in case of Climate Change, the Kyoto Protocol failed. The Ozone case was used to assess the efficiency of the IPCC process. The lockstep situation of the IPCC is having built a broad science consensus while states and governments still follow different, if not opposing goals. The underlying linear model of policy-making of more knowledge we have, the better the political response will be is being doubted.\n\nQuestion: Whose goals often still oppose the IPCC?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "states and governments",
+        "states and governments",
+        "states and governments"
+      ],
+      "prediction": "States and governments",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What are the wave-particles called that mediate all electromagnetic phenomena?",
+      "prompt": "Context: However, attempting to reconcile electromagnetic theory with two observations, the photoelectric effect, and the nonexistence of the ultraviolet catastrophe, proved troublesome. Through the work of leading theoretical physicists, a new theory of electromagnetism was developed using quantum mechanics. This final modification to electromagnetic theory ultimately led to quantum electrodynamics (or QED), which fully describes all electromagnetic phenomena as being mediated by wave\u2013particles known as photons. In QED, photons are the fundamental exchange particle, which described all interactions relating to electromagnetism including the electromagnetic force.[Note 4]\n\nQuestion: What are the wave-particles called that mediate all electromagnetic phenomena?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "photons",
+        "photons",
+        "photons",
+        "photons"
+      ],
+      "prediction": "Photons",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "'Ben-Hur: A Tale of the Christ', the 1880 novel by Lew Wallace, is about a young aristocratic Jew. What is his first name?",
+      "prompt": "Question: 'Ben-Hur: A Tale of the Christ', the 1880 novel by Lew Wallace, is about a young aristocratic Jew. What is his first name?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Judah"
+      ],
+      "prediction": "Judah",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What kind of diseases do drugs target apicoplasts for?",
+      "prompt": "Context: Apicoplasts have lost all photosynthetic function, and contain no photosynthetic pigments or true thylakoids. They are bounded by four membranes, but the membranes are not connected to the endoplasmic reticulum. The fact that apicomplexans still keep their nonphotosynthetic chloroplast around demonstrates how the chloroplast carries out important functions other than photosynthesis. Plant chloroplasts provide plant cells with many important things besides sugar, and apicoplasts are no different\u2014they synthesize fatty acids, isopentenyl pyrophosphate, iron-sulfur clusters, and carry out part of the heme pathway. This makes the apicoplast an attractive target for drugs to cure apicomplexan-related diseases. The most important apicoplast function is isopentenyl pyrophosphate synthesis\u2014in fact, apicomplexans die when something interferes with this apicoplast function, and when apicomplexans are grown in an isopentenyl pyrophosphate-rich medium, they dump the organelle.\n\nQuestion: What kind of diseases do drugs target apicoplasts for?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "apicomplexan-related diseases",
+        "apicomplexan-related diseases",
+        "apicomplexan-related"
+      ],
+      "prediction": "Apicomplexan-related diseases.",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who recorded a version of the Doctor Who theme with spoken lyrics in the 1970's?",
+      "prompt": "Context: Versions of the \"Doctor Who Theme\" have also been released as pop music over the years. In the early 1970s, Jon Pertwee, who had played the Third Doctor, recorded a version of the Doctor Who theme with spoken lyrics, titled, \"Who Is the Doctor\".[note 6] In 1978 a disco version of the theme was released in the UK, Denmark and Australia by the group Mankind, which reached number 24 in the UK charts. In 1988 the band The Justified Ancients of Mu Mu (later known as The KLF) released the single \"Doctorin' the Tardis\" under the name The Timelords, which reached No. 1 in the UK and No. 2 in Australia; this version incorporated several other songs, including \"Rock and Roll Part 2\" by Gary Glitter (who recorded vocals for some of the CD-single remix versions of \"Doctorin' the Tardis\"). Others who have covered or reinterpreted the theme include Orbital, Pink Floyd, the Australian string ensemble Fourplay, New Zealand punk band Blam Blam Blam, The Pogues, Thin Lizzy, Dub Syndicate, and the comedians Bill Bailey and Mitch Benn. Both the theme and obsessive fans were satirised on The Chaser's War on Everything. The theme tune has also appeared on many compilation CDs, and has made its way into mobile-phone ringtones. Fans have also produced and distributed their own remixes of the theme. In January 2011 the Mankind version was released as a digital download on the album Gallifrey And Beyond.\n\nQuestion: Who recorded a version of the Doctor Who theme with spoken lyrics in the 1970's?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Jon Pertwee",
+        "Jon Pertwee",
+        "Jon Pertwee"
+      ],
+      "prediction": "Jon Pertwee",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "In which film does crooked computer programmer Dennis Nedry cause havoc?",
+      "prompt": "Question: In which film does crooked computer programmer Dennis Nedry cause havoc?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Jurassic Park"
+      ],
+      "prediction": "\" Jurassic Park\"",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which country was founded by Muhammed Ali Jinnah?",
+      "prompt": "Question: Which country was founded by Muhammed Ali Jinnah?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Pakistan"
+      ],
+      "prediction": "Pakistan",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What developmental network was discontinued after the shutdown of ABC1?",
+      "prompt": "Context: A second period of international expansion is linked to that of the ESPN network in the 1990s, and policies enacted in the 2000s by Disney Media Networks (which included the expansion of several of the company's U.S.-based cable networks including Disney Channel and its spinoffs Toon Disney, Playhouse Disney and Jetix; although Disney also sold its 33% stake in European sports channel Eurosport for $155 million in June 2000). In contrast to Disney's other channels, ABC is broadcast in the United States, although the network's programming is syndicated in many countries. The policy regarding wholly owned international networks was revived in 2004 when on September 27 of that year, ABC announced the launch of ABC1, a free-to-air channel in the United Kingdom owned by the ABC Group. However, on September 8, 2007, Disney announced that it would discontinue ABC1 citing to the channel's inability to attain sustainable viewership. With ABC1's shutdown that October, the company's attempt to develop ABC International were discontinued.\n\nQuestion: What developmental network was discontinued after the shutdown of ABC1?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "ABC International",
+        "ABC International",
+        "ABC International"
+      ],
+      "prediction": "Eurosport",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Hydrogen Peroxide (H2O2) is one of several different forms of what commonly named chemical agent?",
+      "prompt": "Question: Hydrogen Peroxide (H2O2) is one of several different forms of what commonly named chemical agent?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Bleach"
+      ],
+      "prediction": "Water.",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "How much of the global wealth will the wealthiest 1 percent own by 2016?",
+      "prompt": "Context: A study by the World Institute for Development Economics Research at United Nations University reports that the richest 1% of adults alone owned 40% of global assets in the year 2000. The three richest people in the world possess more financial assets than the lowest 48 nations combined. The combined wealth of the \"10 million dollar millionaires\" grew to nearly $41 trillion in 2008. A January 2014 report by Oxfam claims that the 85 wealthiest individuals in the world have a combined wealth equal to that of the bottom 50% of the world's population, or about 3.5 billion people. According to a Los Angeles Times analysis of the report, the wealthiest 1% owns 46% of the world's wealth; the 85 richest people, a small part of the wealthiest 1%, own about 0.7% of the human population's wealth, which is the same as the bottom half of the population. More recently, in January 2015, Oxfam reported that the wealthiest 1 percent will own more than half of the global wealth by 2016. An October 2014 study by Credit Suisse also claims that the top 1% now own nearly half of the world's wealth and that the accelerating disparity could trigger a recession. In October 2015, Credit Suisse published a study which shows global inequality continues to increase, and that half of the world's wealth is now in the hands of those in the top percentile, whose assets each exceed $759,900. A 2016 report by Oxfam claims that the 62 wealthiest individuals own as much wealth as the poorer half of the global population combined. Oxfam's claims have however been questioned on the basis of the methodology used: by using net wealth (adding up assets and subtracting debts), the Oxfam report, for instance, finds that there are more poor people in the United States and Western Europe than in China (due to a greater tendency to take on debts).[unreliable source?][unreliable source?] Anthony Shorrocks, the lead author of the Credit Suisse report which is one of the sources of Oxfam's data, considers the criticism about debt to be a \"silly argument\" and \"a non-issue . . . a diversion.\"\n\nQuestion: How much of the global wealth will the wealthiest 1 percent own by 2016?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "half",
+        "more than half",
+        "own more than half of the global wealth by 2016",
+        "more than half"
+      ],
+      "prediction": "50%",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which is the only marsupial to be found in North America?",
+      "prompt": "Question: Which is the only marsupial to be found in North America?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Opossum"
+      ],
+      "prediction": "Kangaroo",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "How many touchdowns did Jonathan Stewart have in 13 games?",
+      "prompt": "Context: The Panthers offense, which led the NFL in scoring (500 points), was loaded with talent, boasting six Pro Bowl selections. Pro Bowl quarterback Cam Newton had one of his best seasons, throwing for 3,837 yards and rushing for 636, while recording a career-high and league-leading 45 total touchdowns (35 passing, 10 rushing), a career-low 10 interceptions, and a career-best quarterback rating of 99.4. Newton's leading receivers were tight end Greg Olsen, who caught a career-high 77 passes for 1,104 yards and seven touchdowns, and wide receiver Ted Ginn, Jr., who caught 44 passes for 739 yards and 10 touchdowns; Ginn also rushed for 60 yards and returned 27 punts for 277 yards. Other key receivers included veteran Jerricho Cotchery (39 receptions for 485 yards), rookie Devin Funchess (31 receptions for 473 yards and five touchdowns), and second-year receiver Corey Brown (31 receptions for 447 yards). The Panthers backfield featured Pro Bowl running back Jonathan Stewart, who led the team with 989 rushing yards and six touchdowns in 13 games, along with Pro Bowl fullback Mike Tolbert, who rushed for 256 yards and caught 18 passes for another 154 yards. Carolina's offensive line also featured two Pro Bowl selections: center Ryan Kalil and guard Trai Turner.\n\nQuestion: How many touchdowns did Jonathan Stewart have in 13 games?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "six",
+        "six",
+        "six"
+      ],
+      "prediction": "6",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "How long was each Doctor Who episode in the 2005 revival series (including ads)?",
+      "prompt": "Context: The serial format changed for the 2005 revival, with each series usually consisting of 13 45-minute, self-contained episodes (60 minutes with adverts, on overseas commercial channels), and an extended episode broadcast on Christmas Day. Each series includes several standalone and multi-part stories, linked with a loose story arc that resolves in the series finale. As in the early \"classic\" era, each episode, whether standalone or part of a larger story, has its own title. Occasionally, regular-series episodes will exceed the 45-minute run time; notably, the episodes \"Journey's End\" from 2008 and \"The Eleventh Hour\" from 2010 exceeded an hour in length.\n\nQuestion: How long was each Doctor Who episode in the 2005 revival series (including ads)?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "60 minutes",
+        "45-minute",
+        "60 minutes"
+      ],
+      "prediction": "60 minutes with adverts",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "Which English cricketer had figures for bowling 10 for 53 against Australia 1956?",
+      "prompt": "Question: Which English cricketer had figures for bowling 10 for 53 against Australia 1956?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "JIM LAKER"
+      ],
+      "prediction": "Les Ames",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Complete the title of this 1970's group 'Sutherland Brothers and \u0085.'",
+      "prompt": "Question: Complete the title of this 1970's group 'Sutherland Brothers and \u0085.'\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "QUIVER"
+      ],
+      "prediction": "Sutherland Brothers and the Blue Flames",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What language did Tesla study while in school?",
+      "prompt": "Context: Tesla was the fourth of five children. He had an older brother named Dane and three sisters, Milka, Angelina and Marica. Dane was killed in a horse-riding accident when Nikola was five. In 1861, Tesla attended the \"Lower\" or \"Primary\" School in Smiljan where he studied German, arithmetic, and religion. In 1862, the Tesla family moved to Gospi\u0107, Austrian Empire, where Tesla's father worked as a pastor. Nikola completed \"Lower\" or \"Primary\" School, followed by the \"Lower Real Gymnasium\" or \"Normal School.\"\n\nQuestion: What language did Tesla study while in school?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "German",
+        "German",
+        "German"
+      ],
+      "prediction": "German, arithmetic, and religion",
+      "exact_match": false,
+      "f1": 0.4,
+      "failed": false
+    },
+    {
+      "question": "A dress worn at President John F Kennedy's birthday party at Madison Square Garden on 19 May 1962 was sold at auction in 1999 for $1.26 million. Who wore it at the party?",
+      "prompt": "Question: A dress worn at President John F Kennedy's birthday party at Madison Square Garden on 19 May 1962 was sold at auction in 1999 for $1.26 million. Who wore it at the party?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Marilyn Munroe"
+      ],
+      "prediction": "First Lady Jacqueline Kennedy Onassis wore it.",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What can lead to higher wages for members of labor organizations?",
+      "prompt": "Context: A job where there are many workers willing to work a large amount of time (high supply) competing for a job that few require (low demand) will result in a low wage for that job. This is because competition between workers drives down the wage. An example of this would be jobs such as dish-washing or customer service. Competition amongst workers tends to drive down wages due to the expendable nature of the worker in relation to his or her particular job. A job where there are few able or willing workers (low supply), but a large need for the positions (high demand), will result in high wages for that job. This is because competition between employers for employees will drive up the wage. Examples of this would include jobs that require highly developed skills, rare abilities, or a high level of risk. Competition amongst employers tends to drive up wages due to the nature of the job, since there is a relative shortage of workers for the particular position. Professional and labor organizations may limit the supply of workers which results in higher demand and greater incomes for members. Members may also receive higher wages through collective bargaining, political influence, or corruption.\n\nQuestion: What can lead to higher wages for members of labor organizations?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "collective bargaining, political influence, or corruption",
+        "collective bargaining, political influence, or corruption",
+        "collective bargaining, political influence, or corruption"
+      ],
+      "prediction": "Labor organizations can limit supply, increase demand, and influence wages through collective bargaining, political influence, or corruption.",
+      "exact_match": false,
+      "f1": 0.5217391304347826,
+      "failed": false
+    },
+    {
+      "question": "Approximately how many architectural photographs does the V&A hold in its collection?",
+      "prompt": "Context: In 2004, the V&A alongside Royal Institute of British Architects opened the first permanent gallery in the UK covering the history of architecture with displays using models, photographs, elements from buildings and original drawings. With the opening of the new gallery, the RIBA Drawings and Archives Collection has been transferred to the museum, joining the already extensive collection held by the V&A. With over 600,000 drawings, over 750,000 papers and paraphernalia, and over 700,000 photographs from around the world, together they form the world's most comprehensive architectural resource.\n\nQuestion: Approximately how many architectural photographs does the V&A hold in its collection?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "over 700,000",
+        "over 700,000",
+        "700,000"
+      ],
+      "prediction": "Over 700,000",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "On which island are the Cuillin Hills?",
+      "prompt": "Question: On which island are the Cuillin Hills?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "The Isle of Skye"
+      ],
+      "prediction": "Isle of Skye",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "In what year was it declared that no Roman numerals would be used in the name of the 50th Super Bowl?",
+      "prompt": "Context: On June 4, 2014, the NFL announced that the practice of branding Super Bowl games with Roman numerals, a practice established at Super Bowl V, would be temporarily suspended, and that the game would be named using Arabic numerals as Super Bowl 50 as opposed to Super Bowl L. The use of Roman numerals will be reinstated for Super Bowl LI. Jaime Weston, the league's vice president of brand and creative, explained that a primary reason for the change was the difficulty of designing an aesthetically pleasing logo with the letter \"L\" using the standardized logo template introduced at Super Bowl XLV. The logo also deviates from the template by featuring large numerals, colored in gold, behind the Vince Lombardi Trophy, instead of underneath and in silver as in the standard logo.\n\nQuestion: In what year was it declared that no Roman numerals would be used in the name of the 50th Super Bowl?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "2014",
+        "2014",
+        "2014"
+      ],
+      "prediction": "2014",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "An American aided coup in Chile in 1973, deposed which President?",
+      "prompt": "Question: An American aided coup in Chile in 1973, deposed which President?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "SALVADOR ALLENDE"
+      ],
+      "prediction": "Allende",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "Which Bond villain has been played by Telly Savalas, Donald Pleasance, Charles Gray, and Max Von Sydow?",
+      "prompt": "Question: Which Bond villain has been played by Telly Savalas, Donald Pleasance, Charles Gray, and Max Von Sydow?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "BLOFELD"
+      ],
+      "prediction": "The Count",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "How many legs (including arms or pincers according to certain definitions) does a crab have?",
+      "prompt": "Question: How many legs (including arms or pincers according to certain definitions) does a crab have?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "10"
+      ],
+      "prediction": "14",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "According to Sammy Haggar, what can't he drive?",
+      "prompt": "Question: According to Sammy Haggar, what can't he drive?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "55"
+      ],
+      "prediction": "Trains.",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What is floridean?",
+      "prompt": "Context: Rhodoplasts have a double membrane with an intermembrane space and phycobilin pigments organized into phycobilisomes on the thylakoid membranes, preventing their thylakoids from stacking. Some contain pyrenoids. Rhodoplasts have chlorophyll a and phycobilins for photosynthetic pigments; the phycobilin phycoerytherin is responsible for giving many red algae their distinctive red color. However, since they also contain the blue-green chlorophyll a and other pigments, many are reddish to purple from the combination. The red phycoerytherin pigment is an adaptation to help red algae catch more sunlight in deep water\u2014as such, some red algae that live in shallow water have less phycoerytherin in their rhodoplasts, and can appear more greenish. Rhodoplasts synthesize a form of starch called floridean, which collects into granules outside the rhodoplast, in the cytoplasm of the red alga.\n\nQuestion: What is floridean?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "a form of starch",
+        "a form of starch",
+        "a form of starch"
+      ],
+      "prediction": "Floridean is a form of starch synthesized by rhodoplasts, collected into granules outside the rhodoplast in the cytoplasm of red",
+      "exact_match": false,
+      "f1": 0.3,
+      "failed": true
+    },
+    {
+      "question": "What has Islamism been increasingly interdependent with following the Arab Spring?",
+      "prompt": "Context: Another major division within Islamism is between what Graham E. Fuller has described as the fundamentalist \"guardians of the tradition\" (Salafis, such as those in the Wahhabi movement) and the \"vanguard of change and Islamic reform\" centered around the Muslim Brotherhood. Olivier Roy argues that \"Sunni pan-Islamism underwent a remarkable shift in the second half of the 20th century\" when the Muslim Brotherhood movement and its focus on Islamisation of pan-Arabism was eclipsed by the Salafi movement with its emphasis on \"sharia rather than the building of Islamic institutions,\" and rejection of Shia Islam. Following the Arab Spring, Roy has described Islamism as \"increasingly interdependent\" with democracy in much of the Arab Muslim world, such that \"neither can now survive without the other.\" While Islamist political culture itself may not be democratic, Islamists need democratic elections to maintain their legitimacy. At the same time, their popularity is such that no government can call itself democratic that excludes mainstream Islamist groups.\n\nQuestion: What has Islamism been increasingly interdependent with following the Arab Spring?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "democracy",
+        "democracy",
+        "democracy"
+      ],
+      "prediction": "Democracy",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What is the Latin name for Black Death?",
+      "prompt": "Context: Gasquet (1908) claimed that the Latin name atra mors (Black Death) for the 14th-century epidemic first appeared in modern times in 1631 in a book on Danish history by J.I. Pontanus: \"Vulgo & ab effectu atram mortem vocatibant. (\"Commonly and from its effects, they called it the black death\"). The name spread through Scandinavia and then Germany, gradually becoming attached to the mid 14th-century epidemic as a proper name. In England, it was not until 1823 that the medieval epidemic was first called the Black Death.\n\nQuestion: What is the Latin name for Black Death?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "atra mors",
+        "atra mors",
+        "atra mors"
+      ],
+      "prediction": "Atra mors",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "How did William Shirley feel about French advancement?",
+      "prompt": "Context: In his extensively detailed report, C\u00e9loron wrote, \"All I can say is that the Natives of these localities are very badly disposed towards the French, and are entirely devoted to the English. I don't know in what way they could be brought back.\" Even before his return to Montreal, reports on the situation in the Ohio Country were making their way to London and Paris, each side proposing that action be taken. William Shirley, the expansionist governor of the Province of Massachusetts Bay, was particularly forceful, stating that British colonists would not be safe as long as the French were present. Conflicts between the colonies, accomplished through raiding parties that included Indian allies, had taken place for decades, leading to a brisk trade in European colonial captives from either side.\n\nQuestion: How did William Shirley feel about French advancement?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "British colonists would not be safe as long as the French were present",
+        "British colonists would not be safe",
+        "British colonists would not be safe as long as the French were present",
+        "British colonists would not be safe",
+        "forceful"
+      ],
+      "prediction": "Shirley was forceful in opposing French advancement.",
+      "exact_match": false,
+      "f1": 0.25,
+      "failed": true
+    },
+    {
+      "question": "Who first proved Bertrand's postulate?",
+      "prompt": "Context: are prime for any natural number n. Here  represents the floor function, i.e., largest integer not greater than the number in question. The latter formula can be shown using Bertrand's postulate (proven first by Chebyshev), which states that there always exists at least one prime number p with n < p < 2n \u2212 2, for any natural number n > 3. However, computing A or \u03bc requires the knowledge of infinitely many primes to begin with. Another formula is based on Wilson's theorem and generates the number 2 many times and all other primes exactly once.\n\nQuestion: Who first proved Bertrand's postulate?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Chebyshev",
+        "Chebyshev",
+        "Chebyshev",
+        "Chebyshev",
+        "Chebyshev"
+      ],
+      "prediction": "Chebyshev",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Metz is the capital of which region of France?",
+      "prompt": "Question: Metz is the capital of which region of France?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Lorraine"
+      ],
+      "prediction": "Alsace",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "The Old Faithful geyser is in which American national park?",
+      "prompt": "Question: The Old Faithful geyser is in which American national park?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Yellowstone"
+      ],
+      "prediction": "Yellowstone National Park",
+      "exact_match": false,
+      "f1": 0.5,
+      "failed": false
+    },
+    {
+      "question": "What was he studying that gave him the teleforce weapon idea?",
+      "prompt": "Context: Later in life, Tesla made claims concerning a \"teleforce\" weapon after studying the Van de Graaff generator. The press variably referred to it as a \"peace ray\" or death ray. Tesla described the weapon as capable of being used against ground-based infantry or for anti-aircraft purposes.\n\nQuestion: What was he studying that gave him the teleforce weapon idea?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Van de Graaff generator",
+        "the Van de Graaff generator",
+        "the Van de Graaff generator"
+      ],
+      "prediction": "Van de Graaff generator",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who do gurus control?",
+      "prompt": "Context: In Hinduism the spiritual teacher is known as a guru, and, in many traditions of Hinduism - especially those common in the West - the emphasis on spiritual mentorship is extremely high, with gurus often exercising a great deal of control over the lives of their disciples.\n\nQuestion: Who do gurus control?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "their disciples",
+        "lives of their disciples",
+        "disciples"
+      ],
+      "prediction": "The lives of their disciples.",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What does Luther's hymn Christ unser Herr zum jordan kam concern?",
+      "prompt": "Context: Luther's 1541 hymn \"Christ unser Herr zum Jordan kam\" (\"To Jordan came the Christ our Lord\") reflects the structure and substance of his questions and answers concerning baptism in the Small Catechism. Luther adopted a preexisting Johann Walter tune associated with a hymnic setting of Psalm 67's prayer for grace; Wolf Heintz's four-part setting of the hymn was used to introduce the Lutheran Reformation in Halle in 1541. Preachers and composers of the 18th century, including J. S. Bach, used this rich hymn as a subject for their own work, although its objective baptismal theology was displaced by more subjective hymns under the influence of late-19th-century Lutheran pietism.\n\nQuestion: What does Luther's hymn Christ unser Herr zum jordan kam concern?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "baptism",
+        "baptism",
+        "baptism"
+      ],
+      "prediction": "Luther's hymn \"Christ unser Herr zum Jordan kam\" concerns baptism.",
+      "exact_match": false,
+      "f1": 0.18181818181818182,
+      "failed": true
+    },
+    {
+      "question": "What was Tesla's idea regarding Earth?",
+      "prompt": "Context: Tesla investigated atmospheric electricity, observing lightning signals via his receivers. He stated that he observed stationary waves during this time. The great distances and the nature of what Tesla was detecting from lightning storms confirmed his belief that the earth had a resonant frequency.\n\nQuestion: What was Tesla's idea regarding Earth?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "that the earth had a resonant frequency.",
+        "the earth had a resonant frequency",
+        "earth had a resonant frequency"
+      ],
+      "prediction": "Tesla believed Earth had a resonant frequency.",
+      "exact_match": false,
+      "f1": 0.8,
+      "failed": false
+    },
+    {
+      "question": "What will a pharmacist who passes the ambulatory pharmacist exam be called?",
+      "prompt": "Context: In the U.S. federal health care system (including the VA, the Indian Health Service, and NIH) ambulatory care pharmacists are given full independent prescribing authority. In some states such North Carolina and New Mexico these pharmacist clinicians are given collaborative prescriptive and diagnostic authority. In 2011 the board of Pharmaceutical Specialties approved ambulatory care pharmacy practice as a separate board certification. The official designation for pharmacists who pass the ambulatory care pharmacy specialty certification exam will be Board Certified Ambulatory Care Pharmacist and these pharmacists will carry the initials BCACP.\n\nQuestion: What will a pharmacist who passes the ambulatory pharmacist exam be called?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Board Certified Ambulatory Care Pharmacist",
+        "Board Certified Ambulatory Care Pharmacist",
+        "Board Certified Ambulatory Care Pharmacist"
+      ],
+      "prediction": "Board Certified Ambulatory Care Pharmacist",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What coach left the Broncos after the season prior to Super Bowl 50?",
+      "prompt": "Context: Following their loss in the divisional round of the previous season's playoffs, the Denver Broncos underwent numerous coaching changes, including a mutual parting with head coach John Fox (who had won four divisional championships in his four years as Broncos head coach), and the hiring of Gary Kubiak as the new head coach. Under Kubiak, the Broncos planned to install a run-oriented offense with zone blocking to blend in with quarterback Peyton Manning's shotgun passing skills, but struggled with numerous changes and injuries to the offensive line, as well as Manning having his worst statistical season since his rookie year with the Indianapolis Colts in 1998, due to a plantar fasciitis injury in his heel that he had suffered since the summer, and the simple fact that Manning was getting old, as he turned 39 in the 2015 off-season. Although the team had a 7\u20130 start, Manning led the NFL in interceptions. In week 10, Manning suffered a partial tear of the plantar fasciitis in his left foot. He set the NFL's all-time record for career passing yards in this game, but was benched after throwing four interceptions in favor of backup quarterback Brock Osweiler, who took over as the starter for most of the remainder of the regular season. Osweiler was injured, however, leading to Manning's return during the Week 17 regular season finale, where the Broncos were losing 13\u20137 against the 4\u201311 San Diego Chargers, resulting in Manning re-claiming the starting quarterback position for the playoffs by leading the team to a key 27\u201320 win that enabled the team to clinch the number one overall AFC seed. Under defensive coordinator Wade Phillips, the Broncos' defense ranked number one in total yards allowed, passing yards allowed and sacks, and like the previous three seasons, the team has continued to set numerous individual, league and franchise records. With the defense carrying the team despite the issues with the offense, the Broncos finished the regular season with a 12\u20134 record and earned home-field advantage throughout the AFC playoffs.\n\nQuestion: What coach left the Broncos after the season prior to Super Bowl 50?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "John Fox",
+        "John Fox",
+        "Fox"
+      ],
+      "prediction": "John Fox",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "A sequence of numbers beginning 0, 1, in which each number is the sum of the previous two numbers is named after what Italian mathematician who devised the system?",
+      "prompt": "Question: A sequence of numbers beginning 0, 1, in which each number is the sum of the previous two numbers is named after what Italian mathematician who devised the system?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Fibonacci"
+      ],
+      "prediction": "Fibonacci",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What is retrograde signaling?",
+      "prompt": "Context: Chloroplasts can serve as cellular sensors. After detecting stress in a cell, which might be due to a pathogen, chloroplasts begin producing molecules like salicylic acid, jasmonic acid, nitric oxide and reactive oxygen species which can serve as defense-signals. As cellular signals, reactive oxygen species are unstable molecules, so they probably don't leave the chloroplast, but instead pass on their signal to an unknown second messenger molecule. All these molecules initiate retrograde signaling\u2014signals from the chloroplast that regulate gene expression in the nucleus.\n\nQuestion: What is retrograde signaling?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "signals from the chloroplast that regulate gene expression in the nucleus",
+        "signals from the chloroplast that regulate gene expression",
+        "signals from the chloroplast that regulate gene expression in the nucleus"
+      ],
+      "prediction": "Signals from the chloroplast that regulate gene expression in the nucleus.",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which British-American actress died on 23rd March 2011, aged 79?",
+      "prompt": "Question: Which British-American actress died on 23rd March 2011, aged 79?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Elizabeth Taylor"
+      ],
+      "prediction": "Julie Andrews",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What is each section of ten beads on a rosary called?",
+      "prompt": "Question: What is each section of ten beads on a rosary called?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Decade"
+      ],
+      "prediction": "Prayer bead",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "In what event did Bruce Jenner win a gold medal at the 1976 Olympics?",
+      "prompt": "Question: In what event did Bruce Jenner win a gold medal at the 1976 Olympics?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Decathlon"
+      ],
+      "prediction": "Bruce Jenner won a gold medal in the decathlon at the 1976 Olympics.",
+      "exact_match": false,
+      "f1": 0.18181818181818182,
+      "failed": true
+    },
+    {
+      "question": "How were Dr Stantz, Dr Spengler and Dr Venkman better known in the 1980's?",
+      "prompt": "Question: How were Dr Stantz, Dr Spengler and Dr Venkman better known in the 1980's?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Ghostbusters"
+      ],
+      "prediction": "The X-Files characters.",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What tool is used in corporal punishment?",
+      "prompt": "Context: 30 US states have banned corporal punishment, the others (mostly in the South) have not. It is still used to a significant (though declining) degree in some public schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee and Texas. Private schools in these and most other states may also use it. Corporal punishment in American schools is administered to the seat of the student's trousers or skirt with a specially made wooden paddle. This often used to take place in the classroom or hallway, but nowadays the punishment is usually given privately in the principal's office.\n\nQuestion: What tool is used in corporal punishment?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "a specially made wooden paddle",
+        "wooden paddle",
+        "wooden paddle"
+      ],
+      "prediction": "Wooden paddle",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who is the protagonist and narrator of Robert Louis Stevenson's novels 'Kidnapped' and 'Catriona'?",
+      "prompt": "Question: Who is the protagonist and narrator of Robert Louis Stevenson's novels 'Kidnapped' and 'Catriona'?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "'DAVID BALFOUR'"
+      ],
+      "prediction": "Peter MacNiel",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Who played Grandad in the UK television series \u2018Only Fools and Horses\u2019?",
+      "prompt": "Question: Who played Grandad in the UK television series \u2018Only Fools and Horses\u2019?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Lennard Pearce"
+      ],
+      "prediction": "Bill Nighy",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "In medicine, if something is subcutaneous it is applied or located under which organ of the body?",
+      "prompt": "Question: In medicine, if something is subcutaneous it is applied or located under which organ of the body?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Skin"
+      ],
+      "prediction": "skin",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Major asshat Idi Amin Dada was the president of what African nation from 1971 to 1979?",
+      "prompt": "Question: Major asshat Idi Amin Dada was the president of what African nation from 1971 to 1979?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Uganda"
+      ],
+      "prediction": "Uganda",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which rider won the ladies European Three Day event Championship at Burghley in 1971?",
+      "prompt": "Question: Which rider won the ladies European Three Day event Championship at Burghley in 1971?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "PRINCESS ANNE"
+      ],
+      "prediction": "Mary King",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which boxing champion had the nickname 'Hit-Man'?",
+      "prompt": "Question: Which boxing champion had the nickname 'Hit-Man'?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "THOMAS HEARNS"
+      ],
+      "prediction": "Muhammad Ali",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which English cricketer had figures for bowling 10 for 53 against Australia 1956?",
+      "prompt": "Question: Which English cricketer had figures for bowling 10 for 53 against Australia 1956?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "JIM LAKER"
+      ],
+      "prediction": "Les Ames",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Where were Persians more successful compared to Chinese in the Yuan?",
+      "prompt": "Context: Politically, the system of government created by Kublai Khan was the product of a compromise between Mongolian patrimonial feudalism and the traditional Chinese autocratic-bureaucratic system. Nevertheless, socially the educated Chinese elite were in general not given the degree of esteem that they had been accorded previously under native Chinese dynasties. Although the traditional Chinese elite were not given their share of power, the Mongols and the Semuren (various allied groups from Central Asia and the western end of the empire) largely remained strangers to the mainstream Chinese culture, and this dichotomy gave the Yuan regime a somewhat strong \"colonial\" coloration. The unequal treatment is possibly due to the fear of transferring power to the ethnic Chinese under their rule. The Mongols and Semuren were given certain advantages in the dynasty, and this would last even after the restoration of the imperial examination in the early 14th century. In general there were very few North Chinese or Southerners reaching the highest-post in the government compared with the possibility that Persians did so in the Ilkhanate. Later the Yongle Emperor of the Ming dynasty also mentioned the discrimination that existed during the Yuan dynasty. In response to an objection against the use of \"barbarians\" in his government, the Yongle Emperor answered: \"... Discrimination was used by the Mongols during the Yuan dynasty, who employed only \"Mongols and Tartars\" and discarded northern and southern Chinese and this was precisely the cause that brought disaster upon them\".\n\nQuestion: Where were Persians more successful compared to Chinese in the Yuan?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Ilkhanate",
+        "Ilkhanate",
+        "reaching the highest-post in the government"
+      ],
+      "prediction": "Persians were more successful in government posts compared to Chinese.",
+      "exact_match": false,
+      "f1": 0.28571428571428575,
+      "failed": true
+    },
+    {
+      "question": "How did Morgan react to the request?",
+      "prompt": "Context: Tesla later approached Morgan to ask for more funds to build a more powerful transmitter. When asked where all the money had gone, Tesla responded by saying that he was affected by the Panic of 1901, which he (Morgan) had caused. Morgan was shocked by the reminder of his part in the stock market crash and by Tesla's breach of contract by asking for more funds. Tesla wrote another plea to Morgan, but it was also fruitless. Morgan still owed Tesla money on the original agreement, and Tesla had been facing foreclosure even before construction of the tower began.\n\nQuestion: How did Morgan react to the request?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "shocked",
+        "shocked",
+        "shocked by the reminder of his part in the stock market crash and by Tesla's breach of contract"
+      ],
+      "prediction": "Morgan was shocked and reacted negatively.",
+      "exact_match": false,
+      "f1": 0.2857142857142857,
+      "failed": true
+    },
+    {
+      "question": "The name of which chemical element, with the symbol 'Rh', is derived from the Greek word for 'rose'?",
+      "prompt": "Question: The name of which chemical element, with the symbol 'Rh', is derived from the Greek word for 'rose'?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "RHODIUM"
+      ],
+      "prediction": "Rhodium",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who has the record of being the oldest quarter back in any Super Bowl game?",
+      "prompt": "Context: Peyton Manning became the first quarterback ever to lead two different teams to multiple Super Bowls. He is also the oldest quarterback ever to play in a Super Bowl at age 39. The past record was held by John Elway, who led the Broncos to victory in Super Bowl XXXIII at age 38 and is currently Denver's Executive Vice President of Football Operations and General Manager.\n\nQuestion: Who has the record of being the oldest quarter back in any Super Bowl game?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Peyton Manning",
+        "Peyton Manning",
+        "Manning",
+        "Manning"
+      ],
+      "prediction": "John Elway",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "At what temperature will oxygen condense?",
+      "prompt": "Context: Oxygen condenses at 90.20 K (\u2212182.95 \u00b0C, \u2212297.31 \u00b0F), and freezes at 54.36 K (\u2212218.79 \u00b0C, \u2212361.82 \u00b0F). Both liquid and solid O\n2 are clear substances with a light sky-blue color caused by absorption in the red (in contrast with the blue color of the sky, which is due to Rayleigh scattering of blue light). High-purity liquid O\n2 is usually obtained by the fractional distillation of liquefied air. Liquid oxygen may also be produced by condensation out of air, using liquid nitrogen as a coolant. It is a highly reactive substance and must be segregated from combustible materials.\n\nQuestion: At what temperature will oxygen condense?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "90.20 K",
+        "90.20 K",
+        "90.20 K (\u2212182.95 \u00b0C, \u2212297.31 \u00b0F)",
+        "90.20 K",
+        "90.20 K (\u2212182.95 \u00b0C, \u2212297.31 \u00b0F)"
+      ],
+      "prediction": "90.20 K",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which major computer language shares it's name with an Indonesian Island ?",
+      "prompt": "Question: Which major computer language shares it's name with an Indonesian Island ?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "JAVA"
+      ],
+      "prediction": "Java",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "After 23 years on the air, America's Most Wanted will be winding down. Who has been the host of the series since its inception?",
+      "prompt": "Question: After 23 years on the air, America's Most Wanted will be winding down. Who has been the host of the series since its inception?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "John Walsh"
+      ],
+      "prediction": "Tom Kalil",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Who may seek changes or exemptions in the law that governs the land where the building will be built?",
+      "prompt": "Context: The project must adhere to zoning and building code requirements. Constructing a project that fails to adhere to codes does not benefit the owner. Some legal requirements come from malum in se considerations, or the desire to prevent things that are indisputably bad \u2013 bridge collapses or explosions. Other legal requirements come from malum prohibitum considerations, or things that are a matter of custom or expectation, such as isolating businesses to a business district and residences to a residential district. An attorney may seek changes or exemptions in the law that governs the land where the building will be built, either by arguing that a rule is inapplicable (the bridge design will not cause a collapse), or that the custom is no longer needed (acceptance of live-work spaces has grown in the community).\n\nQuestion: Who may seek changes or exemptions in the law that governs the land where the building will be built?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "An attorney",
+        "attorney",
+        "An attorney"
+      ],
+      "prediction": "An attorney.",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What is the name of another algorithm useful for conveniently testing the primality of large numbers? ",
+      "prompt": "Context: The property of being prime (or not) is called primality. A simple but slow method of verifying the primality of a given number n is known as trial division. It consists of testing whether n is a multiple of any integer between 2 and . Algorithms much more efficient than trial division have been devised to test the primality of large numbers. These include the Miller\u2013Rabin primality test, which is fast but has a small probability of error, and the AKS primality test, which always produces the correct answer in polynomial time but is too slow to be practical. Particularly fast methods are available for numbers of special forms, such as Mersenne numbers. As of January 2016[update], the largest known prime number has 22,338,618 decimal digits.\n\nQuestion: What is the name of another algorithm useful for conveniently testing the primality of large numbers? \n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "the AKS primality test",
+        "AKS primality test",
+        "AKS primality test",
+        "AKS primality test",
+        "AKS primality test"
+      ],
+      "prediction": "AKS primality test",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What stadium did Super Bowl 50 take place in?",
+      "prompt": "Context: Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24\u201310 to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California. As this was the 50th Super Bowl, the league emphasized the \"golden anniversary\" with various gold-themed initiatives, as well as temporarily suspending the tradition of naming each Super Bowl game with Roman numerals (under which the game would have been known as \"Super Bowl L\"), so that the logo could prominently feature the Arabic numerals 50.\n\nQuestion: What stadium did Super Bowl 50 take place in?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Levi's Stadium",
+        "Levi's Stadium",
+        "Levi's Stadium"
+      ],
+      "prediction": "Levi's Stadium",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What name is shared by a former Manchester City FC manager (1965-1971) and a champion flat jockey who used to ride for the Queen?",
+      "prompt": "Question: What name is shared by a former Manchester City FC manager (1965-1971) and a champion flat jockey who used to ride for the Queen?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Joe Mercer"
+      ],
+      "prediction": "Neville Barnet",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "The English football team played the World Cup Final in 1966 in what coloured shirts?",
+      "prompt": "Question: The English football team played the World Cup Final in 1966 in what coloured shirts?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Red"
+      ],
+      "prediction": "Red shirts",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "When do Plastoglobuli occur in linked groups?",
+      "prompt": "Context: Plastoglobuli were once thought to be free-floating in the stroma, but it is now thought that they are permanently attached either to a thylakoid or to another plastoglobulus attached to a thylakoid, a configuration that allows a plastoglobulus to exchange its contents with the thylakoid network. In normal green chloroplasts, the vast majority of plastoglobuli occur singularly, attached directly to their parent thylakoid. In old or stressed chloroplasts, plastoglobuli tend to occur in linked groups or chains, still always anchored to a thylakoid.\n\nQuestion: When do Plastoglobuli occur in linked groups?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "In old or stressed chloroplasts",
+        "In old or stressed chloroplasts",
+        "In old or stressed chloroplasts"
+      ],
+      "prediction": "In old or stressed chloroplasts.",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What was found to be at fault for the fire in the cabin on Apollo 1 regarding the CM design?",
+      "prompt": "Context: NASA immediately convened an accident review board, overseen by both houses of Congress. While the determination of responsibility for the accident was complex, the review board concluded that \"deficiencies existed in Command Module design, workmanship and quality control.\" At the insistence of NASA Administrator Webb, North American removed Harrison Storms as Command Module program manager. Webb also reassigned Apollo Spacecraft Program Office (ASPO) Manager Joseph Francis Shea, replacing him with George Low.\n\nQuestion: What was found to be at fault for the fire in the cabin on Apollo 1 regarding the CM design?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "deficiencies",
+        "workmanship and quality control",
+        "deficiencies existed in Command Module design, workmanship and quality control",
+        "\"deficiencies existed in Command Module design, workmanship and quality control.\""
+      ],
+      "prediction": "Deficiencies in Command Module design",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "Goldenson proposed a merger between UPT and what network in October 1954?",
+      "prompt": "Context: However, a problem emerged regarding the directions taken by ABC and UPT. In 1950, Noble appointed Robert Kintner to be ABC's president while he himself served as its CEO, a position he would hold until his death in 1958. Despite the promise of non-interference between ABC and UPT, Goldenson had to intervene in ABC's decisions because of financial problems and the FCC's long period of indecision. Goldenson added to the confusion when, in October 1954, he proposed a merger between UPT and the DuMont Television Network, which was also mired in financial trouble. As part of this merger, the network would have been renamed \"ABC-DuMont\" for five years, and DuMont would have received $5 million in cash, room on the schedule for existing DuMont programming, and guaranteed advertising time for DuMont Laboratories receivers. In addition, to comply with FCC ownership restrictions, it would have been required to sell either WABC-TV or DuMont owned-and-operated station WABD in the New York City market, as well as two other stations. The merged ABC-DuMont would have had the resources to compete with CBS and NBC.\n\nQuestion: Goldenson proposed a merger between UPT and what network in October 1954?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "DuMont Television Network",
+        "DuMont Television Network",
+        "DuMont Television Network"
+      ],
+      "prediction": "DuMont Television Network",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "In children's TV by what name is Sir Topham Hatt better known",
+      "prompt": "Question: In children's TV by what name is Sir Topham Hatt better known\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "The Fat Controller"
+      ],
+      "prediction": "Mr. Bowleg",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What area did the Westwood One broadcast cover?",
+      "prompt": "Context: Westwood One will carry the game throughout North America, with Kevin Harlan as play-by-play announcer, Boomer Esiason and Dan Fouts as color analysts, and James Lofton and Mark Malone as sideline reporters. Jim Gray will anchor the pre-game and halftime coverage.\n\nQuestion: What area did the Westwood One broadcast cover?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "North America",
+        "North America",
+        "North America"
+      ],
+      "prediction": "North America",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "In the United States the UMC ranks as the largest what?",
+      "prompt": "Context: The United Methodist Church is the largest denomination within the wider Methodist movement, which has approximately 80 million adherents across the world. In the United States, the UMC ranks as the largest mainline Protestant denomination, the largest Protestant church after the Southern Baptist Convention, and the third largest Christian denomination. As of 2014, worldwide membership was about 12 million: 7.2 million in the United States, and 4.4 million in Africa, Asia and Europe. It is a member of the World Council of Churches, the World Methodist Council, and other religious associations. In 2015, Pew Research estimated that 3.6% of the U.S population, or 9 million adult adherents, self-identify with the United Methodist Church revealing a much larger number of adherents than registered membership.\n\nQuestion: In the United States the UMC ranks as the largest what?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "mainline Protestant denomination",
+        "Protestant denomination",
+        "mainline Protestant denomination"
+      ],
+      "prediction": "mainline Protestant denomination",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What do the Treaties generally limit?",
+      "prompt": "Context: While the concept of a \"social market economy\" was only introduced into EU law in 2007, free movement and trade were central to European development since the Treaty of Rome 1957. According to the standard theory of comparative advantage, two countries can both benefit from trade even if one of them has a less productive economy in all respects. Like in other regional organisations such as the North American Free Trade Association, or the World Trade Organisation, breaking down barriers to trade, and enhancing free movement of goods, services, labour and capital, is meant to reduce consumer prices. It was originally theorised that a free trade area had a tendency to give way to a customs union, which led to a common market, then monetary union, then union of monetary and fiscal policy, political and eventually a full union characteristic of a federal state. In Europe, however, those stages were considerably mixed, and it remains unclear whether the \"endgame\" should be the same as a state, traditionally understood. In practice free trade, without standards to ensure fair trade, can benefit some people and groups within countries (particularly big business) much more than others, but will burden people who lack bargaining power in an expanding market, particularly workers, consumers, small business, developing industries, and communities. The Treaty on the Functioning of the European Union articles 28 to 37 establish the principle of free movement of goods in the EU, while articles 45 to 66 require free movement of persons, services and capital. These so-called \"four freedoms\" were thought to be inhibited by physical barriers (e.g. customs), technical barriers (e.g. differing laws on safety, consumer or environmental standards) and fiscal barriers (e.g. different Value Added Tax rates). The tension in the law is that the free movement and trade is not supposed to spill over into a licence for unrestricted commercial profit. The Treaties limit free trade, to prioritise other values such as public health, consumer protection, labour rights, fair competition, and environmental improvement. Increasingly the Court of Justice has taken the view that the specific goals of free trade are underpinned by the general aims of the treaty for improvement of people's well being.\n\nQuestion: What do the Treaties generally limit?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "free trade",
+        "free trade",
+        "free trade"
+      ],
+      "prediction": "Free trade.",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Acessing the Amazon rainforest was restricted before what era?",
+      "prompt": "Context: Deforestation is the conversion of forested areas to non-forested areas. The main sources of deforestation in the Amazon are human settlement and development of the land. Prior to the early 1960s, access to the forest's interior was highly restricted, and the forest remained basically intact. Farms established during the 1960s were based on crop cultivation and the slash and burn method. However, the colonists were unable to manage their fields and the crops because of the loss of soil fertility and weed invasion. The soils in the Amazon are productive for just a short period of time, so farmers are constantly moving to new areas and clearing more land. These farming practices led to deforestation and caused extensive environmental damage. Deforestation is considerable, and areas cleared of forest are visible to the naked eye from outer space.\n\nQuestion: Acessing the Amazon rainforest was restricted before what era?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "the early 1960s",
+        "early 1960s",
+        "1960s"
+      ],
+      "prediction": "1960s",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "When did a plague-ridden ship land in Norway?",
+      "prompt": "Context: From Italy, the disease spread northwest across Europe, striking France, Spain, Portugal and England by June 1348, then turned and spread east through Germany and Scandinavia from 1348 to 1350. It was introduced in Norway in 1349 when a ship landed at Ask\u00f8y, then spread to Bj\u00f8rgvin (modern Bergen) and Iceland. Finally it spread to northwestern Russia in 1351. The plague was somewhat less common in parts of Europe that had smaller trade relations with their neighbours, including the Kingdom of Poland, the majority of the Basque Country, isolated parts of Belgium and the Netherlands, and isolated alpine villages throughout the continent.\n\nQuestion: When did a plague-ridden ship land in Norway?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "1349",
+        "1349",
+        "1349"
+      ],
+      "prediction": "1349",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "In November 2008, RMS Queen Elizabeth II will depart Southamptonon her last voyage. To which city will she travel?",
+      "prompt": "Question: In November 2008, RMS Queen Elizabeth II will depart Southamptonon her last voyage. To which city will she travel?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "DUBAI"
+      ],
+      "prediction": "New York City",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "United Nations Day is celebrated during which month of the year?",
+      "prompt": "Question: United Nations Day is celebrated during which month of the year?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "October"
+      ],
+      "prediction": "October",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What do some Mongolians feel non-Mongolian historians exaggerate about Genghis Khan?",
+      "prompt": "Context: In the early 1990s the memory of Genghis Khan with the Mongolian national identity has had a powerful revival partly because of his perception during the Mongolian People's Republic period. Genghis Khan became one of the central figures of the national identity. He is looked upon positively by Mongolians for his role in uniting warring tribes. For example, it is not uncommon for Mongolians to refer to their country as \"Genghis Khan's Mongolia\", to themselves as \"Genghis Khan's children\", and to Genghis Khan as the \"father of the Mongols\" especially among the younger generation. However, there is a chasm in the perception of his brutality. Mongolians maintain that the historical records written by non-Mongolians are unfairly biased against Genghis Khan and that his butchery is exaggerated, while his positive role is underrated.\n\nQuestion: What do some Mongolians feel non-Mongolian historians exaggerate about Genghis Khan?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "his brutality",
+        "butchery",
+        "his butchery"
+      ],
+      "prediction": "Butchery",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What was the name of Sir Fred Hoyles theory, an alternative to the Big Bang, that said that there was continuous creation of matter between galaxies, so that as galaxies get further apart, new ones develop between them?",
+      "prompt": "Question: What was the name of Sir Fred Hoyles theory, an alternative to the Big Bang, that said that there was continuous creation of matter between galaxies, so that as galaxies get further apart, new ones develop between them?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Steady state"
+      ],
+      "prediction": "Hawking-Screen Theory",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "From which planet did Dan Dare's enemy The Mekon come?",
+      "prompt": "Question: From which planet did Dan Dare's enemy The Mekon come?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "VENUS"
+      ],
+      "prediction": "Venus",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "\"Who starred in and directed the 2004 movie \"\"Beyond the Sea\"\"?\"",
+      "prompt": "Question: \"Who starred in and directed the 2004 movie \"\"Beyond the Sea\"\"?\"\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Kevin Spacey"
+      ],
+      "prediction": "Brad Pitt, Ang Lee",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Where did the congregation at St. George's initially meet in 1767?",
+      "prompt": "Context: St. George's United Methodist Church, located at the corner of 4th and New Streets, in the Old City neighborhood of Philadelphia, is the oldest Methodist church in continuous use in the United States, beginning in 1769. The congregation was founded in 1767, meeting initially in a sail loft on Dock Street, and in 1769 it purchased the shell of a building which had been erected in 1763 by a German Reformed congregation. At this time, Methodists had not yet broken away from the Anglican Church and the Methodist Episcopal Church was not founded until 1784.\n\nQuestion: Where did the congregation at St. George's initially meet in 1767?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "sail loft on Dock Street",
+        "meeting initially in a sail loft on Dock Street",
+        "Dock Street"
+      ],
+      "prediction": "Dock Street",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "How and when did the first variant of y. pestis enter Europe?",
+      "prompt": "Context: The study also found that there were two previously unknown but related clades (genetic branches) of the Y. pestis genome associated with medieval mass graves. These clades (which are thought to be extinct) were found to be ancestral to modern isolates of the modern Y. pestis strains Y. p. orientalis and Y. p. medievalis, suggesting the plague may have entered Europe in two waves. Surveys of plague pit remains in France and England indicate the first variant entered Europe through the port of Marseille around November 1347 and spread through France over the next two years, eventually reaching England in the spring of 1349, where it spread through the country in three epidemics. Surveys of plague pit remains from the Dutch town of Bergen op Zoom showed the Y. pestis genotype responsible for the pandemic that spread through the Low Countries from 1350 differed from that found in Britain and France, implying Bergen op Zoom (and possibly other parts of the southern Netherlands) was not directly infected from England or France in 1349 and suggesting a second wave of plague, different from those in Britain and France, may have been carried to the Low Countries from Norway, the Hanseatic cities or another site.\n\nQuestion: How and when did the first variant of y. pestis enter Europe?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "through the port of Marseille around November 1347",
+        "the port of Marseille around November 1347",
+        "1347"
+      ],
+      "prediction": "November 1347, spread through France over the next two years, reaching England in the spring of 1349.",
+      "exact_match": false,
+      "f1": 0.36363636363636365,
+      "failed": true
+    },
+    {
+      "question": "Nani, Cobra Bubbles and Captain Gantu are all characters in which Disney film?",
+      "prompt": "Question: Nani, Cobra Bubbles and Captain Gantu are all characters in which Disney film?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Lilo and Stitch"
+      ],
+      "prediction": "Despicable Me",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What kind of buildings are in the towns of Close, Sandhill and Quayside?",
+      "prompt": "Context: In large parts, Newcastle still retains a medieval street layout. Narrow alleys or 'chares', most of which can only be traversed by foot, still exist in abundance, particularly around the riverside. Stairs from the riverside to higher parts of the city centre and the extant Castle Keep, originally recorded in the 14th century, remain intact in places. Close, Sandhill and Quayside contain modern buildings as well as structures dating from the 15th\u201318th centuries, including Bessie Surtees House, the Cooperage and Lloyds Quayside Bars, Derwentwater House and \"House of Tides\", a restaurant situated at a Grade I-listed 16th century merchant's house at 28\u201330 Close.\n\nQuestion: What kind of buildings are in the towns of Close, Sandhill and Quayside?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "modern",
+        "modern buildings as well as structures dating from the 15th\u201318th centuries",
+        "modern buildings"
+      ],
+      "prediction": "Modern buildings and structures dating from the 15th\u201318th centuries.",
+      "exact_match": false,
+      "f1": 0.7777777777777777,
+      "failed": false
+    },
+    {
+      "question": "Besides the Bondage of the Will, what other work did Luther view as a book of his?",
+      "prompt": "Context: The catechism is one of Luther's most personal works. \"Regarding the plan to collect my writings in volumes,\" he wrote, \"I am quite cool and not at all eager about it because, roused by a Saturnian hunger, I would rather see them all devoured. For I acknowledge none of them to be really a book of mine, except perhaps the Bondage of the Will and the Catechism.\" The Small Catechism has earned a reputation as a model of clear religious teaching. It remains in use today, along with Luther's hymns and his translation of the Bible.\n\nQuestion: Besides the Bondage of the Will, what other work did Luther view as a book of his?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "the Catechism",
+        "Catechism",
+        "Catechism"
+      ],
+      "prediction": "The Catechism",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "In which year did Captain Scott reach the South Pole?",
+      "prompt": "Question: In which year did Captain Scott reach the South Pole?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "1912"
+      ],
+      "prediction": "1911",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which car manufacturer produces a model called the RAV4?",
+      "prompt": "Question: Which car manufacturer produces a model called the RAV4?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Toyota"
+      ],
+      "prediction": "Toyota",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What Latin phrase indicates that an aristocrat holds a title in her or his own right ?",
+      "prompt": "Question: What Latin phrase indicates that an aristocrat holds a title in her or his own right ?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "SUO JURE"
+      ],
+      "prediction": "Jus primae noctis",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "How many herbs and spices make up the secret blend used on Colonel Harland Sanders' most famous creation: his Original Recipe Kentucky Fried Chicken?",
+      "prompt": "Question: How many herbs and spices make up the secret blend used on Colonel Harland Sanders' most famous creation: his Original Recipe Kentucky Fried Chicken?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "11"
+      ],
+      "prediction": "27",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Who was Kennedy's vice president?",
+      "prompt": "Context: On April 20, Kennedy sent a memo to Vice President Lyndon B. Johnson, asking Johnson to look into the status of America's space program, and into programs that could offer NASA the opportunity to catch up. Johnson responded approximately one week later, concluding that \"we are neither making maximum effort nor achieving results necessary if this country is to reach a position of leadership.\" His memo concluded that a manned Moon landing was far enough in the future that it was likely the United States would achieve it first.\n\nQuestion: Who was Kennedy's vice president?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Lyndon B. Johnson",
+        "Lyndon B. Johnson",
+        "Lyndon B. Johnson",
+        "Lyndon B. Johnson",
+        "Lyndon B. Johnson"
+      ],
+      "prediction": "Lyndon B. Johnson",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What play was President Lincoln watching the night he was assassinated in 1865?",
+      "prompt": "Question: What play was President Lincoln watching the night he was assassinated in 1865?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Our American Cousin"
+      ],
+      "prediction": "\"Idiot Politician\"",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Josiah Bartlet was a central character in which U.S. TV drama series?",
+      "prompt": "Question: Josiah Bartlet was a central character in which U.S. TV drama series?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "The West Wing"
+      ],
+      "prediction": "\"The West Wing\"",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Newton was the number one pick in which draft?",
+      "prompt": "Context: This was the first Super Bowl to feature a quarterback on both teams who was the #1 pick in their draft classes. Manning was the #1 selection of the 1998 NFL draft, while Newton was picked first in 2011. The matchup also pits the top two picks of the 2011 draft against each other: Newton for Carolina and Von Miller for Denver. Manning and Newton also set the record for the largest age difference between opposing Super Bowl quarterbacks at 13 years and 48 days (Manning was 39, Newton was 26).\n\nQuestion: Newton was the number one pick in which draft?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "2011",
+        "2011",
+        "2011"
+      ],
+      "prediction": "2011",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "In which US state is the world\u2019s largest volcano?",
+      "prompt": "Question: In which US state is the world\u2019s largest volcano?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Hawaii"
+      ],
+      "prediction": "Hawaii",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "For which ABC Movie of the Week film did Steven Spielberg first gain success?",
+      "prompt": "Context: On the television side, in September 1969, ABC launched the Movie of the Week, a weekly showcase aimed at capitalizing on the growing success of made-for-TV movies since the early 1960s. The Movie of the Week broadcast feature-length dramatic films directed by such talented filmmakers as Aaron Spelling, David Wolper and Steven Spielberg (the latter of whom gained early success through the showcase for his 1971 film Duel) that were produced on an average budget of $400,000\u2013$450,000. Hits for the television network during the late 1960s and early 1970s included The Courtship of Eddie's Father, The Brady Bunch and The Partridge Family.\n\nQuestion: For which ABC Movie of the Week film did Steven Spielberg first gain success?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Duel",
+        "Duel",
+        "Duel"
+      ],
+      "prediction": "Duel",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Where do all trains going to Scotland stop at?",
+      "prompt": "Context: Train operator Virgin Trains East Coast provides a half-hourly frequency of trains to London King's Cross, with a journey time of about three hours, these services call at Durham, Darlington, York, Doncaster, Newark North Gate and Peterborough and north to Scotland with all trains calling at Edinburgh and a small number of trains extended to Glasgow, Aberdeen and Inverness. CrossCountry trains serve destinations in Yorkshire, the Midlands and the South West. First TransPennine Express operates services to Manchester and Liverpool. Northern Rail provides local and regional services.\n\nQuestion: Where do all trains going to Scotland stop at?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Edinburgh",
+        "Edinburgh",
+        "Edinburgh"
+      ],
+      "prediction": "Edinburgh",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which river runs through The Grand Canyon",
+      "prompt": "Question: Which river runs through The Grand Canyon\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Colorado"
+      ],
+      "prediction": "The Colorado River",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "The Belgian beer \u2018Kriek\u2019 is flavoured with which fruit?",
+      "prompt": "Question: The Belgian beer \u2018Kriek\u2019 is flavoured with which fruit?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Cherry"
+      ],
+      "prediction": "Strawberry",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "In what area of the United States did Tesla move to?",
+      "prompt": "Context: Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in a corporate alternating current/direct current \"War of Currents\" as well as various patent battles.\n\nQuestion: In what area of the United States did Tesla move to?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "New York City",
+        "New York City",
+        "New York City"
+      ],
+      "prediction": "New York City",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "In which country were both the 'G8' and 'G20' summits held in June 2010?",
+      "prompt": "Question: In which country were both the 'G8' and 'G20' summits held in June 2010?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "CANADA"
+      ],
+      "prediction": "Italy",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What is the name of the village that once existed in what is now downtown Jacksonville?",
+      "prompt": "Context: The area of the modern city of Jacksonville has been inhabited for thousands of years. On Black Hammock Island in the national Timucuan Ecological and Historic Preserve, a University of North Florida team discovered some of the oldest remnants of pottery in the United States, dating to 2500 BC. In the 16th century, the beginning of the historical era, the region was inhabited by the Mocama, a coastal subgroup of the Timucua people. At the time of contact with Europeans, all Mocama villages in present-day Jacksonville were part of the powerful chiefdom known as the Saturiwa, centered around the mouth of the St. Johns River. One early map shows a village called Ossachite at the site of what is now downtown Jacksonville; this may be the earliest recorded name for that area.\n\nQuestion: What is the name of the village that once existed in what is now downtown Jacksonville?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Ossachite",
+        "Ossachite",
+        "Ossachite"
+      ],
+      "prediction": "Ossachite",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What is the name of the small fifth claw called on the side of a dog's foot ?",
+      "prompt": "Question: What is the name of the small fifth claw called on the side of a dog's foot ?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "The dewclaw"
+      ],
+      "prediction": "Paw nail",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which Apollo was the first testing of the LM, unmanned, in Earth's orbit?",
+      "prompt": "Context: Apollo 5 (AS-204) was the first unmanned test flight of LM in Earth orbit, launched from pad 37 on January 22, 1968, by the Saturn IB that would have been used for Apollo 1. The LM engines were successfully test-fired and restarted, despite a computer programming error which cut short the first descent stage firing. The ascent engine was fired in abort mode, known as a \"fire-in-the-hole\" test, where it was lit simultaneously with jettison of the descent stage. Although Grumman wanted a second unmanned test, George Low decided the next LM flight would be manned.\n\nQuestion: Which Apollo was the first testing of the LM, unmanned, in Earth's orbit?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Apollo 5",
+        "Apollo 5",
+        "Apollo 5",
+        "Apollo 5",
+        "Apollo 5"
+      ],
+      "prediction": "Apollo 5",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What did ABC do that was special in 2003?",
+      "prompt": "Context: In Australia, the show has had a strong fan base since its inception, having been exclusively first run by the Australian Broadcasting Corporation (ABC) since January 1965. The ABC has periodically repeated episodes; of note were the weekly screenings of all available classic episodes starting in 2003, for the show's 40th anniversary, and the weekdaily screenings of all available revived episodes in 2013 for the show's 50th anniversary. The ABC broadcasts the modern series first run on ABC1, with repeats on ABC2. The ABC also provided partial funding for the 20th anniversary special The Five Doctors in 1983. Repeats of both the classic and modern series have also been shown on subscription television channels BBC UKTV, SF and later on SyFy upon SF's closure.[citation needed]\n\nQuestion: What did ABC do that was special in 2003?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "weekly screenings of all available classic episodes",
+        "screenings of all available classic episodes",
+        "repeated episodes"
+      ],
+      "prediction": "Repeated all available classic episodes weekly.",
+      "exact_match": false,
+      "f1": 0.7692307692307692,
+      "failed": false
+    },
+    {
+      "question": "What do FtsZ1 and FtsZ2 plus ARC6 form?",
+      "prompt": "Context: The division process starts when the proteins FtsZ1 and FtsZ2 assemble into filaments, and with the help of a protein ARC6, form a structure called a Z-ring within the chloroplast's stroma. The Min system manages the placement of the Z-ring, ensuring that the chloroplast is cleaved more or less evenly. The protein MinD prevents FtsZ from linking up and forming filaments. Another protein ARC3 may also be involved, but it is not very well understood. These proteins are active at the poles of the chloroplast, preventing Z-ring formation there, but near the center of the chloroplast, MinE inhibits them, allowing the Z-ring to form.\n\nQuestion: What do FtsZ1 and FtsZ2 plus ARC6 form?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "a structure called a Z-ring",
+        "a Z-ring",
+        "Z-ring"
+      ],
+      "prediction": "A Z-ring",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who commissioned the Domesday Book?",
+      "prompt": "Question: Who commissioned the Domesday Book?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "William the Conqueror"
+      ],
+      "prediction": "William the Conqueror",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What type of book are accounts usually written in?",
+      "prompt": "Question: What type of book are accounts usually written in?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Ledger"
+      ],
+      "prediction": "ledger",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Which was the last non-capital city to host the Summer Olympic Games?",
+      "prompt": "Question: Which was the last non-capital city to host the Summer Olympic Games?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "SYDNEY"
+      ],
+      "prediction": "Rio de Janeiro, Brazil",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which year resulted in the suspension of one of the two soccer teams?",
+      "prompt": "Context: From 2005 to 2014, there were two Major League Soccer teams in Los Angeles \u2014 the LA Galaxy and Chivas USA \u2014 that both played at the StubHub Center and were local rivals. However, Chivas were suspended following the 2014 MLS season, with a second MLS team scheduled to return in 2018.\n\nQuestion: Which year resulted in the suspension of one of the two soccer teams?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "2014",
+        "2014",
+        "2014"
+      ],
+      "prediction": "2014",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who wrote the poem \u2018The Lady of the Lake\u2019?",
+      "prompt": "Question: Who wrote the poem \u2018The Lady of the Lake\u2019?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Sir Walter Scott"
+      ],
+      "prediction": "John Masefield",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What alumni wrote \"The Closing of the American Mind\"?",
+      "prompt": "Context: In literature, author of the New York Times bestseller Before I Fall Lauren Oliver, Pulitzer Prize winning novelist Philip Roth, Canadian-born Pulitzer Prize and Nobel Prize for Literature winning writer Saul Bellow, political philosopher, literary critic and author of the New York Times bestseller \"The Closing of the American Mind\" Allan Bloom, ''The Good War\" author Studs Terkel, American writer, essayist, filmmaker, teacher, and political activist Susan Sontag, analytic philosopher and Stanford University Professor of Comparative Literature Richard Rorty, and American writer and satirist Kurt Vonnegut are notable alumni.\n\nQuestion: What alumni wrote \"The Closing of the American Mind\"?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Allan Bloom",
+        "Allan Bloom",
+        "Allan Bloom"
+      ],
+      "prediction": "Allan Bloom",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "\"Which actor, who died in 2011, became famous when portraying a TV character who became a household name in the 1970's? The actor won 4 emmys for his TV role and was nominated for film oscars for his parts in \"\"Pocketful of Miracles\"\" and \"\"Murder Inc.\"\".\"",
+      "prompt": "Question: \"Which actor, who died in 2011, became famous when portraying a TV character who became a household name in the 1970's? The actor won 4 emmys for his TV role and was nominated for film oscars for his parts in \"\"Pocketful of Miracles\"\" and \"\"Murder Inc.\"\".\"\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "PETER FALK"
+      ],
+      "prediction": "John Travolta",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which successor to Henry resumed persecution of the Huguenots?",
+      "prompt": "Context: By 1620 the Huguenots were on the defensive, and the government increasingly applied pressure. A series of three small civil wars known as the Huguenot rebellions broke out, mainly in southwestern France, between 1621 and 1629. revolted against royal authority. The uprising occurred a decade following the death of Henry IV, a Huguenot before converting to Catholicism, who had protected Protestants through the Edict of Nantes. His successor Louis XIII, under the regency of his Italian Catholic mother Marie de' Medici, became more intolerant of Protestantism. The Huguenots respond by establishing independent political and military structures, establishing diplomatic contacts with foreign powers, and openly revolting against central power. The rebellions were implacably suppressed by the French Crown.[citation needed]\n\nQuestion: Which successor to Henry resumed persecution of the Huguenots?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Louis XIII",
+        "Louis XIII",
+        "Louis XIII"
+      ],
+      "prediction": "Louis XIII",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Who was responsible for the decorations of the Centre Refreshment Room?",
+      "prompt": "Context: The interiors of the three refreshment rooms were assigned to different designers. The Green Dining Room 1866\u201368 was the work of Philip Webb and William Morris, and displays Elizabethan influences. The lower part of the walls are panelled in wood with a band of paintings depicting fruit and the occasional figure, with moulded plaster foliage on the main part of the wall and a plaster frieze around the decorated ceiling and stained-glass windows by Edward Burne-Jones. The Centre Refreshment Room 1865\u201377 was designed in a Renaissance style by James Gamble, the walls and even the Ionic columns are covered in decorative and moulded ceramic tile, the ceiling consists of elaborate designs on enamelled metal sheets and matching stained-glass windows, the marble fireplace was designed and sculpted by Alfred Stevens and was removed from Dorchester House prior to that building's demolition in 1929. The Grill Room 1876\u201381 was designed by Sir Edward Poynter, the lower part of the walls consist of blue and white tiles with various figures and foliage enclosed by wood panelling, above there are large tiled scenes with figures depicting the four seasons and the twelve months these were painted by ladies from the Art School then based in the museum, the windows are also stained glass, there is an elaborate cast-iron grill still in place.\n\nQuestion: Who was responsible for the decorations of the Centre Refreshment Room?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "James Gamble",
+        "James Gamble,",
+        "James Gamble"
+      ],
+      "prediction": "James Gamble",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "The worlds largest marketer of fruit juices, what is the juice arm of the Coca Cola company?",
+      "prompt": "Question: The worlds largest marketer of fruit juices, what is the juice arm of the Coca Cola company?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Minute Maid"
+      ],
+      "prediction": "Sprite",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "In what month is the university's scavenger hunt?",
+      "prompt": "Context: Every May since 1987, the University of Chicago has held the University of Chicago Scavenger Hunt, in which large teams of students compete to obtain notoriously esoteric items from a list. Since 1963, the Festival of the Arts (FOTA) takes over campus for 7\u201310 days of exhibitions and interactive artistic endeavors. Every January, the university holds a week-long winter festival, Kuviasungnerk/Kangeiko, which include early morning exercise routines and fitness workshops. The university also annually holds a summer carnival and concert called Summer Breeze that hosts outside musicians, and is home to Doc Films, a student film society founded in 1932 that screens films nightly at the university. Since 1946, the university has organized the Latke-Hamantash Debate, which involves humorous discussions about the relative merits and meanings of latkes and hamantashen.\n\nQuestion: In what month is the university's scavenger hunt?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "May",
+        "May",
+        "May"
+      ],
+      "prediction": "May",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Tennis player Martina Hingis was born in which European country?",
+      "prompt": "Question: Tennis player Martina Hingis was born in which European country?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Switzerland"
+      ],
+      "prediction": "Switzerland",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What rift system developed in the Alpine orogeny?",
+      "prompt": "Context: From the Eocene onwards, the ongoing Alpine orogeny caused a N\u2013S rift system to develop in this zone. The main elements of this rift are the Upper Rhine Graben, in southwest Germany and eastern France and the Lower Rhine Embayment, in northwest Germany and the southeastern Netherlands. By the time of the Miocene, a river system had developed in the Upper Rhine Graben, that continued northward and is considered the first Rhine river. At that time, it did not yet carry discharge from the Alps; instead, the watersheds of the Rhone and Danube drained the northern flanks of the Alps.\n\nQuestion: What rift system developed in the Alpine orogeny?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "N\u2013S",
+        "N\u2013S",
+        "N\u2013S rift system"
+      ],
+      "prediction": "N-S rift system",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "The name of which Spanish city is in the full title of Costa del Sol Airport?",
+      "prompt": "Question: The name of which Spanish city is in the full title of Costa del Sol Airport?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "M\u00c1LAGA"
+      ],
+      "prediction": "M\u00e1laga",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What war in Ireland featured Huguenot regiments?",
+      "prompt": "Context: Following the French Crown's revocation of the Edict of Nantes, many Huguenots settled in Ireland in the late 17th and early 18th centuries, encouraged by an act of parliament for Protestants' settling in Ireland. Huguenot regiments fought for William of Orange in the Williamite war in Ireland, for which they were rewarded with land grants and titles, many settling in Dublin. Significant Huguenot settlements were in Dublin, Cork, Portarlington, Lisburn, Waterford and Youghal. Smaller settlements, which included Killeshandra in County Cavan, contributed to the expansion of flax cultivation and the growth of the Irish linen industry.\n\nQuestion: What war in Ireland featured Huguenot regiments?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "Williamite war",
+        "Williamite",
+        "the Williamite war"
+      ],
+      "prediction": "Williamite war in Ireland",
+      "exact_match": false,
+      "f1": 0.6666666666666666,
+      "failed": false
+    },
+    {
+      "question": "What former U.S. president is known for his staunch support of Habitat for Humanity?",
+      "prompt": "Question: What former U.S. president is known for his staunch support of Habitat for Humanity?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Jimmy Carter"
+      ],
+      "prediction": "Bill Clinton",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "In John Bunyan's Pilgrim's Progress, where did the Giant Despair live?",
+      "prompt": "Question: In John Bunyan's Pilgrim's Progress, where did the Giant Despair live?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "DOUBTING CASTLE"
+      ],
+      "prediction": "The Giant Despair lived in the Despair Country.",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "Which company makes/made a watch called 'Submariner'?",
+      "prompt": "Question: Which company makes/made a watch called 'Submariner'?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Rolex"
+      ],
+      "prediction": "Rolex",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "How old was Tesla when he wrote that he'd completed his dynamic theory of gravity?",
+      "prompt": "Context: Tesla claimed to have developed his own physical principle regarding matter and energy that he started working on in 1892, and in 1937, at age 81, claimed in a letter to have completed a \"dynamic theory of gravity\" that \"[would] put an end to idle speculations and false conceptions, as that of curved space.\" He stated that the theory was \"worked out in all details\" and that he hoped to soon give it to the world. Further elucidation of his theory was never found in his writings.:309\n\nQuestion: How old was Tesla when he wrote that he'd completed his dynamic theory of gravity?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "81",
+        "81",
+        "81"
+      ],
+      "prediction": "81",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "Terra Nullius is a Latin expression meaning what in English?",
+      "prompt": "Context: The principles of imperialism are often generalizable to the policies and practices of the British Empire \"during the last generation, and proceeds rather by diagnosis than by historical description\". British imperialism often used the concept of Terra nullius (Latin expression which stems from Roman law meaning 'empty land'). The country of Australia serves as a case study in relation to British settlement and colonial rule of the continent in the eighteenth century, as it was premised on terra nullius, and its settlers considered it unused by its sparse Aboriginal inhabitants.\n\nQuestion: Terra Nullius is a Latin expression meaning what in English?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "empty land",
+        "empty land",
+        "empty land",
+        "empty land",
+        "'empty land'"
+      ],
+      "prediction": "Empty land",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    },
+    {
+      "question": "What mountain's peak is the farthest point from Earth's centre/center?",
+      "prompt": "Question: What mountain's peak is the farthest point from Earth's centre/center?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "Chimborazo"
+      ],
+      "prediction": "Mount Everest",
+      "exact_match": false,
+      "f1": 0.0,
+      "failed": true
+    },
+    {
+      "question": "What railway line is green on the traditional map of the London Underground (Tube)?",
+      "prompt": "Question: What railway line is green on the traditional map of the London Underground (Tube)?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "trivia",
+      "golds": [
+        "District Line"
+      ],
+      "prediction": "Victoria Line",
+      "exact_match": false,
+      "f1": 0.5,
+      "failed": false
+    },
+    {
+      "question": "When was the Doctor Who series released on DVD?",
+      "prompt": "Context: \"Official\" reconstructions have also been released by the BBC on VHS, on MP3 CD-ROM, and as special features on DVD. The BBC, in conjunction with animation studio Cosgrove Hall, reconstructed the missing episodes 1 and 4 of The Invasion (1968), using remastered audio tracks and the comprehensive stage notes for the original filming, for the serial's DVD release in November 2006. The missing episodes of The Reign of Terror were animated by animation company Theta-Sigma, in collaboration with Big Finish, and became available for purchase in May 2013 through Amazon.com. Subsequent animations made in 2013 include The Tenth Planet, The Ice Warriors and The Moonbase.\n\nQuestion: When was the Doctor Who series released on DVD?\n\nAnswer with as few words as possible, no explanation.",
+      "source": "squad",
+      "golds": [
+        "November 2006",
+        "November 2006",
+        "2006"
+      ],
+      "prediction": "November 2006",
+      "exact_match": true,
+      "f1": 1.0,
+      "failed": false
+    }
+  ]
+}
