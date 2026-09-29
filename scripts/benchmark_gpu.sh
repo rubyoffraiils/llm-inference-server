@@ -12,7 +12,11 @@ set -euo pipefail
 
 PORT=${PORT:-8100}
 DURATION=${DURATION:-30}
-QPS_LEVELS=${QPS_LEVELS:-"1 2 4 8 16"}
+# Up to 64 so the batched path's own ceiling shows up, not just naive's.
+QPS_LEVELS=${QPS_LEVELS:-"1 2 4 8 16 32 64"}
+# Repeat each configuration so the spread is reportable rather than a
+# single sample.
+REPEATS=${REPEATS:-3}
 
 command -v nvidia-smi >/dev/null && nvidia-smi || echo "WARNING: no nvidia-smi, is this a GPU box?"
 
@@ -27,7 +31,9 @@ python -c "import torch; assert torch.cuda.is_available(), 'CUDA not available -
 mkdir -p results
 
 cd src
-uvicorn server:app --port "$PORT" --host 127.0.0.1 &
+# Access logs are one line per request and bury the result tables at
+# these rates; errors still surface.
+uvicorn server:app --port "$PORT" --host 127.0.0.1 --no-access-log > ../results/server.log 2>&1 &
 SERVER_PID=$!
 cd ..
 trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
@@ -42,18 +48,21 @@ curl -sf -X POST "http://localhost:$PORT/process" \
   -H 'Content-Type: application/json' \
   -d '{"prompt":"Question: warmup\n\nAnswer with as few words as possible, no explanation.","mode":"batched"}' >/dev/null
 
-for mode in naive batched routed; do
-  echo
-  echo "=== $mode ==="
-  python scripts/load_test.py \
-    --url "http://localhost:$PORT/process" \
-    --qps $QPS_LEVELS \
-    --duration "$DURATION" \
-    --mode "$mode" \
-    --out "results/load_${mode}.json"
-  curl -s "http://localhost:$PORT/stats" > "results/stats_${mode}.json"
+for run in $(seq 1 "$REPEATS"); do
+  for mode in naive batched routed; do
+    echo
+    echo "=== $mode run $run ==="
+    python scripts/load_test.py \
+      --url "http://localhost:$PORT/process" \
+      --qps $QPS_LEVELS \
+      --duration "$DURATION" \
+      --mode "$mode" \
+      --out "results/load_${mode}_run${run}.json"
+  done
 done
+
+curl -s "http://localhost:$PORT/stats" > results/stats_final.json
 
 echo
 echo "done. copy these back:"
-ls -1 results/load_*.json results/stats_*.json
+ls -1 results/load_*.json results/stats_final.json

@@ -1,0 +1,32 @@
+[
+  {
+    "router": "heuristic",
+    "routed_to_expensive": 0.5,
+    "failures_caught": 86,
+    "failures_total": 108,
+    "recall": 0.7962962962962963,
+    "lift_over_chance": 1.5925925925925926,
+    "pipeline_accuracy": 0.595,
+    "latency_p50_ms": 0.00012491364032030106,
+    "latency_p95_ms": 0.00016705598682165146,
+    "cost_usd_total": 0.0,
+    "cost_usd_per_1k_requests": 0.0,
+    "mean_confidence": null,
+    "fell_back": 0
+  },
+  {
+    "router": "jev",
+    "routed_to_expensive": 0.085,
+    "failures_caught": 17,
+    "failures_total": 108,
+    "recall": 0.1574074074074074,
+    "lift_over_chance": 1.8518518518518519,
+    "pipeline_accuracy": 0.46,
+    "latency_p50_ms": 182.22037504892796,
+    "latency_p95_ms": 307.2389999870211,
+    "cost_usd_total": 0.004229148,
+    "cost_usd_per_1k_requests": 0.021145740000000003,
+    "mean_confidence": 0.76745,
+    "fell_back": 0
+  }
+]
