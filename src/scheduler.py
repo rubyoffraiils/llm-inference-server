@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import asyncio
 import time
+from collections import deque
 from dataclasses import dataclass, field
 
 import torch
@@ -232,6 +233,15 @@ def _splice_slot(batch_cache, slot_index: int, new_cache) -> None:
 
 
 @dataclass
+class _Request:
+    """A queued request and the timestamp it arrived, for queue-wait timing."""
+
+    prompt: str
+    future: asyncio.Future
+    submitted_at: float
+
+
+@dataclass
 class _Slot:
     """One decode slot's bookkeeping. `future` is None when the slot is free."""
 
@@ -239,10 +249,30 @@ class _Slot:
     token_ids: list[int] = field(default_factory=list)
     start_time: float = 0.0
     time_to_first_token: float | None = None
+    queue_wait: float = 0.0
 
     @property
     def is_free(self) -> bool:
         return self.future is None
+
+
+@dataclass
+class _Completed:
+    """One finished request's timings, kept for percentile reporting."""
+
+    queue_wait: float
+    generation_time: float
+    total_time: float
+    tokens: int
+
+
+def _percentile(values: list[float], fraction: float) -> float:
+    """Nearest-rank percentile. Averages hide the tail these exist to show."""
+    if not values:
+        return 0.0
+    ordered = sorted(values)
+    index = min(int(fraction * len(ordered)), len(ordered) - 1)
+    return ordered[index]
 
 
 class BatchingScheduler:
@@ -262,20 +292,26 @@ class BatchingScheduler:
         max_batch_size: int = 4,
         max_new_tokens: int = 50,
         max_queue_size: int = 32,
+        metrics_window: int = 1000,
     ):
         self._model = model
         self._tokenizer = tokenizer
         self._max_batch_size = max_batch_size
         self._max_new_tokens = max_new_tokens
-        self._queue: asyncio.Queue[tuple[str, asyncio.Future]] = asyncio.Queue(
-            maxsize=max_queue_size
-        )
+        self._queue: asyncio.Queue[_Request] = asyncio.Queue(maxsize=max_queue_size)
         self._loop_task: asyncio.Task | None = None
 
         self._slots = [_Slot() for _ in range(max_batch_size)]
         self._cache = None
         self._mask: torch.Tensor | None = None
         self._next_input: torch.Tensor | None = None
+
+        # Bounded window: percentiles need the samples themselves, but
+        # keeping every request's timing forever leaks on a long run.
+        self._completed: deque[_Completed] = deque(maxlen=metrics_window)
+        self._total_requests = 0
+        self._rejected = 0
+        self._started_at = time.perf_counter()
 
     def start(self) -> None:
         self._loop_task = asyncio.create_task(self._run())
@@ -292,43 +328,75 @@ class BatchingScheduler:
         out having learned nothing.
         """
         future: asyncio.Future = asyncio.get_event_loop().create_future()
-        self._queue.put_nowait((prompt, future))
+        try:
+            self._queue.put_nowait(
+                _Request(prompt=prompt, future=future, submitted_at=time.perf_counter())
+            )
+        except asyncio.QueueFull:
+            self._rejected += 1
+            raise
+        self._total_requests += 1
         return await future
 
     async def _run(self) -> None:
         while True:
-            await self._admit_waiting_requests()
-
+            # Drop a drained batch's state before admitting anyone, not
+            # after: a request joining against the previous batch's cache
+            # pads itself to a length that no longer exists.
             if all(slot.is_free for slot in self._slots):
-                # Fully drained: drop the cache rather than let the next
-                # request pad itself out to a dead batch's length.
                 self._cache = None
                 self._mask = None
                 self._next_input = None
-                # Block rather than spin, then loop back around to admit
-                # whatever just arrived.
-                prompt, future = await self._queue.get()
-                self._queue.put_nowait((prompt, future))
+
+            await self._admit_waiting_requests()
+
+            if all(slot.is_free for slot in self._slots):
+                # Nothing to decode: block rather than spin, then loop
+                # back around to admit whatever just arrived.
+                request = await self._queue.get()
+                self._queue.put_nowait(request)
                 continue
 
-            await asyncio.to_thread(self._decode_step)
-            self._reap_finished_slots()
+            try:
+                await asyncio.to_thread(self._decode_step)
+                self._reap_finished_slots()
+            except Exception as exc:
+                # A dead loop leaves every caller awaiting a future nobody
+                # will ever resolve. Fail them loudly instead of hanging.
+                self._fail_all(exc)
+                raise
+
+    def _fail_all(self, exc: BaseException) -> None:
+        """Propagate a loop failure to everyone waiting on it."""
+        for slot in self._slots:
+            if slot.future is not None and not slot.future.done():
+                slot.future.set_exception(exc)
+            slot.future = None
+            slot.token_ids = []
+        while not self._queue.empty():
+            request = self._queue.get_nowait()
+            if not request.future.done():
+                request.future.set_exception(exc)
 
     async def _admit_waiting_requests(self) -> None:
         """Fill every free slot with a queued request, if any are waiting."""
         for index, slot in enumerate(self._slots):
             if not slot.is_free or self._queue.empty():
                 continue
-            prompt, future = self._queue.get_nowait()
-            await asyncio.to_thread(self._join_slot, index, prompt, future)
+            request = self._queue.get_nowait()
+            await asyncio.to_thread(self._join_slot, index, request)
 
-    def _join_slot(self, index: int, prompt: str, future: asyncio.Future) -> None:
-        """Prefill `prompt` alone and splice it into slot `index`."""
+    def _join_slot(self, index: int, request: _Request) -> None:
+        """Prefill the request's prompt and splice it into slot `index`."""
+        prompt, future = request.prompt, request.future
         if self._cache is not None:
             # Reclaim columns no live slot needs before measuring how far
             # this request has to pad -- otherwise a departed slot's dead
             # columns inflate every future join.
             self._mask = _trim_dead_columns(self._cache, self._mask)
+        # Pad to the batch cache's own length. Deriving this from the mask
+        # instead is wrong: the mask runs one column ahead of the cache
+        # between a decode step and the next forward pass.
         target_len = self._cache.get_seq_length() if self._cache is not None else 0
         cache, mask_row, first_token, _ = _prefill_and_pad(
             prompt, self._model, self._tokenizer, target_len
@@ -379,6 +447,7 @@ class BatchingScheduler:
         slot.token_ids = [first_token.item()]
         slot.start_time = time.perf_counter()
         slot.time_to_first_token = 0.0
+        slot.queue_wait = slot.start_time - request.submitted_at
 
     def _decode_step(self) -> None:
         """Advance every occupied slot by one token, in one shared forward pass."""
@@ -420,12 +489,23 @@ class BatchingScheduler:
                 continue
 
             text = self._tokenizer.decode(slot.token_ids, skip_special_tokens=True)
+            generation_time = time.perf_counter() - slot.start_time
             slot.future.set_result(
                 GenerationResult(
                     text=text,
                     time_to_first_token=slot.time_to_first_token,
-                    total_time=time.perf_counter() - slot.start_time,
+                    total_time=generation_time,
                     tokens_generated=len(slot.token_ids),
+                )
+            )
+            self._completed.append(
+                _Completed(
+                    queue_wait=slot.queue_wait,
+                    generation_time=generation_time,
+                    # What the caller actually waited, queueing included --
+                    # generation time alone understates latency under load.
+                    total_time=slot.queue_wait + generation_time,
+                    tokens=len(slot.token_ids),
                 )
             )
             slot.future = None
@@ -433,3 +513,30 @@ class BatchingScheduler:
             # Release this slot's columns so they can be trimmed; a stale
             # row of 1s would keep dead columns looking live forever.
             self._mask[index].zero_()
+
+    def stats(self) -> dict:
+        """Live counters and latency percentiles over the recent window."""
+        active = sum(not slot.is_free for slot in self._slots)
+        window = list(self._completed)
+        totals = [c.total_time for c in window]
+        waits = [c.queue_wait for c in window]
+        uptime = time.perf_counter() - self._started_at
+
+        return {
+            "queue_depth": self._queue.qsize(),
+            "active_slots": active,
+            "max_slots": self._max_batch_size,
+            # How full the batch runs. On CPU this stands in for GPU
+            # utilization: low occupancy means batching isn't paying off.
+            "slot_occupancy": active / self._max_batch_size,
+            "requests_total": self._total_requests,
+            "requests_rejected": self._rejected,
+            "completed_in_window": len(window),
+            "latency_p50_ms": _percentile(totals, 0.50) * 1000,
+            "latency_p95_ms": _percentile(totals, 0.95) * 1000,
+            "queue_wait_p50_ms": _percentile(waits, 0.50) * 1000,
+            "queue_wait_p95_ms": _percentile(waits, 0.95) * 1000,
+            "tokens_per_second": (
+                sum(c.tokens for c in window) / uptime if uptime > 0 else 0.0
+            ),
+        }
