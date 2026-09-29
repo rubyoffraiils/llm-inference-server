@@ -16,7 +16,12 @@ QPS_LEVELS=${QPS_LEVELS:-"1 2 4 8 16"}
 
 command -v nvidia-smi >/dev/null && nvidia-smi || echo "WARNING: no nvidia-smi, is this a GPU box?"
 
-source venv/bin/activate
+# A GPU image usually ships torch system-wide; a venv on top of it would
+# shadow that with a CPU build.
+if [ -f venv/bin/activate ]; then
+  source venv/bin/activate
+fi
+
 python -c "import torch; assert torch.cuda.is_available(), 'CUDA not available -- benchmark would measure CPU'; print('CUDA:', torch.cuda.get_device_name(0))"
 
 mkdir -p results
