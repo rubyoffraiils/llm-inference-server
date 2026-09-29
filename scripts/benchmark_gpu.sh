@@ -48,6 +48,12 @@ curl -sf -X POST "http://localhost:$PORT/process" \
   -H 'Content-Type: application/json' \
   -d '{"prompt":"Question: warmup\n\nAnswer with as few words as possible, no explanation.","mode":"batched"}' >/dev/null
 
+# Sample memory and cache state throughout, so a slowdown across runs
+# can be attributed rather than guessed at.
+python scripts/monitor_server.py "http://localhost:$PORT" results/monitor.csv &
+MONITOR_PID=$!
+trap 'kill $SERVER_PID $MONITOR_PID 2>/dev/null || true' EXIT
+
 for run in $(seq 1 "$REPEATS"); do
   for mode in naive batched routed; do
     echo
@@ -63,6 +69,12 @@ done
 
 curl -s "http://localhost:$PORT/stats" > results/stats_final.json
 
+kill $MONITOR_PID 2>/dev/null || true
+
+echo
+echo "=== drift over the run (first vs last sample per tier) ==="
+python scripts/summarise_monitor.py results/monitor.csv
+
 echo
 echo "done. copy these back:"
-ls -1 results/load_*.json results/stats_final.json
+ls -1 results/load_*.json results/stats_final.json results/monitor.csv

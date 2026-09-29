@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+from collections import deque
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Literal
@@ -14,9 +15,14 @@ from pydantic import BaseModel
 
 from model import CHEAP_MODEL, EXPENSIVE_MODEL, load_model
 from router import route
-from scheduler import BatchingScheduler
+from scheduler import BatchingScheduler, _percentile
 
 Mode = Literal["naive", "batched", "routed"]
+
+# Routing decisions, so the cheap/expensive split and the router's own
+# overhead are visible live rather than only in a benchmark run.
+_routing_counts = {"cheap": 0, "expensive": 0}
+_router_latencies: deque[float] = deque(maxlen=1000)
 
 # Each tier gets its own queue and scheduler. Sharing one queue would let
 # a burst of expensive requests block cheap ones behind it while the
@@ -69,6 +75,30 @@ class ProcessResponse(BaseModel):
     router_latency_ms: float
 
 
+def _process_stats() -> dict:
+    """Memory held by this process, for diagnosing slowdown over time.
+
+    Reserved climbing while allocated stays flat is allocator
+    fragmentation; both climbing is a leak. Read here rather than from a
+    monitoring process, which would only see its own memory.
+    """
+    import resource
+    import sys
+
+    import torch
+
+    # ru_maxrss is bytes on macOS, kilobytes on Linux.
+    raw = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    rss_mib = raw / 2**20 if sys.platform == "darwin" else raw / 1024
+    if not torch.cuda.is_available():
+        return {"host_rss_mib": round(rss_mib, 1)}
+    return {
+        "host_rss_mib": round(rss_mib, 1),
+        "gpu_allocated_mib": round(torch.cuda.memory_allocated() / 2**20, 1),
+        "gpu_reserved_mib": round(torch.cuda.memory_reserved() / 2**20, 1),
+    }
+
+
 @app.get("/stats")
 async def stats() -> dict:
     """Per-tier queue and latency numbers, plus a combined view.
@@ -78,8 +108,16 @@ async def stats() -> dict:
     number describes neither.
     """
     per_tier = {name: scheduler.stats() for name, scheduler in _tiers.items()}
+    routed = _routing_counts["cheap"] + _routing_counts["expensive"]
     return {
         "tiers": per_tier,
+        "process": _process_stats(),
+        "routing": {
+            **_routing_counts,
+            "fraction_cheap": _routing_counts["cheap"] / routed if routed else 0.0,
+            "router_latency_p50_ms": _percentile(_router_latencies, 0.50),
+            "router_latency_p95_ms": _percentile(_router_latencies, 0.95),
+        },
         "overall": {
             "requests_total": sum(t["requests_total"] for t in per_tier.values()),
             "requests_rejected": sum(t["requests_rejected"] for t in per_tier.values()),
@@ -94,6 +132,8 @@ async def process(request: ProcessRequest) -> ProcessResponse:
     if request.mode == "routed":
         decision = route(request.prompt)
         tier, router_latency_ms = decision.tier, decision.latency_ms
+        _routing_counts[tier] += 1
+        _router_latencies.append(router_latency_ms)
     else:
         # naive and batched both always use the expensive tier; they
         # differ only in whether requests are batched together.

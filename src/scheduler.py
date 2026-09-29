@@ -11,6 +11,7 @@ from __future__ import annotations
 import asyncio
 import time
 from collections import OrderedDict, deque
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 
 import torch
@@ -266,7 +267,7 @@ class _Completed:
     tokens: int
 
 
-def _percentile(values: list[float], fraction: float) -> float:
+def _percentile(values: Iterable[float], fraction: float) -> float:
     """Nearest-rank percentile. Averages hide the tail these exist to show."""
     if not values:
         return 0.0
@@ -570,9 +571,15 @@ class BatchingScheduler:
             "cache_hits": self._cache_hits,
             "dedup_hits": self._dedup_hits,
             "cache_entries": len(self._response_cache),
+            # Columns in the shared KV-cache. Every decode step processes
+            # all of them, so growth here shows up directly as latency.
+            "kv_cache_columns": (
+                self._cache.get_seq_length() if self._cache is not None else 0
+            ),
             "completed_in_window": len(window),
             "latency_p50_ms": _percentile(totals, 0.50) * 1000,
             "latency_p95_ms": _percentile(totals, 0.95) * 1000,
+            "latency_p99_ms": _percentile(totals, 0.99) * 1000,
             "queue_wait_p50_ms": _percentile(waits, 0.50) * 1000,
             "queue_wait_p95_ms": _percentile(waits, 0.95) * 1000,
             "tokens_per_second": (
