@@ -85,7 +85,7 @@ async def _fire(client: httpx.AsyncClient, url: str, prompt: str, mode: str) -> 
 
 
 async def run_level(
-    url: str, prompts: list[str], qps: int, duration: float, mode: str
+    url: str, prompts: list[str], qps: int, duration: float, mode: str, tag: str
 ) -> LevelResult:
     result = LevelResult(qps=qps, duration=duration)
     interval = 1.0 / qps
@@ -95,7 +95,10 @@ async def run_level(
         start = time.perf_counter()
         sent = 0
         while time.perf_counter() - start < duration:
-            prompt = prompts[sent % len(prompts)]
+            # Unique per request: the server caches responses, so cycling a
+            # fixed prompt list would measure cache lookups rather than
+            # generation throughput.
+            prompt = f"{prompts[sent % len(prompts)]} (request {tag}-{qps}-{sent})"
             tasks.append(asyncio.create_task(_fire(client, url, prompt, mode)))
             sent += 1
             # Sleep to the next scheduled send time rather than a flat
@@ -119,6 +122,9 @@ async def main() -> None:
     parser.add_argument("--duration", type=float, default=20.0, help="seconds per rate")
     parser.add_argument("--mode", default="routed", choices=["naive", "batched", "routed"])
     parser.add_argument("--out", type=Path, default=None)
+    # Distinguishes repeat runs so their prompts don't collide and turn
+    # later runs into cache hits.
+    parser.add_argument("--tag", default=str(int(time.time())))
     args = parser.parse_args()
 
     dev, _ = load_mixed_split(200, 200)
@@ -132,7 +138,9 @@ async def main() -> None:
 
     summaries = []
     for qps in args.qps:
-        result = await run_level(args.url, prompts, qps, args.duration, args.mode)
+        result = await run_level(
+            args.url, prompts, qps, args.duration, args.mode, args.tag
+        )
         s = result.summary()
         summaries.append(s)
         print(
