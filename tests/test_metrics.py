@@ -77,9 +77,10 @@ async def test_rejected_requests_are_counted():
     )
     scheduler.start()
     try:
+        # Distinct prompts: identical ones deduplicate and never queue.
         first = asyncio.create_task(scheduler.submit("Write a long history of Rome."))
         await asyncio.sleep(0.3)
-        second = asyncio.create_task(scheduler.submit("Write a long history of Rome."))
+        second = asyncio.create_task(scheduler.submit("Write a long history of Egypt."))
         await asyncio.sleep(0.1)
         try:
             await scheduler.submit("2 + 2 =")

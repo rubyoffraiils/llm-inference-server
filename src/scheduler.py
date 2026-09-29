@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import asyncio
 import time
-from collections import deque
+from collections import OrderedDict, deque
 from dataclasses import dataclass, field
 
 import torch
@@ -293,6 +293,7 @@ class BatchingScheduler:
         max_new_tokens: int = 50,
         max_queue_size: int = 32,
         metrics_window: int = 1000,
+        response_cache_size: int = 512,
     ):
         self._model = model
         self._tokenizer = tokenizer
@@ -313,6 +314,17 @@ class BatchingScheduler:
         self._rejected = 0
         self._started_at = time.perf_counter()
 
+        # Decoding is greedy, so a repeated prompt regenerates the same
+        # tokens -- a cache hit is exact, not an approximation. Bounded
+        # LRU; unbounded would leak the way the queue used to.
+        self._response_cache: OrderedDict[str, GenerationResult] = OrderedDict()
+        self._response_cache_size = response_cache_size
+        self._cache_hits = 0
+        # Identical prompts already generating share one slot rather than
+        # occupying two.
+        self._in_flight: dict[str, asyncio.Future] = {}
+        self._dedup_hits = 0
+
     def start(self) -> None:
         self._loop_task = asyncio.create_task(self._run())
 
@@ -321,12 +333,27 @@ class BatchingScheduler:
             self._loop_task.cancel()
 
     async def submit(self, prompt: str) -> GenerationResult:
-        """Queue `prompt` and wait for its own slot to finish generating.
+        """Return `prompt`'s answer, generating it only if necessary.
 
         Raises QueueFull rather than accepting work it can't get to --
         a caller that waits forever behind an unbounded queue just times
         out having learned nothing.
         """
+        self._total_requests += 1
+
+        cached = self._response_cache.get(prompt)
+        if cached is not None:
+            self._response_cache.move_to_end(prompt)
+            self._cache_hits += 1
+            return cached
+
+        # An identical prompt mid-generation: wait on its result instead
+        # of taking a second slot to compute the same tokens.
+        existing = self._in_flight.get(prompt)
+        if existing is not None:
+            self._dedup_hits += 1
+            return await asyncio.shield(existing)
+
         future: asyncio.Future = asyncio.get_event_loop().create_future()
         try:
             self._queue.put_nowait(
@@ -335,8 +362,17 @@ class BatchingScheduler:
         except asyncio.QueueFull:
             self._rejected += 1
             raise
-        self._total_requests += 1
-        return await future
+
+        self._in_flight[prompt] = future
+        try:
+            result = await asyncio.shield(future)
+        finally:
+            self._in_flight.pop(prompt, None)
+
+        self._response_cache[prompt] = result
+        if len(self._response_cache) > self._response_cache_size:
+            self._response_cache.popitem(last=False)
+        return result
 
     async def _run(self) -> None:
         while True:
@@ -531,6 +567,9 @@ class BatchingScheduler:
             "slot_occupancy": active / self._max_batch_size,
             "requests_total": self._total_requests,
             "requests_rejected": self._rejected,
+            "cache_hits": self._cache_hits,
+            "dedup_hits": self._dedup_hits,
+            "cache_entries": len(self._response_cache),
             "completed_in_window": len(window),
             "latency_p50_ms": _percentile(totals, 0.50) * 1000,
             "latency_p95_ms": _percentile(totals, 0.95) * 1000,

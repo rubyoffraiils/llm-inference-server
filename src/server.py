@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import asyncio
 from contextlib import asynccontextmanager
+from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from model import CHEAP_MODEL, EXPENSIVE_MODEL, load_model
@@ -43,6 +46,14 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+_STATIC = Path(__file__).resolve().parent.parent / "static"
+if _STATIC.is_dir():
+    app.mount("/static", StaticFiles(directory=_STATIC), name="static")
+
+    @app.get("/")
+    async def demo_page() -> FileResponse:
+        return FileResponse(_STATIC / "index.html")
 
 
 class ProcessRequest(BaseModel):

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Batched vs one-at-a-time</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --line: #262b36;
+    --text: #e6e9ef;
+    --dim: #8b93a7;
+    --pending: #222733;
+    --slow: #d97757;
+    --fast: #4ea1d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 16px 64px;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+  main { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 0 0 4px; font-weight: 600; }
+  .sub { color: var(--dim); margin: 0 0 28px; }
+  button {
+    background: var(--fast);
+    color: #06121c;
+    border: 0;
+    border-radius: 7px;
+    padding: 11px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.45; cursor: default; }
+  .lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+  @media (max-width: 640px) { .lanes { grid-template-columns: 1fr; } }
+  .lane {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    padding: 18px;
+  }
+  .lane h2 { font-size: 15px; margin: 0; font-weight: 600; }
+  .lane .note { color: var(--dim); font-size: 13px; margin: 3px 0 14px; }
+  .timer {
+    font-variant-numeric: tabular-nums;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; }
+  .cell {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    background: var(--pending);
+    transition: background 120ms ease;
+  }
+  .lane.slow .cell.done { background: var(--slow); }
+  .lane.fast .cell.done { background: var(--fast); }
+  .verdict {
+    margin-top: 26px;
+    padding: 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    font-size: 17px;
+    min-height: 24px;
+  }
+  .verdict strong { font-size: 21px; }
+  .footnote { color: var(--dim); font-size: 13px; margin-top: 22px; }
+  code { background: #11141a; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Same questions. Same model. Same machine.</h1>
+  <p class="sub">The only difference is whether the server groups requests together.</p>
+
+  <button id="go">Start</button>
+
+  <div class="lanes">
+    <div class="lane slow" id="lane-naive">
+      <h2>One at a time</h2>
+      <p class="note">Each request waits for the one before it.</p>
+      <div class="timer" id="timer-naive">0.0s</div>
+      <div class="grid" id="grid-naive"></div>
+    </div>
+    <div class="lane fast" id="lane-batched">
+      <h2>Batched</h2>
+      <p class="note">Requests in flight together share each step.</p>
+      <div class="timer" id="timer-batched">0.0s</div>
+      <div class="grid" id="grid-batched"></div>
+    </div>
+  </div>
+
+  <div class="verdict" id="verdict"></div>
+
+  <p class="footnote">
+    Both lanes hit the same server and the same model weights over HTTP.
+    <code>naive</code> runs with one decode slot, <code>batched</code> with four.
+    Every square lights when a real response arrives &mdash; nothing here is replayed.
+  </p>
+</main>
+
+<script>
+const COUNT = 16;
+
+const lanes = {
+  naive: { grid: document.getElementById('grid-naive'), timer: document.getElementById('timer-naive') },
+  batched: { grid: document.getElementById('grid-batched'), timer: document.getElementById('timer-batched') },
+};
+
+const PROMPTS = [
+  'What is the capital of Japan?',
+  'What is the opposite of hot?',
+  'What is 2 + 2?',
+  'Who wrote Hamlet?',
+  'What colour is the sky on a clear day?',
+  'How many days are in a week?',
+  'What is the largest ocean?',
+  'What language is spoken in Brazil?',
+];
+
+function buildGrids() {
+  for (const key of Object.keys(lanes)) {
+    const grid = lanes[key].grid;
+    grid.innerHTML = '';
+    for (let i = 0; i < COUNT; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      grid.appendChild(cell);
+    }
+    lanes[key].timer.textContent = '0.0s';
+  }
+  document.getElementById('verdict').textContent = '';
+}
+
+function promptFor(i) {
+  return 'Question: ' + PROMPTS[i % PROMPTS.length] +
+    '\n\nAnswer with as few words as possible, no explanation.';
+}
+
+async function runLane(mode) {
+  const lane = lanes[mode];
+  const cells = lane.grid.children;
+  const start = performance.now();
+  let finished = 0;
+
+  const tick = setInterval(() => {
+    lane.timer.textContent = ((performance.now() - start) / 1000).toFixed(1) + 's';
+  }, 50);
+
+  // Fire everything at once; the server decides what it can overlap.
+  await Promise.all(Array.from({ length: COUNT }, (_, i) =>
+    fetch('/process', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt: promptFor(i), mode: mode }),
+    }).then(r => r.json()).then(() => {
+      cells[finished].classList.add('done');
+      finished++;
+    }).catch(() => {
+      cells[finished].classList.add('done');
+      finished++;
+    })
+  ));
+
+  clearInterval(tick);
+  const elapsed = (performance.now() - start) / 1000;
+  lane.timer.textContent = elapsed.toFixed(1) + 's';
+  return elapsed;
+}
+
+document.getElementById('go').addEventListener('click', async (event) => {
+  const button = event.target;
+  button.disabled = true;
+  button.textContent = 'Running...';
+  buildGrids();
+
+  const [naive, batched] = await Promise.all([runLane('naive'), runLane('batched')]);
+
+  const verdict = document.getElementById('verdict');
+  const speedup = naive / batched;
+  verdict.innerHTML = speedup >= 1.05
+    ? `Batched finished <strong>${speedup.toFixed(1)}&times;</strong> faster &mdash; ` +
+      `${batched.toFixed(1)}s against ${naive.toFixed(1)}s for the same ${COUNT} questions.`
+    : `Batched finished in ${batched.toFixed(1)}s, one-at-a-time in ${naive.toFixed(1)}s. ` +
+      `Too close to call &mdash; batching only helps once requests overlap, which needs a GPU ` +
+      `and enough of them arriving at once.`;
+
+  button.disabled = false;
+  button.textContent = 'Run again';
+});
+
+buildGrids();
+</script>
+</body>
+</html>

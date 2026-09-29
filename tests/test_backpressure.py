@@ -16,9 +16,11 @@ async def test_queue_full_rejects_instead_of_hanging():
     )
     scheduler.start()
     try:
+        # Distinct prompts: identical ones deduplicate onto a single
+        # in-flight request and never reach the queue at all.
         first = asyncio.create_task(scheduler.submit(LONG_PROMPT))
         await asyncio.sleep(0.5)  # let it occupy the slot
-        second = asyncio.create_task(scheduler.submit(LONG_PROMPT))
+        second = asyncio.create_task(scheduler.submit(LONG_PROMPT + " Briefly."))
         await asyncio.sleep(0.1)  # let it take the one queue place
 
         with pytest.raises(asyncio.QueueFull):
