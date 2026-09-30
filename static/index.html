@@ -3,105 +3,134 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Batched vs one-at-a-time</title>
+<title>does batching actually help?</title>
 <style>
   :root {
-    --bg: #0f1115;
-    --panel: #171a21;
-    --line: #262b36;
-    --text: #e6e9ef;
-    --dim: #8b93a7;
-    --pending: #222733;
+    --paper: #fbfaf6;
+    --ink: #26241f;
+    --faint: #8a857a;
+    --rule: #e3dfd4;
+    --pending: #ebe7dc;
     --slow: #d97757;
-    --fast: #4ea1d3;
+    --fast: #4a8fc4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1b1a17;
+      --ink: #e8e4da;
+      --faint: #8f897c;
+      --rule: #34322c;
+      --pending: #2c2a25;
+    }
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    padding: 32px 16px 64px;
-    background: var(--bg);
-    color: var(--text);
-    font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, sans-serif;
+    padding: 48px 16px 80px;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.65 ui-serif, Georgia, "Times New Roman", serif;
   }
-  main { max-width: 900px; margin: 0 auto; }
-  h1 { font-size: 24px; margin: 0 0 4px; font-weight: 600; }
-  .sub { color: var(--dim); margin: 0 0 24px; }
-  .controls { display: flex; gap: 10px; flex-wrap: wrap; }
-  button {
-    background: var(--fast);
-    color: #06121c;
-    border: 0;
-    border-radius: 7px;
-    padding: 11px 22px;
-    font-size: 15px;
-    font-weight: 600;
+  main { max-width: 680px; margin: 0 auto; }
+  .date { color: var(--faint); font: 14px ui-monospace, Menlo, monospace; margin: 0 0 6px; }
+  h1 { font-size: 26px; font-weight: 600; margin: 0 0 18px; }
+  p { margin: 0 0 14px; }
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 26px 0 6px; }
+  button, select {
+    font: 15px ui-monospace, Menlo, monospace;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--ink);
+    border-radius: 3px;
+    padding: 7px 14px;
     cursor: pointer;
   }
-  button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
-  button:disabled { opacity: 0.45; cursor: default; }
-  .provenance { color: var(--dim); font-size: 13px; margin: 14px 0 0; min-height: 20px; }
-  .lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
-  @media (max-width: 640px) { .lanes { grid-template-columns: 1fr; } }
-  .lane {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 11px;
-    padding: 18px;
-  }
-  .lane h2 { font-size: 15px; margin: 0; font-weight: 600; }
-  .lane .note { color: var(--dim); font-size: 13px; margin: 3px 0 14px; }
-  .timer { font-variant-numeric: tabular-nums; font-size: 30px; font-weight: 600; margin-bottom: 14px; }
-  .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; }
-  .cell { aspect-ratio: 1; border-radius: 4px; background: var(--pending); transition: background 120ms ease; }
+  button:disabled { opacity: 0.4; cursor: default; }
+  .aside { color: var(--faint); font-size: 15px; min-height: 22px; }
+  .lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 24px 0; }
+  @media (max-width: 600px) { .lanes { grid-template-columns: 1fr; } }
+  .lane h2 { font-size: 17px; font-weight: 600; margin: 0; }
+  .lane .note { color: var(--faint); font-size: 15px; margin: 0 0 8px; }
+  .timer { font: 26px ui-monospace, Menlo, monospace; margin-bottom: 10px; }
+  .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
+  .cell { aspect-ratio: 1; border-radius: 2px; background: var(--pending); transition: background 120ms ease; }
   .lane.slow .cell.done { background: var(--slow); }
   .lane.fast .cell.done { background: var(--fast); }
-  .verdict {
-    margin-top: 22px;
-    padding: 18px;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 11px;
-    font-size: 17px;
-    min-height: 24px;
-  }
-  .verdict strong { font-size: 21px; }
-  .footnote { color: var(--dim); font-size: 13px; margin-top: 22px; }
-  code { background: #11141a; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  .verdict { border-top: 1px solid var(--rule); padding-top: 16px; }
+  .results { border-top: 1px solid var(--rule); padding-top: 16px; }
+  main > ul { margin: 0 0 14px; padding-left: 22px; }
+  .notes { border-top: 1px solid var(--rule); margin-top: 28px; padding-top: 16px; font-size: 15px; }
+  .notes ul { padding-left: 20px; margin: 6px 0 14px; }
+  .notes li { margin-bottom: 6px; }
+  a { color: inherit; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Same questions. Same model. Same GPU.</h1>
-  <p class="sub">A burst of requests arrives at once. The only difference is whether the server groups them together.</p>
+  <p class="date">sep 30, 2026</p>
+  <h1>does batching actually help?</h1>
+
+  <p>i've been building a small llm inference server from scratch (decode loop, kv cache,
+  batching, scheduling, etc.) bc i wanted to actually see if batching makes that much of a
+  difference.</p>
+
+  <p>the server is tested on 24 short trivia questions and sent all 24 to the server at the exact
+  same time. i ran the same test twice:</p>
+  <ul>
+    <li>one request at a time</li>
+    <li>batches of up to 4 requests</li>
+  </ul>
+  <p>same model (qwen2.5-1.5b-instruct), same nvidia a40.</p>
+
+  <p>each square below is one request, and it lights up as soon as the answer comes back.</p>
 
   <div class="controls">
-    <button id="replay">Play recorded race</button>
-    <button id="live" class="secondary" hidden>Run live on this server</button>
+    <button id="replay">replay it</button>
+    <button id="live" hidden>run it live</button>
+    <select id="speed" aria-label="playback speed">
+      <option value="0.25" selected>slow-mo (0.25×)</option>
+      <option value="1">real speed</option>
+    </select>
   </div>
-  <p class="provenance" id="provenance"></p>
+  <p class="aside" id="provenance"></p>
 
   <div class="lanes">
     <div class="lane slow">
-      <h2>One at a time</h2>
-      <p class="note">Each request waits for the one before it.</p>
+      <h2>one at a time</h2>
+      <p class="note">everyone waits in line</p>
       <div class="timer" id="timer-naive">0.0s</div>
       <div class="grid" id="grid-naive"></div>
     </div>
     <div class="lane fast">
-      <h2>Batched</h2>
-      <p class="note">Requests in flight together share each step.</p>
+      <h2>batched</h2>
+      <p class="note">four at a time</p>
       <div class="timer" id="timer-batched">0.0s</div>
       <div class="grid" id="grid-batched"></div>
     </div>
   </div>
 
-  <div class="verdict" id="verdict"></div>
+  <p class="verdict" id="verdict" hidden></p>
 
-  <p class="footnote">
-    Both lanes use the same 1.5B model. <code>naive</code> runs one decode slot,
-    <code>batched</code> runs four. Every square is a real request, lit at the moment its
-    response arrived.
-  </p>
+  <div class="results">
+    <p>one at a time: 1.6s<br>batched: 0.9s</p>
+    <p>so for this burst of 24 requests, batching finished everything about 1.7x faster.</p>
+    <p>the bigger difference showed up when i kept the server under sustained load. throughput
+    went from around 8.8 req/s → 18.6 req/s, a little over 2x.</p>
+    <p>i've been seeing a lot of stuff about jev on x recently so i wanted to play around with it
+    too. i used it as a second router (the part that decides if a question goes to the small model
+    or the big one) and put it up against my own one-line rule. mine did at least as well on
+    accuracy, and it decides in ~0.002ms vs ~180ms for jev, for free.</p>
+  </div>
+
+  <div class="notes">
+    <p>notes to self:</p>
+    <ul>
+      <li>give each experiment its own fresh server. i originally ran the tests against the same
+      process, and whichever one ran second looked noticeably worse.</li>
+    </ul>
+    <p>code + benchmarks:
+    <a href="https://github.com/rubyoffraiils/llm-inference-server">github.com/rubyoffraiils/llm-inference-server</a></p>
+  </div>
 </main>
 
 <script>
@@ -141,13 +170,14 @@ function buildGrids(count) {
   verdict.textContent = '';
 }
 
-// Plays both lanes from completion times, side by side at real speed.
-function animate(lanes) {
+// Plays both lanes from completion times, side by side. `elapsed` is
+// recorded time, so timers read the true durations whatever the speed.
+function animate(lanes, speed) {
   return new Promise((resolve) => {
     const totals = Object.fromEntries(LANES.map((l) => [l, lanes[l][lanes[l].length - 1]]));
     const start = performance.now();
     function frame() {
-      const elapsed = (performance.now() - start) / 1000;
+      const elapsed = ((performance.now() - start) / 1000) * speed;
       for (const lane of LANES) {
         const cells = document.getElementById(`grid-${lane}`).children;
         const done = lanes[lane].filter((t) => t <= elapsed).length;
@@ -167,21 +197,33 @@ function animate(lanes) {
 
 function showVerdict(totals, count) {
   const speedup = totals.naive / totals.batched;
-  verdict.innerHTML = speedup >= 1.05
-    ? `Batched finished <strong>${speedup.toFixed(1)}&times;</strong> faster &mdash; ` +
-      `${totals.batched.toFixed(1)}s against ${totals.naive.toFixed(1)}s for the same ${count} questions.`
-    : `Batched ${totals.batched.toFixed(1)}s, one-at-a-time ${totals.naive.toFixed(1)}s &mdash; too close to call. ` +
-      `Batching only pays off when the hardware has spare parallel capacity, which a CPU doesn't.`;
+  verdict.textContent = speedup >= 1.05
+    ? `batched: ${totals.batched.toFixed(1)}s. one at a time: ${totals.naive.toFixed(1)}s. ` +
+      `~${speedup.toFixed(1)}× faster.`
+    : `batched: ${totals.batched.toFixed(1)}s. one at a time: ${totals.naive.toFixed(1)}s. ` +
+      'basically a tie, batching needs a gpu to shine.';
+}
+
+function selectedSpeed() {
+  return parseFloat(document.getElementById('speed').value);
+}
+
+function speedNote(speed) {
+  return speed === 1
+    ? "real speed, blink and you'll miss it."
+    : 'slowed down 4×, timers are real.';
 }
 
 async function playRecording() {
   if (!recording) return;
+  const speed = selectedSpeed();
   replayButton.disabled = liveButton.disabled = true;
   provenance.textContent =
-    `Replay of a recorded run on an ${recording.gpu}, ${recording.recorded_at}. ` +
-    `Each lane was recorded separately on a fresh server and is played back at real speed.`;
+    `replay of a run i recorded on an ${recording.gpu.toLowerCase()}, ${recording.recorded_at}. ` +
+    speedNote(speed);
   buildGrids(recording.requests);
-  showVerdict(await animate(recording.lanes), recording.requests);
+  // The written results below already describe this recording.
+  await animate(recording.lanes, speed);
   replayButton.disabled = liveButton.disabled = false;
 }
 
@@ -209,14 +251,16 @@ async function runLive() {
   buildGrids(count);
   // Measured one after the other: both lanes share one GPU, and racing them
   // concurrently would have each slow the other down.
-  provenance.textContent = 'Measuring the one-at-a-time lane...';
+  provenance.textContent = 'running one at a time…';
   const naive = await measureLane('naive', count);
-  provenance.textContent = 'Measuring the batched lane...';
+  provenance.textContent = 'running batched…';
   const batched = await measureLane('batched', count);
-  provenance.textContent =
-    'Measured just now on this server. The lanes ran one after the other so they ' +
-    "wouldn't compete for the GPU, and are shown side by side at real speed.";
-  showVerdict(await animate({ naive, batched }), count);
+  const speed = selectedSpeed();
+  provenance.textContent = `live, just now. ${speedNote(speed)}`;
+  const totals = await animate({ naive, batched }, speed);
+  // A live run can differ from the recording, so it gets its own readout.
+  verdict.hidden = false;
+  showVerdict(totals, count);
   replayButton.disabled = liveButton.disabled = false;
 }
 
@@ -231,7 +275,7 @@ liveButton.addEventListener('click', runLive);
     buildGrids(recording.requests);
   } catch {
     replayButton.disabled = true;
-    provenance.textContent = 'No recorded race yet.';
+    provenance.textContent = 'no recording yet.';
     buildGrids(24);
   }
   // Live mode only exists when this page is served by the inference server.
