@@ -91,9 +91,9 @@ def _process_stats() -> dict:
     raw = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     rss_mib = raw / 2**20 if sys.platform == "darwin" else raw / 1024
     if not torch.cuda.is_available():
-        return {"host_rss_mib": round(rss_mib, 1)}
+        return {"host_peak_rss_mib": round(rss_mib, 1)}
     return {
-        "host_rss_mib": round(rss_mib, 1),
+        "host_peak_rss_mib": round(rss_mib, 1),
         "gpu_allocated_mib": round(torch.cuda.memory_allocated() / 2**20, 1),
         "gpu_reserved_mib": round(torch.cuda.memory_reserved() / 2**20, 1),
     }

@@ -326,6 +326,11 @@ class BatchingScheduler:
         self._in_flight: dict[str, asyncio.Future] = {}
         self._dedup_hits = 0
 
+        # Split each decode step into model time and bookkeeping time, so
+        # a slowdown can be attributed to one or the other.
+        self._forward_times: deque[float] = deque(maxlen=500)
+        self._step_overheads: deque[float] = deque(maxlen=500)
+
     def start(self) -> None:
         self._loop_task = asyncio.create_task(self._run())
 
@@ -488,10 +493,12 @@ class BatchingScheduler:
 
     def _decode_step(self) -> None:
         """Advance every occupied slot by one token, in one shared forward pass."""
+        step_started = time.perf_counter()
         position_ids = self._mask.cumsum(dim=-1) - 1
         position_ids.masked_fill_(self._mask == 0, 1)
         position_ids = position_ids[:, -self._next_input.shape[1] :]
 
+        forward_started = time.perf_counter()
         with torch.no_grad():
             outputs = self._model(
                 input_ids=self._next_input,
@@ -500,6 +507,7 @@ class BatchingScheduler:
                 past_key_values=self._cache,
                 use_cache=True,
             )
+        forward_elapsed = time.perf_counter() - forward_started
         self._cache = outputs.past_key_values
         next_token = torch.argmax(outputs.logits[:, -1, :], dim=-1, keepdim=True)
 
@@ -515,6 +523,11 @@ class BatchingScheduler:
             [[0 if slot.is_free else 1] for slot in self._slots], device=_device
         )
         self._mask = torch.cat([self._mask, step_mask], dim=-1)
+
+        self._forward_times.append(forward_elapsed)
+        self._step_overheads.append(
+            time.perf_counter() - step_started - forward_elapsed
+        )
 
     def _reap_finished_slots(self) -> None:
         """Resolve and free any slot that just hit EOS or the token cap."""
@@ -571,11 +584,23 @@ class BatchingScheduler:
             "cache_hits": self._cache_hits,
             "dedup_hits": self._dedup_hits,
             "cache_entries": len(self._response_cache),
+            # Should stay near the number of requests actually generating.
+            # Growth means entries are leaking past submit()'s finally.
+            "in_flight_entries": len(self._in_flight),
+            # Width of the attention mask. Grows a column per decode step
+            # and only shrinks on a trim, and position_ids does a cumsum
+            # across all of it every step.
+            "mask_width": self._mask.shape[1] if self._mask is not None else 0,
             # Columns in the shared KV-cache. Every decode step processes
             # all of them, so growth here shows up directly as latency.
             "kv_cache_columns": (
                 self._cache.get_seq_length() if self._cache is not None else 0
             ),
+            # Wall time spent inside the model call, versus everything
+            # else a decode step does. Separates "the model got slower"
+            # from "our bookkeeping got slower".
+            "forward_ms_p50": _percentile(self._forward_times, 0.50) * 1000,
+            "step_overhead_ms_p50": _percentile(self._step_overheads, 0.50) * 1000,
             "completed_in_window": len(window),
             "latency_p50_ms": _percentile(totals, 0.50) * 1000,
             "latency_p95_ms": _percentile(totals, 0.95) * 1000,
