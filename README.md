@@ -26,5 +26,5 @@ request ──> router ─────┤                                       
 | dropped requests @ 16 req/s | 185 | **0** |
 
 - routing got **93%** of the big model's accuracy while sending half the traffic to the small one
-- also tried jev (a hosted decision model) as the router. my one rule did at least as well, at ~0.002ms vs ~180ms per decision
-- full numbers in [`results/`](results/) !
+- also tried jev (a hosted decision model) as the router after seeing it on x. my one rule did at least as well, at ~0.002ms vs ~180ms per decision
+- full numbers in [`results/`](results/)!
