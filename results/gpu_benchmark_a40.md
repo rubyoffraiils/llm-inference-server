@@ -1,101 +1,87 @@
-# GPU benchmark — A40, 3 runs per mode
+# GPU benchmark — A40
 
 Open-loop load test, 30s per level, Qwen2.5-0.5B / 1.5B, 4 decode slots
-per tier, queue cap 32. Median across 3 runs, with (min-max) range.
+per tier, queue cap 32, unique prompt per request (the response cache
+would otherwise serve repeats without generating).
 
-## Throughput (achieved QPS, median of 3)
+Three repeats. Each repeat started a fresh server, cooled down 120s
+beforehand, and ran the three modes in rotated order:
 
-| offered | naive | batched | routed |
-|---|---|---|---|
-| 1 | 1.0 | 1.0 | 1.0 |
-| 2 | 2.0 | 2.0 | 2.0 |
-| 4 | 4.0 | 4.0 | 4.0 |
-| 8 | 4.2 | **8.0** | 8.0 |
-| 16 | 4.4 | **8.8** | 11.7 |
-| 32 | 4.0 | **8.3** | 10.7 |
-| 64 | 3.7 | **7.4** | 10.3 |
-
-**Batching roughly doubles sustained throughput.** Naive plateaus around
-4 QPS, batched around 8.
-
-Rejections at 8 QPS: naive 114, batched 0.
-
-## The spread is large, and that matters
-
-| mode, level | p50 range across 3 runs |
+| run | order |
 |---|---|
-| naive, 4 QPS | 0.14s – 7.07s |
-| batched, 8 QPS | 0.12s – 3.29s |
-| batched, 16 QPS | 0.20s – 5.30s |
+| 1 | naive → batched → routed |
+| 2 | batched → routed → naive |
+| 3 | routed → naive → batched |
 
-Run 1 was fast across every mode; runs 2 and 3 were slower. The cleanest
-view is at 1 QPS, where nothing queues: naive p50 went 0.14s → 0.25s, a
-~1.8× slowdown in per-request service time. The larger swings at higher
-rates are queueing amplifying that — 1.8× slower service pushes naive's
-capacity below the offered load, and past capacity latency grows without
-bound.
+## Per run (p50 latency / achieved QPS)
 
-## What caused it
+| file | slot | 1 QPS | 4 QPS | 8 QPS | 16 QPS | 64 QPS |
+|---|---|---|---|---|---|---|
+| naive run1 | 1st | 0.14/1.0 | 0.16/4.0 | 3.78/7.6 | 4.64/7.8 | 5.44/6.9 |
+| naive run3 | 2nd | 0.20/1.0 | 1.97/4.0 | 7.31/5.4 | 8.12/4.9 | 9.64/4.2 |
+| naive run2 | 3rd | 0.26/1.0 | 4.12/4.0 | 9.56/4.0 | 9.37/4.3 | 10.72/3.9 |
+| batched run2 | 1st | 0.15/1.0 | 0.15/4.0 | 0.14/8.0 | 0.52/16.0 | 2.49/14.9 |
+| batched run1 | 2nd | 0.15/1.0 | 0.16/4.0 | 0.15/8.0 | 1.10/16.0 | 2.44/15.1 |
+| batched run3 | 3rd | 0.18/1.0 | 0.20/4.0 | 0.30/8.0 | 3.75/9.5 | 4.30/9.0 |
+| routed run3 | 1st | 0.14/1.0 | 0.19/4.0 | 0.41/8.0 | 0.83/16.0 | 5.84/13.5 |
+| routed run2 | 2nd | 0.15/1.0 | 0.21/4.0 | 0.27/8.0 | 4.68/13.2 | 6.41/11.8 |
+| routed run1 | 3rd | 0.14/1.0 | 0.22/4.0 | 0.22/8.0 | 2.10/15.1 | 6.34/12.8 |
 
-An instrumented re-run sampled server state every 10s for the whole run.
-Ruled out, by measurement:
+**Slot on the server explains most of the spread.** Every mode did best
+as the first mode after a restart. Later modes on the same server lost
+throughput — naive most (ceiling ~7.5 → ~4), batched in the 3rd slot
+(~15 → ~9). Restarting between repeats reset it; sharing a server between
+the three modes of a repeat did not.
+
+## The result to report: each mode on a fresh server
+
+| offered QPS | naive | batched | routed |
+|---|---|---|---|
+| 8 | 7.6 achieved, p50 3.78s, rejecting | 8.0, p50 0.14s | 8.0, p50 0.41s |
+| 16 | 7.8, p50 4.64s | **16.0, p50 0.52s** | 16.0, p50 0.83s |
+| 64 | 6.9 | **14.9** | 13.5 |
+
+- **Batching roughly doubles the throughput ceiling: ~7.5 → ~15 QPS.**
+- At 16 QPS naive saturates at 7.8 with p50 4.6s; batched serves all 16
+  with p50 0.52s.
+- Corroborated independently: a separate fresh-server run on an RTX 3090
+  measured naive 7.8 vs batched 16.0.
+- Routing tops out slightly below batched (~13.5 vs ~15): both tiers share
+  one GPU and their schedulers contend. Routing's value is cost and
+  quality (60% accuracy at 67% of always-expensive cost), not throughput.
+
+n=1 per mode for the fresh-server numbers on this GPU, n=2 across GPUs.
+The benchmark now restarts the server before every (repeat, mode) so
+future runs give three fresh-server samples per mode.
+
+## The slowdown, and what it isn't
+
+Instrumented across this run and the one before it:
 
 | candidate | result |
 |---|---|
-| GPU memory leak | allocated +1%, reserved +0% |
-| allocator fragmentation | reserved flat while allocated flat |
+| GPU thermal / clock throttling | temp flat ~51°C, SM clock at rated 1740 MHz under load; only throttle flags were idle (0x1, cooldowns) and brief software power cap (0x4) |
+| GPU memory leak / fragmentation | allocated +1%, reserved flat |
 | host memory leak | peak RSS never rose after startup |
-| KV-cache growth | bounded; stable or shrinking per tier |
-| attention-mask growth | tracks the cache, bounded |
-| in-flight bookkeeping | stable at the number of live requests |
+| KV-cache growth | bounded, stable or shrinking |
+| attention-mask growth | bounded, tracks the cache |
+| in-flight bookkeeping | stable |
 | per-call hook accumulation | transformers installs capture hooks once, only on request |
 
-A load–idle–load experiment then separated process state from machine
-state (`scripts/diagnose_degradation.py`, forward-pass time per window):
+Forward-pass time per decode step rose within a server's lifetime (naive
+23 → 37 ms) while the GPU ran at full clock. For models this small a
+decode step is bound by CPU-side work — Python dispatch and kernel
+launches — rather than GPU compute, and naive (batch of one) pays that
+per-step cost on every token instead of sharing it across four requests,
+which fits naive degrading most. The container's host load average sat
+around 35 on 9 vCPUs. So the likely source is the host CPU side, but the
+exact mechanism is not identified; it is recorded as a known limitation.
 
-| condition | forward pass |
-|---|---|
-| start of sustained load | 37.5 ms |
-| after 2.5 min of load | 44.7 ms |
-| same process, after 60s idle | 37.3 ms — recovered |
-| fresh process, machine still warm | 39.6 → 49.3 ms — not recovered |
-
-Idling restores speed without a restart; a restart without idling does
-not. That is machine state, not server state: under sustained load the
-machine slows (thermal/frequency behaviour), and recovers at rest. There
-is no accumulating bug in the server.
-
-That experiment ran on a laptop CPU. The GPU-side mechanism is not yet
-measured directly — the earlier "not hardware" reading was an
-`nvidia-smi` snapshot taken after the run, on an idle GPU, which says
-nothing about clocks under load. The benchmark now logs SM clock,
-temperature, power and throttle reasons throughout.
-
-## What was wrong with this run's method
-
-- **One server, 40 minutes of back-to-back load, no rest.** Later runs
-  measured a hot machine.
-- **Fixed mode order.** Naive always ran first in each repeat, so any
-  drift systematically favoured naive — the degradation did *not* hit
-  all three modes equally.
-
-`scripts/benchmark_gpu.sh` now starts a fresh server per repeat, cools
-down between repeats, and rotates the mode order so each mode takes each
-slot once. **These A40 numbers are superseded pending that re-run.** The
-direction holds — batched beat naive in every individual run — but the
-magnitudes here are not ones to quote.
-
-## Earlier single run (RTX 3090)
-
-A previous one-run-per-mode benchmark on a 3090 reported naive 7.8 QPS vs
-batched 16 QPS. Those came from a freshly started server and are **not
-comparable** to these — different GPU, and no repeats to show the spread.
-Superseded by this run.
+An earlier explanation in this file — thermal throttling, inferred from a
+laptop CPU experiment — is refuted for the GPU by the telemetry above.
 
 ## Caveats
 
 - Cost proxy is the parameter-count ratio (3×), not measured per-token time.
 - Quality numbers (46% cheap / 60% routed / 64% expensive) come from
   offline scoring and are machine-independent.
-- Three runs is enough to see the spread, not enough for tight confidence
-  intervals.

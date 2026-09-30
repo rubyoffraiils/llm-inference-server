@@ -8,12 +8,12 @@
 # batched tiers share a model object, so running them together would
 # have them contend for it.
 #
-# Each repeat is independent: a fresh server process, a cooldown before
-# it, and a rotated mode order. An earlier version ran 40 minutes of
-# back-to-back load against one server in a fixed order; later runs then
-# measured a hot machine (a load-idle-load test showed idling restores
-# speed and a fresh process on a warm machine does not), and naive always
-# got the coolest slot.
+# Every (repeat, mode) measurement is independent: its own fresh server,
+# a cooldown before it, and a rotated mode order. Throughput falls the
+# longer one server has been under load -- the first mode after a restart
+# was consistent across repeats, later modes on the same server lost up to
+# half their ceiling -- so sharing a server between measurements makes the
+# result depend on position rather than on the mode being measured.
 
 set -euo pipefail
 
@@ -24,7 +24,7 @@ QPS_LEVELS=${QPS_LEVELS:-"1 2 4 8 16 32 64"}
 # Repeat each configuration so the spread is reportable rather than a
 # single sample.
 REPEATS=${REPEATS:-3}
-COOLDOWN=${COOLDOWN:-120}
+COOLDOWN=${COOLDOWN:-60}
 
 command -v nvidia-smi >/dev/null && nvidia-smi || echo "WARNING: no nvidia-smi, is this a GPU box?"
 
@@ -69,23 +69,27 @@ MONITOR_PID=$!
 trap 'stop_server; kill $MONITOR_PID 2>/dev/null || true' EXIT
 
 MODES=(naive batched routed)
+first=1
 for run in $(seq 1 "$REPEATS"); do
-  if [ "$run" -gt 1 ]; then
-    echo
-    echo "cooling down ${COOLDOWN}s before run $run..."
-    sleep "$COOLDOWN"
-  fi
-
-  echo
-  echo "starting fresh server for run $run..."
-  start_server
-
   # Rotate so no mode always runs first on the coolest machine.
   offset=$(( (run - 1) % ${#MODES[@]} ))
   for i in 0 1 2; do
     mode=${MODES[$(( (i + offset) % ${#MODES[@]} ))]}
+
+    # Fresh server and a cooldown for every (run, mode), not just every
+    # run: a per-run restart still left modes 2 and 3 on a server that had
+    # already served ~10 minutes of load, and their ceilings dropped by up
+    # to 2x while the first mode after each restart stayed consistent.
+    if [ "$first" -eq 0 ]; then
+      echo
+      echo "cooling down ${COOLDOWN}s..."
+      sleep "$COOLDOWN"
+    fi
+    first=0
+
     echo
-    echo "=== $mode run $run ==="
+    echo "=== $mode run $run (fresh server) ==="
+    start_server
     python scripts/load_test.py \
       --url "http://localhost:$PORT/process" \
       --qps $QPS_LEVELS \
@@ -93,10 +97,9 @@ for run in $(seq 1 "$REPEATS"); do
       --mode "$mode" \
       --tag "run${run}" \
       --out "results/load_${mode}_run${run}.json"
+    curl -s "http://localhost:$PORT/stats" > "results/stats_${mode}_run${run}.json"
+    stop_server
   done
-
-  curl -s "http://localhost:$PORT/stats" > "results/stats_run${run}.json"
-  stop_server
 done
 
 kill $MONITOR_PID 2>/dev/null || true
@@ -111,4 +114,4 @@ python scripts/summarise_runs.py results
 
 echo
 echo "done. copy these back:"
-ls -1 results/load_*.json results/stats_run*.json results/monitor.csv
+ls -1 results/load_*.json results/stats_*_run*.json results/monitor.csv
