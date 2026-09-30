@@ -25,7 +25,8 @@
   }
   main { max-width: 900px; margin: 0 auto; }
   h1 { font-size: 24px; margin: 0 0 4px; font-weight: 600; }
-  .sub { color: var(--dim); margin: 0 0 28px; }
+  .sub { color: var(--dim); margin: 0 0 24px; }
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; }
   button {
     background: var(--fast);
     color: #06121c;
@@ -36,8 +37,10 @@
     font-weight: 600;
     cursor: pointer;
   }
+  button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
   button:disabled { opacity: 0.45; cursor: default; }
-  .lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+  .provenance { color: var(--dim); font-size: 13px; margin: 14px 0 0; min-height: 20px; }
+  .lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
   @media (max-width: 640px) { .lanes { grid-template-columns: 1fr; } }
   .lane {
     background: var(--panel);
@@ -47,23 +50,13 @@
   }
   .lane h2 { font-size: 15px; margin: 0; font-weight: 600; }
   .lane .note { color: var(--dim); font-size: 13px; margin: 3px 0 14px; }
-  .timer {
-    font-variant-numeric: tabular-nums;
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 14px;
-  }
+  .timer { font-variant-numeric: tabular-nums; font-size: 30px; font-weight: 600; margin-bottom: 14px; }
   .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; }
-  .cell {
-    aspect-ratio: 1;
-    border-radius: 4px;
-    background: var(--pending);
-    transition: background 120ms ease;
-  }
+  .cell { aspect-ratio: 1; border-radius: 4px; background: var(--pending); transition: background 120ms ease; }
   .lane.slow .cell.done { background: var(--slow); }
   .lane.fast .cell.done { background: var(--fast); }
   .verdict {
-    margin-top: 26px;
+    margin-top: 22px;
     padding: 18px;
     background: var(--panel);
     border: 1px solid var(--line);
@@ -78,19 +71,23 @@
 </head>
 <body>
 <main>
-  <h1>Same questions. Same model. Same machine.</h1>
-  <p class="sub">The only difference is whether the server groups requests together.</p>
+  <h1>Same questions. Same model. Same GPU.</h1>
+  <p class="sub">A burst of requests arrives at once. The only difference is whether the server groups them together.</p>
 
-  <button id="go">Start</button>
+  <div class="controls">
+    <button id="replay">Play recorded race</button>
+    <button id="live" class="secondary" hidden>Run live on this server</button>
+  </div>
+  <p class="provenance" id="provenance"></p>
 
   <div class="lanes">
-    <div class="lane slow" id="lane-naive">
+    <div class="lane slow">
       <h2>One at a time</h2>
       <p class="note">Each request waits for the one before it.</p>
       <div class="timer" id="timer-naive">0.0s</div>
       <div class="grid" id="grid-naive"></div>
     </div>
-    <div class="lane fast" id="lane-batched">
+    <div class="lane fast">
       <h2>Batched</h2>
       <p class="note">Requests in flight together share each step.</p>
       <div class="timer" id="timer-batched">0.0s</div>
@@ -101,103 +98,147 @@
   <div class="verdict" id="verdict"></div>
 
   <p class="footnote">
-    Both lanes hit the same server and the same model weights over HTTP.
-    <code>naive</code> runs with one decode slot, <code>batched</code> with four.
-    Every square lights when a real response arrives &mdash; nothing here is replayed.
+    Both lanes use the same 1.5B model. <code>naive</code> runs one decode slot,
+    <code>batched</code> runs four. Every square is a real request, lit at the moment its
+    response arrived.
   </p>
 </main>
 
 <script>
-const COUNT = 16;
-
-const lanes = {
-  naive: { grid: document.getElementById('grid-naive'), timer: document.getElementById('timer-naive') },
-  batched: { grid: document.getElementById('grid-batched'), timer: document.getElementById('timer-batched') },
-};
-
-const PROMPTS = [
-  'What is the capital of Japan?',
-  'What is the opposite of hot?',
-  'What is 2 + 2?',
-  'Who wrote Hamlet?',
-  'What colour is the sky on a clear day?',
-  'How many days are in a week?',
-  'What is the largest ocean?',
-  'What language is spoken in Brazil?',
+const LANES = ['naive', 'batched'];
+const QUESTIONS = [
+  'What is the capital of Japan?', 'Who wrote Hamlet?', 'What is the largest ocean on Earth?',
+  'How many days are in a leap year?', 'What gas do plants absorb from the air?',
+  'What language is spoken in Brazil?', 'Who painted the Mona Lisa?',
+  'What is the boiling point of water in Celsius?', 'What planet is known as the Red Planet?',
+  'What is the square root of 81?', 'Which country gifted the Statue of Liberty to the United States?',
+  'What is the chemical symbol for gold?', 'Who developed the theory of general relativity?',
+  'What is the longest river in Africa?', 'How many continents are there?',
+  'What is the smallest prime number?', 'What currency is used in the United Kingdom?',
+  'Which organ pumps blood through the body?', 'What is the freezing point of water in Fahrenheit?',
+  'Who was the first person to walk on the Moon?', 'What is the hardest natural substance?',
+  'In which city is the Eiffel Tower?', 'What is the main language of Mexico?',
+  'How many sides does a hexagon have?',
 ];
 
-function buildGrids() {
-  for (const key of Object.keys(lanes)) {
-    const grid = lanes[key].grid;
+const replayButton = document.getElementById('replay');
+const liveButton = document.getElementById('live');
+const provenance = document.getElementById('provenance');
+const verdict = document.getElementById('verdict');
+let recording = null;
+
+function buildGrids(count) {
+  for (const lane of LANES) {
+    const grid = document.getElementById(`grid-${lane}`);
     grid.innerHTML = '';
-    for (let i = 0; i < COUNT; i++) {
+    for (let i = 0; i < count; i++) {
       const cell = document.createElement('div');
       cell.className = 'cell';
       grid.appendChild(cell);
     }
-    lanes[key].timer.textContent = '0.0s';
+    document.getElementById(`timer-${lane}`).textContent = '0.0s';
   }
-  document.getElementById('verdict').textContent = '';
+  verdict.textContent = '';
 }
 
-function promptFor(i) {
-  return 'Question: ' + PROMPTS[i % PROMPTS.length] +
-    '\n\nAnswer with as few words as possible, no explanation.';
+// Plays both lanes from completion times, side by side at real speed.
+function animate(lanes) {
+  return new Promise((resolve) => {
+    const totals = Object.fromEntries(LANES.map((l) => [l, lanes[l][lanes[l].length - 1]]));
+    const start = performance.now();
+    function frame() {
+      const elapsed = (performance.now() - start) / 1000;
+      for (const lane of LANES) {
+        const cells = document.getElementById(`grid-${lane}`).children;
+        const done = lanes[lane].filter((t) => t <= elapsed).length;
+        for (let i = 0; i < done; i++) cells[i].classList.add('done');
+        document.getElementById(`timer-${lane}`).textContent =
+          Math.min(elapsed, totals[lane]).toFixed(1) + 's';
+      }
+      if (elapsed < Math.max(...Object.values(totals))) {
+        requestAnimationFrame(frame);
+      } else {
+        resolve(totals);
+      }
+    }
+    requestAnimationFrame(frame);
+  });
 }
 
-async function runLane(mode) {
-  const lane = lanes[mode];
-  const cells = lane.grid.children;
+function showVerdict(totals, count) {
+  const speedup = totals.naive / totals.batched;
+  verdict.innerHTML = speedup >= 1.05
+    ? `Batched finished <strong>${speedup.toFixed(1)}&times;</strong> faster &mdash; ` +
+      `${totals.batched.toFixed(1)}s against ${totals.naive.toFixed(1)}s for the same ${count} questions.`
+    : `Batched ${totals.batched.toFixed(1)}s, one-at-a-time ${totals.naive.toFixed(1)}s &mdash; too close to call. ` +
+      `Batching only pays off when the hardware has spare parallel capacity, which a CPU doesn't.`;
+}
+
+async function playRecording() {
+  if (!recording) return;
+  replayButton.disabled = liveButton.disabled = true;
+  provenance.textContent =
+    `Replay of a recorded run on an ${recording.gpu}, ${recording.recorded_at}. ` +
+    `Each lane was recorded separately on a fresh server and is played back at real speed.`;
+  buildGrids(recording.requests);
+  showVerdict(await animate(recording.lanes), recording.requests);
+  replayButton.disabled = liveButton.disabled = false;
+}
+
+async function measureLane(mode, count) {
+  const nonce = `${mode}-${Date.now()}`;
   const start = performance.now();
-  let finished = 0;
-
-  const tick = setInterval(() => {
-    lane.timer.textContent = ((performance.now() - start) / 1000).toFixed(1) + 's';
-  }, 50);
-
-  // Fire everything at once; the server decides what it can overlap.
-  await Promise.all(Array.from({ length: COUNT }, (_, i) =>
+  const times = await Promise.all(Array.from({ length: count }, (_, i) =>
     fetch('/process', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: promptFor(i), mode: mode }),
-    }).then(r => r.json()).then(() => {
-      cells[finished].classList.add('done');
-      finished++;
-    }).catch(() => {
-      cells[finished].classList.add('done');
-      finished++;
-    })
+      // Unique per lane: the server caches and deduplicates identical prompts.
+      body: JSON.stringify({
+        prompt: `Question: ${QUESTIONS[i % QUESTIONS.length]} (ref ${nonce}-${i})\n\n` +
+                'Answer with as few words as possible, no explanation.',
+        mode,
+      }),
+    }).then(() => (performance.now() - start) / 1000)
   ));
-
-  clearInterval(tick);
-  const elapsed = (performance.now() - start) / 1000;
-  lane.timer.textContent = elapsed.toFixed(1) + 's';
-  return elapsed;
+  return times.sort((a, b) => a - b);
 }
 
-document.getElementById('go').addEventListener('click', async (event) => {
-  const button = event.target;
-  button.disabled = true;
-  button.textContent = 'Running...';
-  buildGrids();
+async function runLive() {
+  const count = 24;
+  replayButton.disabled = liveButton.disabled = true;
+  buildGrids(count);
+  // Measured one after the other: both lanes share one GPU, and racing them
+  // concurrently would have each slow the other down.
+  provenance.textContent = 'Measuring the one-at-a-time lane...';
+  const naive = await measureLane('naive', count);
+  provenance.textContent = 'Measuring the batched lane...';
+  const batched = await measureLane('batched', count);
+  provenance.textContent =
+    'Measured just now on this server. The lanes ran one after the other so they ' +
+    "wouldn't compete for the GPU, and are shown side by side at real speed.";
+  showVerdict(await animate({ naive, batched }), count);
+  replayButton.disabled = liveButton.disabled = false;
+}
 
-  const [naive, batched] = await Promise.all([runLane('naive'), runLane('batched')]);
+replayButton.addEventListener('click', playRecording);
+liveButton.addEventListener('click', runLive);
 
-  const verdict = document.getElementById('verdict');
-  const speedup = naive / batched;
-  verdict.innerHTML = speedup >= 1.05
-    ? `Batched finished <strong>${speedup.toFixed(1)}&times;</strong> faster &mdash; ` +
-      `${batched.toFixed(1)}s against ${naive.toFixed(1)}s for the same ${COUNT} questions.`
-    : `Batched finished in ${batched.toFixed(1)}s, one-at-a-time in ${naive.toFixed(1)}s. ` +
-      `Too close to call &mdash; batching only helps once requests overlap, which needs a GPU ` +
-      `and enough of them arriving at once.`;
-
-  button.disabled = false;
-  button.textContent = 'Run again';
-});
-
-buildGrids();
+(async () => {
+  try {
+    const response = await fetch('race.json');
+    if (!response.ok) throw new Error();
+    recording = await response.json();
+    buildGrids(recording.requests);
+  } catch {
+    replayButton.disabled = true;
+    provenance.textContent = 'No recorded race yet.';
+    buildGrids(24);
+  }
+  // Live mode only exists when this page is served by the inference server.
+  try {
+    if ((await fetch('/stats')).ok) liveButton.hidden = false;
+  } catch {}
+})();
 </script>
 </body>
 </html>

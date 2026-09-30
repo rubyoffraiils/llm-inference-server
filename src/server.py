@@ -61,6 +61,15 @@ if _STATIC.is_dir():
     async def demo_page() -> FileResponse:
         return FileResponse(_STATIC / "index.html")
 
+    # The page fetches this relative to itself, which is the site root both
+    # here and on GitHub Pages.
+    @app.get("/race.json")
+    async def race_recording() -> FileResponse:
+        path = _STATIC / "race.json"
+        if not path.exists():
+            raise HTTPException(status_code=404, detail="no recorded race yet")
+        return FileResponse(path)
+
 
 class ProcessRequest(BaseModel):
     prompt: str
