@@ -1,6 +1,6 @@
 # llm-inference-server
 
-a small llm inference server i built to learn and play around w batching and see how it works.
+a small llm inference server i built to play around w batching and see how it works.
 
 **demo:** [ruby-zhou.vercel.app/projects/llm-inference-server](https://ruby-zhou.vercel.app/projects/llm-inference-server)
 
