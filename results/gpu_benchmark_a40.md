@@ -4,6 +4,46 @@ Open-loop load test, 30s per level, Qwen2.5-0.5B / 1.5B, 4 decode slots
 per tier, queue cap 32, unique prompt per request (the response cache
 would otherwise serve repeats without generating).
 
+## Final result — fresh server per measurement, 3 runs each
+
+Every (run, mode) measurement had its own freshly started server and a
+60s cooldown before it; mode order rotated across runs. Median across 3
+runs, (min–max):
+
+| offered QPS | naive achieved / p50 | batched achieved / p50 | routed achieved / p50 |
+|---|---|---|---|
+| 1 | 1.0 / 0.12s | 1.0 / 0.14s | 1.0 / 0.14s |
+| 8 | 8.0 / 0.67s (0.46–1.15) | 8.0 / 0.12s (0.11–0.12) | 8.0 / 0.78s |
+| 16 | 9.8 / 3.47s (3.45–3.90), 185 dropped | **16.0 / 0.18s (0.16–0.20), 0 dropped** | 10.3 / 7.54s |
+| 32 | 8.8 / 4.05s | 19.3 / 1.87s | 9.9 / 8.16s |
+| 64 | 8.8 / 4.08s (4.06–4.11) | **18.6 / 1.97s** | 9.7 / 8.60s |
+
+- **Batching raises the throughput ceiling 2.1×: ~8.8 → ~18.6 QPS.**
+- **At 16 QPS: p50 3.47s → 0.18s, dropped requests 185 → 0.**
+- Runs now agree closely (naive p50 at 64 QPS: 4.06–4.11s, versus
+  5.44–10.72s when the three modes shared a server).
+
+### Routing lowers throughput on one GPU
+
+Routed tops out near 10 QPS, barely above naive and about half of
+batched. Monitoring showed the 0.5B model's decode step (~37 ms) is no
+faster than the 1.5B's (~34 ms): at this scale a decode step is bound by
+CPU-side dispatch and kernel launches, not GPU compute, so the smaller
+model is not cheaper to run here. Two tier schedulers on one GPU then
+contend.
+
+This means the parameter-count cost proxy (cheap = 1/3 the cost) does
+not hold on this hardware. Measured per-step time puts the ratio near 1×.
+The routing result that survives is quality: 93% of the expensive
+model's accuracy while sending half the traffic to a model with 3× fewer
+parameters. It does not translate into time or throughput savings at
+this model size on a single GPU.
+
+---
+
+The sections below document the earlier run that exposed the
+position effect and motivated the per-mode restart.
+
 Three repeats. Each repeat started a fresh server, cooled down 120s
 beforehand, and ran the three modes in rotated order:
 
@@ -33,7 +73,7 @@ throughput — naive most (ceiling ~7.5 → ~4), batched in the 3rd slot
 (~15 → ~9). Restarting between repeats reset it; sharing a server between
 the three modes of a repeat did not.
 
-## The result to report: each mode on a fresh server
+## Earlier estimate: first mode after each restart (superseded above)
 
 | offered QPS | naive | batched | routed |
 |---|---|---|---|
