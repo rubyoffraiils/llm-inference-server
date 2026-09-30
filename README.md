@@ -12,7 +12,7 @@ request ──> router ─────┤                                       
                         └──> big model   (qwen2.5-1.5b) ──> batching scheduler ──┘
 ```
 
-- **decode loop**: written by hand w/ kv cache reuse, no `.generate()`
+- **decode loop**: written by hand w/ kv cache reuse
 - **batching**: 4 slots per model, all advanced in one forward pass. a finished request frees its slot and the next one jumps in right away
 - **router**: sends a question to the big model if it doesn't come with a context passage
 - **extras**: queue cap (503 when full), response cache, dedup for identical requests, `/stats` for latency + queue numbers
